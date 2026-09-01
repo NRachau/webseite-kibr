@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+
+<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Individuelle Lösungen von KI Beratung Rachau: Anforderungen ganzheitlich betrachten, bestehende Strukturen berücksichtigen und passende Bausteine sinnvoll verbinden." name="description"/><title>Individuelle Lösungen | KI Beratung Rachau</title><style>
+:root{
+  --navy:#0b1624;
+  --navy-2:#08111c;
+  --navy-3:#0d1b2b;
+  --steel:#7fa4bd;
+  --steel-2:#9db9ca;
+  --paper:#eef4f8;
+  --white:#ffffff;
+  --orange:#ed7a16;
+  --orange-2:#ff9228;
+  --ink:#0d1a27;
+  --muted:#5f7890;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;width:100%;max-width:100%;overflow-x:hidden}
+body{margin:0;width:100%;max-width:100%;overflow-x:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--navy-2);color:var(--ink)}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+.site-header,main,.placeholder,.closing,.site-footer{width:100%;max-width:100%}
+a{transition:.22s ease}
+
+/* =========================
+   HAUPTNAVIGATION
+   ========================= */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(180deg,rgba(7,17,29,.985),rgba(10,24,39,.985));
+  color:#fff;
+  box-shadow:0 14px 34px rgba(5,12,20,.22);
+}
+.nav-shell{
+  width:min(100%,var(--max));max-width:var(--max);height:84px;margin:auto;padding:0 32px;
+  display:flex;align-items:center;gap:30px;
+  border-bottom:1px solid rgba(132,168,192,.13);
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;min-width:max-content}
+.brand-logo{
+  width:62px;height:62px;object-fit:cover;border-radius:50%;
+  box-shadow:0 9px 24px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.06);
+}
+.brand-copy{display:flex;flex-direction:column;gap:8px}
+.brand-copy strong{font-size:20px;line-height:1;font-weight:850;letter-spacing:.065em}
+.brand-copy small{color:#8baac0;font-size:11px;font-weight:760;letter-spacing:.16em}
+.mainnav{margin-left:auto;min-width:0;height:100%;display:flex;align-items:center;gap:clamp(16px,1.55vw,30px)}
+.mainnav>a,.mainnav .nav-link{position:relative;height:100%;display:flex;align-items:center;color:#edf4f8;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
+.mainnav>a:not(.contact-btn)::after,.mainnav .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:2px;background:var(--orange);transform:scaleX(0);transition:transform .22s ease;box-shadow:0 0 10px rgba(237,122,22,.35)}
+.mainnav>a.active:not(.contact-btn)::after,.mainnav>a:hover:not(.contact-btn)::after,.mainnav .nav-link.active::after,.mainnav .nav-link:hover::after,.nav-dropdown.open .nav-link::after{transform:scaleX(1)}
+.mainnav>a:hover:not(.contact-btn),.mainnav .nav-link:hover{color:#fff}
+.contact-btn{
+  height:auto!important;padding:14px 18px!important;border-radius:9px;
+  background:linear-gradient(180deg,#f28a2a 0%,#e96f0d 100%);
+  box-shadow:0 10px 24px rgba(237,122,22,.24),0 0 24px rgba(237,122,22,.12),inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(124,47,0,.35);
+  border:1px solid rgba(255,150,67,.35);
+}
+.contact-btn span{margin-left:12px;font-size:17px}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(237,122,22,.32),0 0 32px rgba(237,122,22,.18),inset 0 1px 0 rgba(255,255,255,.4)}
+.menu-toggle{display:none}
+
+/* =========================
+   LEISTUNGEN-DROPDOWN
+   ========================= */
+.nav-dropdown{position:relative;height:100%;display:flex;align-items:center}
+.nav-link{font:inherit;border:0;background:transparent;padding:0;cursor:pointer}
+.dropdown-panel{
+  position:absolute;top:calc(100% - 10px);left:50%;z-index:160;
+  width:292px;padding:10px;border-radius:14px;
+  background:linear-gradient(155deg,rgba(255,255,255,.98),rgba(235,243,248,.97));
+  border:1px solid rgba(123,157,180,.34);
+  box-shadow:0 24px 55px rgba(2,12,22,.34),0 8px 18px rgba(27,61,84,.18),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(14px);
+  transform:translate(-50%,-8px) scale(.985);transform-origin:top center;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+}
+.dropdown-panel::before{
+  content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;
+  background:#f8fbfd;border-left:1px solid rgba(123,157,180,.30);border-top:1px solid rgba(123,157,180,.30);
+  transform:translateX(-50%) rotate(45deg);
+}
+.nav-dropdown.open .dropdown-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+.dropdown-panel a{
+  position:relative;height:auto!important;display:flex!important;align-items:center;
+  padding:13px 14px!important;border-radius:9px;color:#132333!important;
+  text-decoration:none;font-size:14px!important;font-weight:700!important;line-height:1.2;
+  transition:background .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.dropdown-panel a::after{display:none!important}
+.dropdown-panel a:hover,.dropdown-panel a:focus-visible{
+  color:#081522!important;background:rgba(255,255,255,.88);transform:translateX(3px);
+  box-shadow:0 6px 14px rgba(61,91,111,.11),inset 3px 0 0 var(--orange);outline:none;
+}
+.dropdown-panel a.active-service{
+  color:#0b1a28!important;background:linear-gradient(90deg,rgba(237,122,22,.12),rgba(255,255,255,.62));
+  box-shadow:inset 3px 0 0 var(--orange);
+}
+.dropdown-panel a+a{margin-top:2px}
+
+/* =========================
+   DEMO-INHALTSBEREICH
+   ========================= */
+.placeholder{
+  position:relative;overflow:hidden;min-height:380px;padding:38px 32px;
+  display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 84% 48%,rgba(131,164,187,.18),transparent 29%),
+    linear-gradient(105deg,#e7f0f7 0%,#f7fafc 50%,#dce9f2 100%);
+  box-shadow:inset 0 14px 28px rgba(40,73,96,.12),inset 0 -18px 30px rgba(40,73,96,.06);
+}
+.placeholder-card{
+  position:relative;z-index:3;width:min(1100px,100%);text-align:center;padding:26px 50px 32px;
+  border:1px solid rgba(255,255,255,.82);border-radius:24px;
+  background:linear-gradient(155deg,rgba(255,255,255,.90),rgba(247,250,253,.75));
+  box-shadow:0 24px 50px rgba(53,83,105,.24),0 4px 10px rgba(53,83,105,.08),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+}
+.section-kicker{font-size:12px;font-weight:850;letter-spacing:.22em;color:var(--orange)}
+h1{margin:14px 0 16px;color:#071524;font-size:clamp(42px,4.5vw,64px);line-height:.96;letter-spacing:-.035em}
+.orange-rule{display:block;width:70px;height:3px;background:linear-gradient(90deg,var(--orange),#ffa344);margin:0 auto 17px;border-radius:99px;box-shadow:0 0 10px rgba(237,122,22,.2)}
+.placeholder p{margin:0;color:#56718a;font-size:17px;line-height:1.58}
+.network{position:absolute;top:32px;width:300px;height:220px;opacity:.62;background-image:radial-gradient(circle,#fff 0 2px,transparent 3px),linear-gradient(33deg,transparent 48.7%,rgba(255,255,255,.58) 49%,rgba(255,255,255,.58) 49.5%,transparent 49.8%),linear-gradient(145deg,transparent 48.8%,rgba(255,255,255,.55) 49%,rgba(255,255,255,.55) 49.5%,transparent 49.8%);background-size:74px 70px,122px 82px,146px 96px;filter:drop-shadow(0 1px 2px rgba(100,130,150,.06))}
+.network-left{left:-30px;transform:rotate(-3deg)}
+.network-right{right:-15px;transform:scaleX(-1) rotate(-4deg)}
+.floating-cubes{position:absolute;right:34px;bottom:-26px;width:220px;height:160px;z-index:2}
+.cube{position:absolute;width:70px;height:70px;transform:rotate(30deg) skew(-10deg,-10deg);background:linear-gradient(145deg,rgba(107,139,161,.22),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.76);box-shadow:12px 15px 20px rgba(54,87,108,.10),inset 0 0 22px rgba(255,255,255,.18)}
+.cube-1{right:0;bottom:12px;width:92px;height:92px;border-color:rgba(237,122,22,.76);box-shadow:0 0 18px rgba(237,122,22,.18),12px 18px 28px rgba(54,87,108,.12)}
+.cube-2{right:94px;bottom:42px;width:62px;height:62px}.cube-3{right:45px;bottom:96px;width:48px;height:48px}
+
+/* =========================
+   ABSCHLUSS-CTA
+   ========================= */
+.closing{
+  position:relative;overflow:hidden;color:#fff;padding:34px 32px 38px;
+  background:
+    radial-gradient(circle at 78% 45%,rgba(26,64,96,.44),transparent 35%),
+    linear-gradient(105deg,#071525 0%,#0b1c2e 53%,#06111f 100%);
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.closing-inner{position:relative;z-index:3;width:min(100%,var(--max));max-width:var(--max);margin:auto}
+.top-streak{display:block;width:60px;height:2px;margin:0 0 13px;background:linear-gradient(90deg,var(--orange),rgba(237,122,22,0));box-shadow:0 0 10px rgba(237,122,22,.25)}
+.eyebrow{margin:0;color:var(--orange);font-size:11px;font-weight:850;letter-spacing:.18em}
+.closing h2{margin:12px 0 8px;max-width:900px;font-size:clamp(30px,3vw,42px);line-height:1.08;letter-spacing:-.02em}
+.closing-copy{margin:0 0 20px;color:#d1dce4;font-size:16px;line-height:1.55}
+.primary-btn{
+  display:inline-flex;align-items:center;gap:22px;padding:13px 19px;border-radius:8px;
+  color:#fff;text-decoration:none;font-size:15px;font-weight:800;
+  background:linear-gradient(180deg,#ff932c 0%,#e96d0c 100%);
+  border:1px solid rgba(255,153,72,.46);
+  box-shadow:0 12px 22px rgba(237,122,22,.34),0 0 24px rgba(237,122,22,.20),inset 0 1px 0 rgba(255,255,255,.42),inset 0 -2px 0 rgba(116,42,0,.28);
+}
+.primary-btn span{font-size:18px}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 17px 30px rgba(237,122,22,.40),0 0 34px rgba(237,122,22,.25),inset 0 1px 0 rgba(255,255,255,.45)}
+.closing-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.secondary-btn{
+  display:inline-flex;align-items:center;gap:22px;padding:13px 19px;border-radius:8px;
+  color:var(--orange);text-decoration:none;font-size:15px;font-weight:800;
+  background:linear-gradient(180deg,#fff 0%,#edf3f7 100%);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 12px 22px rgba(0,0,0,.24),0 0 20px rgba(255,255,255,.07),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -2px 0 rgba(74,100,118,.16);
+}
+.secondary-btn span{font-size:18px}
+.secondary-btn:hover{transform:translateY(-2px);background:linear-gradient(180deg,#fff 0%,#f5f8fa 100%);box-shadow:0 17px 30px rgba(0,0,0,.30),0 0 26px rgba(255,255,255,.10),inset 0 1px 0 rgba(255,255,255,1)}
+
+.closing-shapes{position:absolute;right:-10px;top:0;width:520px;height:100%;opacity:.9}
+.closing-shapes span{position:absolute;width:120px;height:120px;transform:rotate(30deg) skew(-10deg,-10deg);border:1px solid rgba(64,105,136,.18);background:linear-gradient(145deg,rgba(49,88,119,.12),rgba(10,28,45,.02))}
+.closing-shapes span:nth-child(1){right:50px;bottom:-35px;border-color:rgba(237,122,22,.72);box-shadow:0 0 18px rgba(237,122,22,.16)}
+.closing-shapes span:nth-child(2){right:170px;bottom:8px;border-color:rgba(237,122,22,.52)}
+.closing-shapes span:nth-child(3){right:280px;bottom:-22px}.closing-shapes span:nth-child(4){right:340px;bottom:65px}.closing-shapes span:nth-child(5){right:75px;bottom:85px}
+
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer{background:linear-gradient(180deg,#06111c,#07131e);color:#dce5eb;border-top:1px solid rgba(127,164,189,.14)}
+.footer-main{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:27px 32px 25px;display:grid;grid-template-columns:1.55fr .9fr 1fr 1fr;gap:58px}
+.footer-brand{display:flex;align-items:flex-start;gap:15px}
+.footer-logo{
+  width:62px;height:62px;object-fit:cover;border-radius:50%;
+  box-shadow:0 9px 24px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.06);
+}
+.footer-brand-copy{display:flex;flex-direction:column;gap:8px}
+.footer-brand strong{
+  display:block;color:#fff;font-size:20px;line-height:1;font-weight:850;letter-spacing:.065em;margin:0;
+}
+.footer-brand small{
+  color:#8baac0;font-size:11px;font-weight:760;letter-spacing:.16em;
+}
+.footer-brand p{margin:7px 0 0;color:#86a3b8;font-size:13px;line-height:1.6}
+.brand-triad{display:flex !important;justify-content:space-between;align-items:center;width:100%;white-space:nowrap}
+.brand-triad span{display:inline-block}
+
+.footer-column h3{margin:3px 0 15px;color:#7da3bf;font-size:11px;letter-spacing:.19em}
+.footer-column>a{display:flex;justify-content:flex-start;gap:12px;color:#fff;text-decoration:none;font-size:13px;margin:0 0 9px;line-height:1.25}
+.footer-column>a span{color:var(--orange);opacity:.95}.footer-column>a:hover{color:#a9c1d2;transform:translateX(2px)}
+.footer-contact p{margin:0 0 14px;color:#8aa4b7;font-size:13px;line-height:1.55}
+.footer-contact-link{font-weight:800!important}
+.footer-bottom{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:18px 32px 21px;border-top:1px solid rgba(127,164,189,.11);display:flex;justify-content:space-between;color:#7392a9;font-size:11px}
+.footer-bottom div{display:flex;gap:30px}.footer-bottom a{color:#83a1b7;text-decoration:none}.footer-bottom a:hover{color:#fff}
+
+@media(max-width:1380px){
+  .nav-shell{padding-left:24px;padding-right:24px;gap:22px}
+  .mainnav{gap:16px}
+  .mainnav>a,.mainnav .nav-link{font-size:13px}
+  .contact-btn{padding-left:15px!important;padding-right:15px!important}
+}
+@media(max-width:1250px){
+  .nav-shell{padding:0 22px}.mainnav{gap:18px}.mainnav>a,.mainnav .nav-link{font-size:12px}.brand-copy strong{font-size:17px}.brand-copy small{font-size:10px}.footer-main{gap:34px}
+}
+@media(max-width:1000px){
+  .nav-shell{height:82px}.brand-logo{width:52px;height:52px}.brand-copy strong{font-size:16px}.brand-copy small{font-size:9px}
+  .menu-toggle{display:block;margin-left:auto;color:#fff;border:1px solid rgba(132,168,192,.24);background:rgba(255,255,255,.04);padding:10px 12px;border-radius:8px;font-weight:800}
+  .mainnav{display:none;position:absolute;top:82px;left:0;right:0;height:auto;background:#081523;flex-direction:column;align-items:stretch;gap:0;padding:10px 22px 20px;box-shadow:0 20px 35px rgba(0,0,0,.3)}
+  .mainnav.open{display:flex}.mainnav>a,.mainnav .nav-link{height:auto;padding:13px 0;border-bottom:1px solid rgba(127,164,189,.11)}.mainnav>a::after,.mainnav .nav-link::after{display:none}.contact-btn{justify-content:center;margin-top:12px;border-bottom:0!important}
+  .nav-dropdown{height:auto;display:block}.nav-link{width:100%;justify-content:flex-start}
+  .dropdown-panel{position:static;width:100%;margin:4px 0 8px;padding:8px;transform:none!important;border-radius:11px;box-shadow:0 14px 30px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.9);display:none;opacity:1;visibility:visible;pointer-events:auto}
+  .dropdown-panel::before{display:none}.nav-dropdown.open .dropdown-panel{display:block}.dropdown-panel a{border-bottom:0!important;padding:12px 13px!important}
+  .placeholder{min-height:360px}.placeholder-card{width:min(1100px,100%)}
+  .closing-shapes{opacity:.55;right:-150px}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .brand-copy strong{font-size:14px}.brand-copy small{font-size:8px;letter-spacing:.12em}.brand-logo{width:46px;height:46px}
+  .placeholder{padding:45px 18px;min-height:430px}.placeholder-card{padding:30px 20px}.placeholder p{font-size:15px}.placeholder p br{display:none}.network{opacity:.35}.floating-cubes{right:-80px}
+  .closing{padding:35px 20px 40px}.closing-copy br{display:none}.closing h2{font-size:32px}
+  .footer-main{padding:30px 20px;grid-template-columns:1fr;gap:27px}.footer-brand{grid-column:auto}.footer-bottom{padding:17px 20px;flex-direction:column;gap:13px}.footer-bottom div{gap:20px}
+}
+
+@media (max-width:1200px){.footer-brand small{font-size:10px}}
+@media (max-width:900px){.footer-brand small{font-size:9px}}
+@media (max-width:650px){.footer-brand small{font-size:8px;letter-spacing:.12em}}
+
+
+/* ==========================================================
+   MASTER – verbindliches Seitenraster für Unterseiten
+   styles.css enthält Navigation, Buttons und Footer.
+   master.css enthält ausschließlich die Seiten-/Inhaltslogik.
+   ========================================================== */
+
+:root{
+  --content-radius:34px;
+  --content-pad-x:56px;
+  --content-pad-y:64px;
+  --content-width:1176px;
+}
+
+main{
+  padding:32px 0 42px;
+  background:linear-gradient(105deg,#e7f0f7 0%,#f7fafc 50%,#dce9f2 100%);
+  box-shadow:inset 0 14px 28px rgba(40,73,96,.12),inset 0 -18px 30px rgba(40,73,96,.06);
+}
+
+/* ----------------------------------------------------------
+   GEMEINSAME AUSSENKANTEN
+   Alle Inhalte und CTA folgen exakt derselben Breitenlogik.
+   Keine Einzelkorrekturen für einzelne Abschnitte hinzufügen.
+   ---------------------------------------------------------- */
+.content-section,
+.closing{
+  width:var(--content-width);
+  max-width:calc(100% - 64px);
+  margin:36px auto 0;
+  box-sizing:border-box;
+  border-radius:var(--content-radius);
+  overflow:hidden;
+}
+.content-section:first-child{margin-top:0}
+
+.content-section{
+  position:relative;
+  isolation:isolate;
+  padding:var(--content-pad-y) var(--content-pad-x) 70px;
+  border:1px solid rgba(255,255,255,.82);
+  box-shadow:0 30px 68px rgba(35,61,80,.20),0 8px 22px rgba(35,61,80,.10),inset 0 1px 0 rgba(255,255,255,.60);
+}
+.content-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(140deg,rgba(255,255,255,.08),transparent 30%,transparent 72%,rgba(12,37,57,.035));
+}
+.content-inner,.closing-inner{width:100%;max-width:none;margin:0}
+
+/* Navigation passt ihre Innenkante bei kleineren Desktopbreiten an. */
+@media(max-width:1380px) and (min-width:1251px){
+  .content-section,.closing{width:1192px;max-width:calc(100% - 48px)}
+}
+@media(max-width:1250px) and (min-width:1001px){
+  .content-section,.closing{width:calc(100% - 44px);max-width:none}
+}
+
+/* ----------------------------------------------------------
+   FESTER FARBWECHSEL
+   1 dunkel, 2 hell, 3 dunkel, 4 hell usw.
+   ---------------------------------------------------------- */
+.content-section:nth-of-type(odd){
+  background:linear-gradient(105deg,#071525,#0b1c2e 55%,#07131f);
+  border-color:rgba(255,255,255,.10);
+}
+.content-section:nth-of-type(odd)::before{
+  background:linear-gradient(140deg,rgba(255,255,255,.055),transparent 34%,transparent 70%,rgba(0,0,0,.12));
+}
+.content-section:nth-of-type(even){
+  background:linear-gradient(155deg,rgba(255,255,255,.96),rgba(247,250,253,.88));
+}
+
+/* ----------------------------------------------------------
+   TYPOGRAFIE
+   Keine Abschnittsnummerierung. Kicker statt Nummern verwenden.
+   ---------------------------------------------------------- */
+.section-kicker{
+  display:block;
+  margin-bottom:12px;
+  color:#ed7a16;
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.18em;
+}
+.content-copy h1,.content-copy h2,.section-title h2{
+  margin:0;
+  color:#0c2539;
+  font-size:clamp(31px,3.1vw,45px);
+  line-height:1.08;
+  letter-spacing:-.025em;
+}
+.content-copy p,.body-copy p{
+  color:#536b7c;
+  font-size:16px;
+  line-height:1.72;
+}
+.content-copy .lead{margin-top:20px;color:#263f52;font-size:18px}
+.content-section:nth-of-type(odd) h1,
+.content-section:nth-of-type(odd) h2,
+.content-section:nth-of-type(odd) .content-copy .lead{color:#fff}
+.content-section:nth-of-type(odd) .content-copy p,
+.content-section:nth-of-type(odd) .body-copy p{color:#c5d2db}
+
+.section-title::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:2px;
+  margin-top:20px;
+  border-radius:2px;
+  background:linear-gradient(90deg,#ed7a16,rgba(237,122,22,.18));
+  box-shadow:0 3px 10px rgba(237,122,22,.18);
+}
+
+/* ----------------------------------------------------------
+   VISUELLE ABSCHNITTE / SPIEGELUNG
+   Die HTML-Reihenfolge steuert links/rechts.
+   visual-left: Medium links, Text rechts.
+   visual-right: Text links, Medium rechts.
+   Reine Textbereiche verwenden .text-only und keine leere Spalte.
+   ---------------------------------------------------------- */
+.media-grid{
+  display:grid;
+  grid-template-columns:minmax(280px,31%) 1fr;
+  gap:0 52px;
+  align-items:start;
+}
+.visual-right .media-grid{grid-template-columns:1fr minmax(280px,31%)}
+.media-card{margin:0;align-self:start}
+.media-card img{display:block;width:100%;height:auto;object-fit:cover}
+.media-placeholder{
+  display:grid;
+  place-items:center;
+  min-height:250px;
+  border-radius:8px;
+  border:1px solid rgba(127,164,189,.36);
+  background:linear-gradient(145deg,rgba(127,164,189,.18),rgba(255,255,255,.08));
+  box-shadow:0 18px 42px rgba(23,50,70,.16),inset 0 1px 0 rgba(255,255,255,.18);
+  color:#8baac0;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.15em;
+}
+/* Oberkante des visuellen Elements und des Textblocks sind identisch. */
+.media-card,.content-copy{align-self:start}
+
+.text-only{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+.section-title h2{max-width:820px}
+.body-copy{max-width:1040px}
+.body-copy p:first-child{margin-top:0}
+
+/* ----------------------------------------------------------
+   TIEFE INNERHALB DER INHALTSBEREICHE
+   ---------------------------------------------------------- */
+.statement{
+  grid-column:1/-1;
+  margin-top:34px;
+  padding:20px 25px;
+  border-left:3px solid #ed7a16;
+  background:rgba(243,246,248,.92);
+  box-shadow:0 12px 28px rgba(35,61,80,.09),inset 0 1px 0 rgba(255,255,255,.72);
+  display:flex;
+  gap:10px 22px;
+  align-items:baseline;
+  flex-wrap:wrap;
+  color:#536b7c;
+}
+.statement strong{color:#17364d;font-size:17px}
+.content-section:nth-of-type(odd) .statement{
+  background:rgba(255,255,255,.06);
+  border-color:#ed7a16;
+  color:#c5d2db;
+}
+.content-section:nth-of-type(odd) .statement strong{color:#fff}
+
+.detail-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.detail-card{
+  padding:22px 24px;
+  border-radius:14px;
+  border:1px solid rgba(127,164,189,.22);
+  background:rgba(255,255,255,.62);
+  box-shadow:0 14px 30px rgba(35,61,80,.10),inset 0 1px 0 rgba(255,255,255,.82);
+}
+.detail-card strong{display:block;color:#17364d;font-size:15px}
+.detail-card span{display:block;margin-top:7px;color:#70828f;font-size:13px;line-height:1.45}
+.content-section:nth-of-type(odd) .detail-card{
+  background:rgba(255,255,255,.055);
+  border-color:rgba(255,255,255,.10);
+  box-shadow:0 14px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.content-section:nth-of-type(odd) .detail-card strong{color:#fff}
+.content-section:nth-of-type(odd) .detail-card span{color:#aebfcb}
+
+/* ----------------------------------------------------------
+   CTA = NORMALER INHALTSBEREICH
+   Immer letzter Bereich vor dem Footer. Breite nie separat verändern.
+   ---------------------------------------------------------- */
+.closing{
+  padding:34px var(--content-pad-x) 38px;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 30px 68px rgba(35,61,80,.20),0 8px 22px rgba(35,61,80,.10);
+}
+.closing h2{font-size:42px}
+
+/* ----------------------------------------------------------
+   RESPONSIVE
+   Größen bleiben stabil; nur verfügbare Breite/Spalten ändern sich.
+   ---------------------------------------------------------- */
+@media(max-width:1000px){
+  .content-section,.closing{
+    width:calc(100% - 36px);
+    max-width:none;
+    margin-top:24px;
+    border-radius:24px;
+  }
+  .content-section:first-child{margin-top:0}
+  .content-section{padding:52px 34px 58px}
+  .closing{padding:35px 34px 40px}
+  .closing h2{font-size:clamp(30px,4.2vw,38px)}
+  .media-grid,.visual-right .media-grid{grid-template-columns:1fr;gap:34px}
+  .media-card{max-width:430px}
+  .detail-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  main{padding-top:18px}
+  .content-section,.closing{width:calc(100% - 28px);margin-top:20px}
+  .content-section:first-child{margin-top:0}
+  .content-section{padding:44px 22px 50px}
+  .closing{padding:35px 22px 40px}
+  .closing h2{font-size:32px}
+  .detail-grid{grid-template-columns:1fr}
+  .statement{display:block}
+  .statement span{display:block;margin-top:7px}
+}
+
+
+/* ==========================================================
+   VERBINDLICHE AKZENT- UND TIEFENREGELN
+   Orange = gezielte Hervorhebung, Dunkelblau = Tiefe/Struktur.
+   Akzente bleiben sparsam und funktional, nicht dekorativ beliebig.
+   ========================================================== */
+:root{
+  --accent-orange:#ed7a16;
+  --accent-orange-soft:rgba(237,122,22,.16);
+  --accent-orange-line:rgba(237,122,22,.55);
+  --depth-blue:#0b1c2e;
+  --depth-blue-2:#122b40;
+  --depth-shadow:rgba(7,21,37,.22);
+}
+
+/* feine orange obere Akzentkante an jedem Inhaltsfeld */
+.content-section::after,
+.closing::after{
+  content:"";
+  position:absolute;
+  left:var(--content-pad-x);
+  top:0;
+  width:86px;
+  height:3px;
+  border-radius:0 0 3px 3px;
+  background:linear-gradient(90deg,var(--accent-orange),rgba(237,122,22,.22));
+  box-shadow:0 5px 16px rgba(237,122,22,.22);
+  pointer-events:none;
+}
+.content-section,
+.closing{position:relative}
+
+/* Kicker mit dezentem Marker statt bloßem Text */
+.section-kicker{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-kicker::before{
+  content:"";
+  width:18px;
+  height:2px;
+  border-radius:2px;
+  background:var(--accent-orange);
+  box-shadow:0 3px 10px rgba(237,122,22,.24);
+}
+
+/* dunkle Bereiche erhalten mehr Tiefe, ohne heller zu werden */
+.content-section.is-dark,
+.content-section[data-tone="dark"]{
+  box-shadow:0 34px 76px rgba(7,21,37,.30),0 10px 28px rgba(7,21,37,.20),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.content-section.is-dark::before,
+.content-section[data-tone="dark"]::before{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(237,122,22,.08),transparent 24%),
+    linear-gradient(145deg,rgba(18,43,64,.35),transparent 38%,transparent 68%,rgba(0,0,0,.16));
+}
+
+/* helle Bereiche bekommen eine sehr dezente dunkelblaue Innenkante */
+.content-section.is-light,
+.content-section[data-tone="light"]{
+  box-shadow:0 28px 62px rgba(35,61,80,.17),0 8px 20px rgba(35,61,80,.08),inset 0 1px 0 rgba(255,255,255,.88);
+}
+.content-section.is-light::before,
+.content-section[data-tone="light"]::before{
+  background:
+    radial-gradient(circle at 94% 8%,rgba(11,28,46,.035),transparent 24%),
+    linear-gradient(145deg,rgba(255,255,255,.18),transparent 42%,rgba(11,28,46,.025));
+}
+
+/* Bilder/Grafiken wirken wie eingebettete Ebenen */
+.media-card{
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(237,122,22,.18);
+  box-shadow:0 22px 46px rgba(7,21,37,.20),0 6px 16px rgba(7,21,37,.10);
+}
+
+/* Detailkarten: kleine orange Funktionskante */
+.detail-card{position:relative;overflow:hidden}
+.detail-card::before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(180deg,var(--accent-orange),rgba(237,122,22,.20));
+}
+
+@media(max-width:640px){
+  .content-section::after,.closing::after{left:22px;width:64px}
+}
+
+
+/* VARIANTE HELL/RECHTS – explizite Farbfolge überschreibt die Standard-nth-of-type-Regel */
+.content-section.is-light{background:linear-gradient(155deg,rgba(255,255,255,.97),rgba(247,250,253,.90));border-color:rgba(255,255,255,.82)}
+.content-section.is-light h1,.content-section.is-light h2{color:#0c2539}
+.content-section.is-light .content-copy .lead{color:#263f52}
+.content-section.is-light .content-copy p,.content-section.is-light .body-copy p{color:#536b7c}
+.content-section.is-dark{background:linear-gradient(105deg,#071525,#0b1c2e 55%,#07131f);border-color:rgba(255,255,255,.10)}
+.content-section.is-dark h1,.content-section.is-dark h2,.content-section.is-dark .content-copy .lead{color:#fff}
+.content-section.is-dark .content-copy p,.content-section.is-dark .body-copy p{color:#c5d2db}
+.content-section.is-dark .detail-card{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.10);box-shadow:0 14px 30px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.06)}
+.content-section.is-dark .detail-card strong{color:#fff}
+.content-section.is-dark .detail-card span{color:#aebfcb}
+.content-section.is-dark .statement{background:rgba(255,255,255,.06);border-color:#ed7a16;color:#c5d2db}
+.content-section.is-dark .statement strong{color:#fff}
+
+
+.hero-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:7px;border-radius:20px;overflow:hidden;padding:7px;background:#fff;box-shadow:0 24px 55px rgba(11,26,40,.18),0 0 0 1px rgba(11,26,40,.08)}.hero-mosaic img{width:100%;height:170px;object-fit:cover;display:block}.detail-grid.six{grid-template-columns:repeat(3,1fr)}
+.branch-section{overflow:hidden}.branch-deck{position:relative;min-height:560px;margin-top:28px}.branch-card{position:absolute;inset:0;opacity:0;pointer-events:none;transform:translateY(18px) scale(.985);transition:.35s ease;background:linear-gradient(145deg,#10283d,#081725);border:1px solid rgba(255,255,255,.13);border-radius:20px;box-shadow:0 28px 60px rgba(7,20,32,.24),0 4px 12px rgba(7,20,32,.18);color:#fff;overflow:visible}.branch-card.active{opacity:1;pointer-events:auto;transform:none;z-index:5}.branch-card:before,.branch-card:after{content:"";position:absolute;inset:9px -9px -9px 9px;border-radius:20px;background:#0c2031;border:1px solid rgba(11,26,40,.15);z-index:-1;box-shadow:0 16px 30px rgba(7,20,32,.14)}.branch-card:after{inset:18px -18px -18px 18px;background:#f0f3f5;z-index:-2}.branch-tab{position:absolute;top:-38px;left:28px;height:39px;padding:0 20px;display:flex;align-items:center;gap:10px;border-radius:10px 10px 0 0;background:#10283d;border:1px solid rgba(255,255,255,.14);border-bottom:0;font-weight:800;letter-spacing:.02em;box-shadow:0 -5px 14px rgba(7,20,32,.1)}.branch-tab span{color:#ed7a16;font-size:.78rem}.branch-body{display:grid;grid-template-columns:34% 1fr;min-height:540px}.branch-media{padding:24px 0 24px 24px}.branch-media img{width:100%;height:100%;max-height:492px;object-fit:cover;border-radius:14px;box-shadow:0 14px 35px rgba(0,0,0,.3)}.branch-copy{padding:34px 38px}.branch-count{color:#ed7a16;font-weight:900;font-size:.8rem;letter-spacing:.12em}.branch-copy h3{font-size:2rem;margin:6px 0 5px;color:#fff}.branch-tags{color:#f2a65f!important;font-weight:700;font-size:.9rem}.branch-copy p{color:#dbe5ed}.branch-copy h4{margin:18px 0 8px;color:#fff}.branch-copy ul{display:grid;grid-template-columns:1fr 1fr;gap:7px 22px;margin:0;padding-left:18px;color:#e8eef3}.branch-ai{margin-top:18px;padding:13px 15px;border-left:3px solid #ed7a16;background:rgba(255,255,255,.055);display:grid;gap:3px}.branch-ai strong{color:#fff}.branch-ai span{color:#cbd8e1}.branch-limit{font-size:.86rem;margin-top:14px!important;color:#bfcdd7!important}.branch-limit strong{color:#fff}.branch-controls{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:45px}.branch-prev,.branch-next{width:44px;height:44px;border-radius:50%;border:1px solid rgba(11,26,40,.14);background:#fff;color:#0b1a28;font-size:1.2rem;box-shadow:0 8px 18px rgba(11,26,40,.09);cursor:pointer}.branch-dots{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:280px}.branch-dots button{width:8px;height:8px;border:0;border-radius:50%;background:#aeb9c1;padding:0;cursor:pointer}.branch-dots button.active{background:#ed7a16;transform:scale(1.35)}
+.compare-grid{display:grid;grid-template-columns:1fr 55px 1fr;align-items:center;gap:20px;margin-top:28px}.compare-grid article{padding:25px;border:1px solid rgba(255,255,255,.12);border-radius:16px;background:rgba(255,255,255,.055);box-shadow:inset 0 1px rgba(255,255,255,.05)}.compare-grid article span{color:#ed7a16;font-size:.72rem;font-weight:900;letter-spacing:.1em}.compare-grid article strong{display:block;color:#fff;font-size:1.25rem;margin:8px 0}.compare-grid article p{color:#d7e0e7;margin:0}.compare-mark{text-align:center;color:#ed7a16;font-size:2rem;font-weight:900}
+.process-line,.decision-track,.five-steps{display:flex;align-items:stretch;gap:10px;margin-top:28px}.process-line>div,.decision-track>div,.five-steps>div{flex:1;padding:20px 16px;border-radius:14px;border:1px solid rgba(11,26,40,.1);background:#fff;box-shadow:0 10px 25px rgba(11,26,40,.07)}.process-line b,.five-steps b{display:block;color:#ed7a16;font-size:.78rem}.process-line strong,.decision-track strong,.five-steps strong{display:block;color:#0b1a28;margin:6px 0}.process-line span,.decision-track span,.five-steps span{color:#5f6f7b;font-size:.88rem}.process-line i{align-self:center;color:#ed7a16;font-style:normal;font-size:1.3rem}.decision-track>div{position:relative}.decision-track>div:not(:last-child):after{content:"→";position:absolute;right:-12px;top:50%;color:#ed7a16;font-weight:900;z-index:2}.service-orbit{display:grid;grid-template-columns:1fr 1fr 1.2fr 1fr 1fr;gap:10px;align-items:center;margin:30px 0}.service-orbit a,.service-orbit>span{min-height:92px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:14px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.055);color:#fff;text-decoration:none;font-weight:800;padding:14px}.service-orbit>span{background:linear-gradient(145deg,#ed7a16,#c85e08);box-shadow:0 14px 32px rgba(237,122,22,.18)}.service-orbit a:hover{border-color:#ed7a16}.microcopy{color:#cbd7df!important;text-align:center;max-width:900px;margin:0 auto!important}.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}.tech-grid article{padding:22px;border-radius:14px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.12)}.tech-grid strong{display:block;color:#fff;font-size:1.1rem;margin-bottom:8px}.tech-grid span{color:#cbd7df}.triad-solution{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;position:relative;padding-bottom:100px}.triad-solution article{padding:25px;text-align:center;background:#fff;border:1px solid rgba(11,26,40,.1);border-radius:16px;box-shadow:0 12px 28px rgba(11,26,40,.08)}.triad-solution b{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;background:#0b1a28;color:#ed7a16}.triad-solution strong{display:block;color:#0b1a28;font-size:1.15rem}.triad-solution span{color:#657581;font-size:.9rem}.solution-center{position:absolute;left:50%;bottom:0;transform:translateX(-50%);background:#0b1a28;color:#fff;border-radius:14px;padding:15px 35px;text-align:center;box-shadow:0 14px 28px rgba(11,26,40,.18);border-top:3px solid #ed7a16}.five-steps>div{background:rgba(255,255,255,.055);border-color:rgba(255,255,255,.12)}.five-steps strong{color:#fff}.five-steps span{color:#cbd7df}.balance-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:28px}.balance-grid span{padding:16px;text-align:center;border-radius:12px;background:#fff;border:1px solid rgba(11,26,40,.1);box-shadow:0 8px 20px rgba(11,26,40,.06);font-weight:800;color:#0b1a28}.inline-link{color:#d86608;font-weight:800;text-decoration:none;border-bottom:1px solid rgba(216,102,8,.35)}
+@media(max-width:900px){.hero-mosaic img{height:125px}.detail-grid.six,.tech-grid{grid-template-columns:1fr 1fr}.branch-deck{min-height:760px}.branch-body{grid-template-columns:1fr}.branch-media{padding:20px 20px 0}.branch-media img{height:220px}.branch-copy{padding:22px}.branch-copy ul{grid-template-columns:1fr}.service-orbit{grid-template-columns:1fr 1fr}.service-orbit>span{grid-column:1/-1;grid-row:1}.process-line,.decision-track,.five-steps{display:grid;grid-template-columns:1fr 1fr}.process-line i,.decision-track>div:after{display:none}.triad-solution{grid-template-columns:1fr}.balance-grid{grid-template-columns:1fr 1fr}.compare-grid{grid-template-columns:1fr}.compare-mark{transform:rotate(90deg)}}
+@media(max-width:600px){.detail-grid.six,.tech-grid,.process-line,.decision-track,.five-steps,.balance-grid{grid-template-columns:1fr}.branch-deck{min-height:890px}.branch-card:before,.branch-card:after{display:none}.branch-tab{left:14px}.branch-copy{padding:18px}.branch-media img{height:180px}.service-orbit{grid-template-columns:1fr}.service-orbit>span{grid-column:auto}.hero-mosaic img{height:105px}}
+
+/* Final quality refinements */
+.hero-custom .statement{background:linear-gradient(135deg,#0f2a40,#0a1c2c)!important;border:1px solid rgba(255,255,255,.12)!important;border-left:4px solid #ed7a16!important;box-shadow:0 16px 34px rgba(11,26,40,.18)!important}
+.hero-custom .statement strong{color:#fff!important}.hero-custom .statement span{color:#d8e3eb!important}
+
+.branch-tab-strip{display:flex;align-items:flex-end;gap:8px;margin:30px 0 0 28px;min-height:58px;position:relative;z-index:8}
+.branch-tab-strip button{appearance:none;border:1px solid rgba(11,26,40,.18);border-bottom:0;border-radius:13px 13px 0 0;background:rgba(16,40,61,.23);color:#0b1a28;padding:14px 20px 15px;min-width:190px;text-align:left;font:inherit;font-weight:850;letter-spacing:.01em;cursor:pointer;box-shadow:0 -8px 20px rgba(11,26,40,.06);transition:.22s ease;opacity:.58;transform:translateY(7px)}
+.branch-tab-strip button .tab-num{color:#d86608;font-size:.76rem;letter-spacing:.09em;margin-right:10px}
+.branch-tab-strip button.active{background:#10283d;color:#fff;border-color:#10283d;opacity:1;transform:none;box-shadow:0 -12px 24px rgba(11,26,40,.16);position:relative;z-index:3}
+.branch-tab-strip button:not(.active):hover{opacity:.82;transform:translateY(4px)}
+.branch-deck{margin-top:0!important}.branch-card>.branch-tab{display:none}
+.branch-outro{margin-top:34px;padding:24px 28px;display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:start;border-radius:18px;background:linear-gradient(135deg,#f8fafb,#eef3f6);border:1px solid rgba(11,26,40,.1);box-shadow:0 14px 32px rgba(11,26,40,.07)}
+.branch-outro-mark{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:#0b1a28;color:#ed7a16;font-size:1.75rem;font-weight:700;box-shadow:0 8px 18px rgba(11,26,40,.15)}
+.branch-outro-kicker{display:block;color:#d86608;font-size:.72rem;font-weight:900;letter-spacing:.14em;margin-bottom:4px}.branch-outro h3{margin:0 0 8px;color:#0b1a28;font-size:1.28rem}.branch-outro p{margin:0;color:#5f6f7b;line-height:1.65;max-width:1120px}
+
+.solution-principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}.solution-principles article{position:relative;padding:24px 22px 22px;border-radius:16px;background:#fff;border:1px solid rgba(11,26,40,.1);box-shadow:0 12px 28px rgba(11,26,40,.08)}.solution-principles article:before{content:"";position:absolute;left:20px;top:0;width:66px;height:3px;background:#ed7a16;border-radius:0 0 4px 4px}.solution-principles span{display:inline-block;color:#d86608;font-size:.76rem;font-weight:900;letter-spacing:.1em;margin-bottom:8px}.solution-principles strong{display:block;color:#0b1a28;font-size:1.08rem;margin-bottom:8px}.solution-principles p{margin:0;color:#62727e;line-height:1.55;font-size:.93rem}
+.solution-flow{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr;align-items:stretch;gap:8px;margin-top:22px;padding:22px;border-radius:18px;background:linear-gradient(135deg,#eef3f6,#f8fafb);border:1px solid rgba(11,26,40,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.8)}.flow-node{padding:18px;border-radius:13px;background:#fff;border:1px solid rgba(11,26,40,.09);box-shadow:0 8px 18px rgba(11,26,40,.05)}.flow-node b{display:block;color:#ed7a16;font-size:.75rem;letter-spacing:.1em}.flow-node strong{display:block;color:#0b1a28;margin:6px 0 7px}.flow-node span{display:block;color:#657581;font-size:.86rem;line-height:1.5}.flow-node-final{background:#0d2437;border-color:#0d2437;box-shadow:0 12px 24px rgba(11,26,40,.16)}.flow-node-final strong{color:#fff}.flow-node-final span{color:#d6e1e9}.flow-connector{align-self:center;text-align:center;color:#ed7a16;font-size:1.35rem;font-weight:900}.solution-note{margin-top:18px;padding:17px 20px;border-left:4px solid #ed7a16;background:#0b1a28;border-radius:0 12px 12px 0;display:flex;gap:12px;align-items:baseline}.solution-note strong{color:#fff;white-space:nowrap}.solution-note span{color:#cfdae3}
+
+.total-picture-section .triad-solution{padding-bottom:158px;gap:20px}.total-picture-section .triad-solution article{position:relative;padding:26px 24px;background:linear-gradient(145deg,#10283d,#0a1c2c);border-color:rgba(11,26,40,.12);box-shadow:0 16px 34px rgba(11,26,40,.14);overflow:hidden}.total-picture-section .triad-solution article:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(237,122,22,.06),transparent 45%);pointer-events:none}.total-picture-section .triad-solution b{background:rgba(255,255,255,.08);border:1px solid rgba(237,122,22,.55);color:#ff8a22}.total-picture-section .triad-solution article strong{color:#fff;font-size:1.2rem}.total-picture-section .triad-solution article span{display:block;color:#f0a15a!important;font-weight:700;margin-top:4px}.total-picture-section .triad-solution article p{color:#d1dde6;margin:13px auto 0;max-width:340px;line-height:1.55;font-size:.9rem}.triad-join{position:absolute;left:13%;right:13%;bottom:121px;height:42px;pointer-events:none}.triad-join:before{content:"";position:absolute;left:50%;top:15px;width:2px;height:28px;background:linear-gradient(#ed7a16,#0b1a28)}.triad-join span{position:absolute;top:0;height:2px;background:linear-gradient(90deg,transparent,#ed7a16)}.triad-join span:nth-child(1){left:5%;width:45%;transform:rotate(7deg);transform-origin:right}.triad-join span:nth-child(2){left:25%;right:25%;background:#ed7a16}.triad-join span:nth-child(3){right:5%;width:45%;transform:rotate(-7deg);transform-origin:left;background:linear-gradient(90deg,#ed7a16,transparent)}
+.total-picture-section .solution-center{bottom:0;min-width:430px;padding:18px 34px 20px;background:linear-gradient(145deg,#0a1c2c,#10283d);border:1px solid rgba(255,255,255,.08);border-top:3px solid #ed7a16;box-shadow:0 18px 36px rgba(11,26,40,.2);display:grid;gap:3px}.total-picture-section .solution-center small{color:#f2a65f;font-size:.68rem;font-weight:900;letter-spacing:.13em}.total-picture-section .solution-center strong{color:#fff!important;font-size:1.06rem;letter-spacing:.02em}.total-picture-section .solution-center span{color:#d5e0e8!important;font-size:.82rem}.total-picture-note{margin-top:22px;padding:19px 22px;border-radius:14px;background:#fff;border:1px solid rgba(11,26,40,.1);box-shadow:0 9px 22px rgba(11,26,40,.06);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}.total-picture-note strong{color:#0b1a28}.total-picture-note span{color:#60717d}
+
+@media(max-width:900px){.branch-tab-strip{margin-left:16px;overflow-x:auto;padding-right:16px}.branch-tab-strip button{min-width:170px}.solution-principles{grid-template-columns:1fr}.solution-flow{grid-template-columns:1fr}.flow-connector{transform:rotate(90deg)}.solution-note{display:grid}.total-picture-section .triad-solution{padding-bottom:150px}.triad-join{display:none}.total-picture-section .solution-center{min-width:min(430px,90%)}.total-picture-note{grid-template-columns:1fr}}
+@media(max-width:600px){.branch-tab-strip button{min-width:145px;padding:12px 14px;font-size:.86rem}.branch-outro{grid-template-columns:1fr}.solution-flow{padding:14px}.total-picture-section .solution-center{min-width:90%;padding:16px 18px}}
+
+/* Merge refinements: Branchen + konkrete Herausforderung */
+.branch-challenge{margin-top:34px;padding:30px 30px 28px;border-radius:20px;background:linear-gradient(145deg,#10283d,#0a1c2c);border:1px solid rgba(11,26,40,.16);box-shadow:0 18px 38px rgba(11,26,40,.14);position:relative;overflow:hidden}
+.branch-challenge:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 88% 10%,rgba(237,122,22,.11),transparent 32%);pointer-events:none}.branch-challenge .section-title,.branch-challenge .body-copy,.branch-challenge .compare-grid,.branch-challenge .statement{position:relative;z-index:1}.branch-challenge .section-kicker{color:#ff8a22!important}.branch-challenge h2{color:#fff!important}.branch-challenge .body-copy p{color:#d3dee6!important}.branch-challenge .compare-grid article{background:rgba(255,255,255,.065)!important;border:1px solid rgba(255,255,255,.13)!important;box-shadow:0 10px 24px rgba(0,0,0,.12)!important}.branch-challenge .compare-grid article span{color:#f2a15b!important}.branch-challenge .compare-grid article strong{color:#fff!important}.branch-challenge .compare-grid article p{color:#d5e0e8!important}.branch-challenge .compare-mark{color:#ff8a22!important}.branch-challenge .statement{background:rgba(255,255,255,.065)!important;border:1px solid rgba(255,255,255,.12)!important;border-left:4px solid #ed7a16!important}.branch-challenge .statement strong{color:#fff!important}.branch-challenge .statement span{color:#d5e0e8!important}
+
+/* Merge refinements: Individuelle Lösung + Technik + Wirtschaftlichkeit */
+.individual-solution-section .solution-merged-block{margin-top:30px;padding-top:30px;border-top:1px solid rgba(11,26,40,.12)}
+.individual-solution-section .solution-merged-block .section-title{margin-bottom:16px}.individual-solution-section .solution-merged-block .section-title h2{font-size:clamp(1.55rem,2.4vw,2.25rem);max-width:1100px}.individual-solution-section .solution-merged-block .body-copy{max-width:1180px}
+.individual-solution-section .tech-merged{padding:30px;border-radius:20px;background:linear-gradient(145deg,#10283d,#0a1c2c);border:1px solid rgba(11,26,40,.15);box-shadow:0 18px 38px rgba(11,26,40,.14)}.individual-solution-section .tech-merged .section-title{border-top:0;padding-top:0}.individual-solution-section .tech-merged .section-kicker{color:#ff8a22!important}.individual-solution-section .tech-merged h2{color:#fff!important}.individual-solution-section .tech-merged .body-copy p{color:#d3dee6!important}.individual-solution-section .tech-merged .tech-grid article{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13);box-shadow:0 10px 22px rgba(0,0,0,.12)}.individual-solution-section .tech-merged .tech-grid strong{color:#fff}.individual-solution-section .tech-merged .tech-grid span{color:#d3dee6}.individual-solution-section .tech-merged .statement{background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.12)!important;border-left:4px solid #ed7a16!important}.individual-solution-section .tech-merged .statement strong{color:#fff!important}.individual-solution-section .tech-merged .statement span{color:#d5e0e8!important}
+.individual-solution-section .economy-merged{padding:30px;border-radius:20px;background:linear-gradient(135deg,#f8fafb,#edf3f6);border:1px solid rgba(11,26,40,.1);box-shadow:0 14px 30px rgba(11,26,40,.07)}.individual-solution-section .economy-merged .section-kicker{color:#d86608!important}.individual-solution-section .economy-merged h2{color:#0b1a28!important}.individual-solution-section .economy-merged .body-copy p{color:#5f707d!important}.individual-solution-section .economy-merged .balance-grid span{background:#fff;color:#0b1a28;border-color:rgba(11,26,40,.1)}
+@media(max-width:700px){.branch-challenge,.individual-solution-section .tech-merged,.individual-solution-section .economy-merged{padding:22px 18px}}
+
+/* Final dark treatment: Individuelle Lösung is one continuous field */
+.individual-solution-section.is-light{background:linear-gradient(145deg,#0d2234 0%,#081927 58%,#06131f 100%)!important;border-color:rgba(255,255,255,.08)!important;box-shadow:0 22px 55px rgba(5,18,29,.2)!important}
+.individual-solution-section .section-title h2,.individual-solution-section .solution-principles strong,.individual-solution-section .flow-node strong{color:#fff!important}
+.individual-solution-section .body-copy p,.individual-solution-section .solution-principles p,.individual-solution-section .flow-node span{color:#d2dde5!important}
+.individual-solution-section .section-kicker{color:#ff861a!important}
+.individual-solution-section .solution-principles article{background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.12)!important;box-shadow:0 12px 28px rgba(0,0,0,.14)!important}
+.individual-solution-section .solution-flow{background:rgba(255,255,255,.035)!important;border-color:rgba(255,255,255,.09)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important}
+.individual-solution-section .flow-node{background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.11)!important;box-shadow:0 8px 18px rgba(0,0,0,.12)!important}
+.individual-solution-section .flow-node-final{background:#ed7a16!important;border-color:#f18a31!important}.individual-solution-section .flow-node-final b,.individual-solution-section .flow-node-final strong{color:#fff!important}.individual-solution-section .flow-node-final span{color:#fff4ea!important}
+.individual-solution-section .solution-note{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.11)!important;border-left:4px solid #ed7a16!important}.individual-solution-section .solution-note span{color:#d2dde5!important}
+/* merged subsections deliberately have no visible field-in-field container */
+.individual-solution-section .solution-merged-block{width:100%;max-width:none;margin:34px 0 0!important;padding:34px 0 0!important;border-radius:0!important;border:0!important;border-top:1px solid rgba(255,255,255,.12)!important;background:none!important;box-shadow:none!important}
+.individual-solution-section .solution-merged-block .section-title,.individual-solution-section .solution-merged-block .body-copy{max-width:none!important;width:100%!important}
+.individual-solution-section .tech-merged h2,.individual-solution-section .economy-merged h2{color:#fff!important}
+.individual-solution-section .tech-merged .body-copy p,.individual-solution-section .economy-merged .body-copy p{color:#d2dde5!important}
+.individual-solution-section .tech-merged .tech-grid article{background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 10px 22px rgba(0,0,0,.12)!important}
+.individual-solution-section .tech-merged .statement{background:rgba(255,255,255,.055)!important;border-color:rgba(255,255,255,.11)!important}
+.individual-solution-section .economy-merged .balance-grid span{background:rgba(255,255,255,.06)!important;color:#fff!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 8px 20px rgba(0,0,0,.1)!important}
+.individual-solution-section .economy-merged .inline-link{color:#ff9a43!important;border-bottom-color:rgba(255,154,67,.5)!important}
+@media(max-width:700px){.individual-solution-section .solution-merged-block{padding:28px 0 0!important}}
+
+/* ==========================================================
+   Feinabstimmung Feld 4 / Reihenfolge / heller CTA
+   ========================================================== */
+/* Feld 4 übernimmt exakt die Standard-Dunkelfläche der Mastervorlage. */
+.individual-solution-section.is-dark{
+  background:linear-gradient(105deg,#071525,#0b1c2e 55%,#07131f)!important;
+  border-color:rgba(255,255,255,.10)!important;
+  box-shadow:0 30px 68px rgba(35,61,80,.20),0 8px 22px rgba(35,61,80,.10),inset 0 1px 0 rgba(255,255,255,.04)!important;
+}
+.individual-solution-section.is-dark::before{
+  background:linear-gradient(140deg,rgba(255,255,255,.08),transparent 30%,transparent 72%,rgba(12,37,57,.035))!important;
+}
+
+/* Die drei Leitprinzipien sind bewusst keine zweite Nummernfolge mehr. */
+.individual-solution-section .solution-principles article{
+  position:relative;
+  padding-top:26px!important;
+}
+.individual-solution-section .principle-symbol{
+  width:52px;height:52px;border-radius:15px;
+  display:grid!important;place-items:center;
+  margin:0 0 17px!important;
+  background:linear-gradient(145deg,rgba(237,122,22,.15),rgba(255,255,255,.035))!important;
+  border:1px solid rgba(237,122,22,.48)!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 22px rgba(0,0,0,.14);
+  position:relative;
+}
+.individual-solution-section .principle-symbol::before,
+.individual-solution-section .principle-symbol::after{content:"";position:absolute;display:block}
+/* Fokus / Aufgabe */
+.individual-solution-section .principle-focus::before{width:22px;height:22px;border:2px solid #ff8a22;border-radius:50%}
+.individual-solution-section .principle-focus::after{width:7px;height:7px;background:#fff;border-radius:50%;box-shadow:0 0 0 4px rgba(255,255,255,.08)}
+/* Bestand / vorhandene Struktur */
+.individual-solution-section .principle-existing::before{width:25px;height:18px;border:2px solid #fff;border-radius:4px;box-shadow:7px 7px 0 -1px #ff8a22}
+.individual-solution-section .principle-existing::after{width:13px;height:2px;background:#ff8a22;left:19px;top:25px}
+/* Verbindung */
+.individual-solution-section .principle-connect::before{width:10px;height:10px;border:2px solid #fff;border-radius:50%;left:12px;top:20px;box-shadow:18px -9px 0 -2px #071525,18px -9px 0 0 #ff8a22,18px 9px 0 -2px #071525,18px 9px 0 0 #ff8a22}
+.individual-solution-section .principle-connect::after{width:20px;height:18px;left:21px;top:17px;border-top:2px solid rgba(255,255,255,.8);border-bottom:2px solid rgba(255,255,255,.8);transform:skewY(-25deg)}
+
+/* Heller Abschluss-CTA – verbindliche Masterdarstellung wie auf den übrigen Seiten. */
+.closing.closing-light{
+  color:#0b1c2e!important;
+  border:1px solid rgba(18,43,64,.12)!important;
+  background:
+    radial-gradient(circle at 82% 24%,rgba(37,78,111,.13),transparent 31%),
+    radial-gradient(circle at 18% 82%,rgba(11,28,46,.055),transparent 34%),
+    linear-gradient(118deg,#ffffff 0%,#f7fafc 48%,#edf3f7 100%)!important;
+  box-shadow:0 34px 72px rgba(7,21,37,.18),0 12px 28px rgba(18,43,64,.10),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -1px 0 rgba(18,43,64,.05)!important;
+  padding:34px var(--content-pad-x) 38px;
+}
+.closing.closing-light::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:linear-gradient(90deg,rgba(11,28,46,.035),transparent 23%,transparent 72%,rgba(18,43,64,.045)),linear-gradient(180deg,rgba(255,255,255,.72),transparent 38%);
+}
+.closing.closing-light .closing-inner{position:relative;z-index:3;width:100%;max-width:none;margin:0}
+.closing.closing-light .eyebrow{color:var(--orange)!important}
+.closing.closing-light h2{color:#0a2032!important;text-shadow:0 1px 0 rgba(255,255,255,.92)}
+.closing.closing-light .closing-copy{color:#536c7d!important;max-width:1050px}
+.closing.closing-light .top-streak{background:linear-gradient(90deg,var(--orange),rgba(237,122,22,.06))!important;box-shadow:0 5px 14px rgba(237,122,22,.17)}
+.closing.closing-light .closing-shapes{display:block!important;opacity:.74}
+.closing.closing-light .closing-shapes span{border-color:rgba(18,43,64,.13);background:linear-gradient(145deg,rgba(38,79,111,.10),rgba(255,255,255,.02));box-shadow:10px 16px 28px rgba(7,21,37,.055),inset 0 1px 0 rgba(255,255,255,.58)}
+.closing.closing-light .closing-shapes span:nth-child(1){border-color:rgba(237,122,22,.58);box-shadow:0 0 18px rgba(237,122,22,.12),12px 18px 30px rgba(7,21,37,.06)}
+.closing.closing-light .closing-shapes span:nth-child(2){border-color:rgba(237,122,22,.38)}
+.closing.closing-light .primary-btn{box-shadow:0 14px 26px rgba(237,122,22,.28),0 5px 12px rgba(7,21,37,.10),inset 0 1px 0 rgba(255,255,255,.44),inset 0 -2px 0 rgba(116,42,0,.22)}
+.closing.closing-light .secondary-btn{color:#17364d;background:linear-gradient(180deg,#fff 0%,#f1f6f9 100%);border:1px solid rgba(18,43,64,.16);box-shadow:0 14px 28px rgba(7,21,37,.14),0 4px 10px rgba(18,43,64,.08),inset 0 1px 0 rgba(255,255,255,1),inset 0 -2px 0 rgba(18,43,64,.06)}
+.closing.closing-light .secondary-btn:hover{background:linear-gradient(180deg,#fff 0%,#f6f9fb 100%);box-shadow:0 18px 34px rgba(7,21,37,.17),0 5px 12px rgba(18,43,64,.09),inset 0 1px 0 rgba(255,255,255,1)}
+@media(max-width:1250px) and (min-width:1001px){.closing.closing-light{padding-left:44px;padding-right:44px}}
+@media(max-width:1000px){.closing.closing-light{padding:34px 34px 38px}}
+@media(max-width:640px){.closing.closing-light{padding:34px 22px 38px}}
+
+/* ==========================================================
+   Prozessvisualisierungen – unterschiedliche grafische Logiken
+   ========================================================== */
+/* 1) Individuelle Lösung: ansteigende Roadmap statt Kartenkette */
+.solution-flow{position:relative!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:22px!important;padding:34px 24px 28px!important;margin-top:30px!important;background:transparent!important;border:0!important;box-shadow:none!important;align-items:end!important}
+.solution-flow::before{content:"";position:absolute;left:8%;right:8%;top:58%;height:3px;background:linear-gradient(90deg,rgba(237,122,22,.2),#ed7a16 52%,rgba(237,122,22,.9));transform:rotate(-3deg);transform-origin:center;box-shadow:0 0 18px rgba(237,122,22,.16)}
+.solution-flow .flow-connector{display:none!important}
+.solution-flow .flow-node{position:relative;z-index:2;min-height:176px;padding:22px 18px 18px!important;border-radius:18px!important;background:linear-gradient(155deg,rgba(255,255,255,.075),rgba(255,255,255,.035))!important;border:1px solid rgba(255,255,255,.13)!important;border-top:3px solid rgba(237,122,22,.65)!important;box-shadow:0 16px 30px rgba(0,0,0,.16)!important;display:flex;flex-direction:column}
+.solution-flow .flow-node:nth-of-type(1){transform:translateY(24px)}.solution-flow .flow-node:nth-of-type(3){transform:translateY(8px)}.solution-flow .flow-node:nth-of-type(5){transform:translateY(-8px)}.solution-flow .flow-node:nth-of-type(7){transform:translateY(-24px)}
+.solution-flow .flow-node b{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#071525;border:1px solid rgba(237,122,22,.65);color:#ff922f!important;margin-bottom:14px;box-shadow:0 7px 16px rgba(0,0,0,.2)}
+.solution-flow .flow-node-final{background:linear-gradient(145deg,#ed7a16,#c85e08)!important;border-color:#f49a4d!important}.solution-flow .flow-node-final b{background:rgba(7,21,37,.86)!important}
+
+/* 2) Bestehende Strukturen: vertikale Prüflogik mit zentraler Linie */
+.decision-track{position:relative!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px 46px!important;max-width:1050px;margin:32px auto 0!important;padding:8px 0!important}
+.decision-track::before{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:2px;background:linear-gradient(#ed7a16,rgba(237,122,22,.18));transform:translateX(-50%)}
+.decision-track>div{position:relative!important;padding:18px 20px!important;min-height:92px;border-radius:15px!important;background:#fff!important;border:1px solid rgba(11,26,40,.1)!important;box-shadow:0 10px 24px rgba(11,26,40,.07)!important}
+.decision-track>div:nth-child(odd){grid-column:1}.decision-track>div:nth-child(even){grid-column:2}.decision-track>div:nth-child(3){grid-column:1}.decision-track>div:nth-child(5){grid-column:1}
+.decision-track>div::before{content:"";position:absolute;top:29px;width:12px;height:12px;border-radius:50%;background:#ed7a16;box-shadow:0 0 0 5px #f7f9fa,0 0 0 6px rgba(237,122,22,.28)}
+.decision-track>div:nth-child(odd)::before{right:-30px}.decision-track>div:nth-child(even)::before{left:-30px}
+.decision-track>div:not(:last-child):after{display:none!important}.decision-track strong{font-size:1.02rem}.decision-track span{display:block;line-height:1.45}
+
+/* 3) Technik: Werkzeug-Hub statt vier gleichwertiger Prozesskarten */
+.tech-grid{position:relative!important;display:grid!important;grid-template-columns:1fr 1.18fr 1fr!important;grid-template-rows:auto auto!important;gap:18px 28px!important;max-width:1050px;margin:34px auto 0!important;align-items:center}
+.tech-grid::before{content:"BEDARF";grid-column:2;grid-row:1 / span 2;align-self:center;justify-self:center;width:138px;height:138px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#ed7a16,#c75d08);color:#fff;font-size:.82rem;font-weight:900;letter-spacing:.13em;box-shadow:0 18px 38px rgba(237,122,22,.22),0 0 0 10px rgba(237,122,22,.08);z-index:2}
+.tech-grid article{min-height:118px!important;padding:20px 22px!important;position:relative}.tech-grid article:nth-child(1){grid-column:1;grid-row:1}.tech-grid article:nth-child(2){grid-column:3;grid-row:1}.tech-grid article:nth-child(3){grid-column:1;grid-row:2}.tech-grid article:nth-child(4){grid-column:3;grid-row:2}
+.tech-grid article::after{content:"";position:absolute;top:50%;width:28px;height:1px;background:rgba(237,122,22,.65)}.tech-grid article:nth-child(odd)::after{right:-29px}.tech-grid article:nth-child(even)::after{left:-29px}
+
+/* 4) Wirtschaftlichkeit: Kriterien als Waage/Spektrum statt Kartenreihe */
+.balance-grid{position:relative!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:0!important;margin:34px 0 8px!important;padding:34px 12px 0!important}
+.balance-grid::before{content:"";position:absolute;left:5%;right:5%;top:16px;height:4px;border-radius:99px;background:linear-gradient(90deg,#647887,#ed7a16 50%,#647887)}
+.balance-grid::after{content:"SINNVOLLES VERHÄLTNIS";position:absolute;left:50%;top:0;transform:translate(-50%,-50%);padding:7px 13px;border-radius:99px;background:#ed7a16;color:#fff;font-size:.66rem;font-weight:900;letter-spacing:.1em;white-space:nowrap;box-shadow:0 8px 18px rgba(237,122,22,.18)}
+.individual-solution-section .economy-merged .balance-grid span{position:relative;background:transparent!important;border:0!important;box-shadow:none!important;padding:18px 8px 8px!important;font-size:.86rem}.balance-grid span::before{content:"";position:absolute;top:-23px;left:50%;width:11px;height:11px;border-radius:50%;background:#fff;border:3px solid #ed7a16;transform:translateX(-50%);box-shadow:0 0 0 4px rgba(237,122,22,.08)}
+
+/* 5) Vom Problem zur Nutzung: geschwungener Pfad mit Meilensteinen */
+.five-steps{position:relative!important;display:grid!important;grid-template-columns:repeat(5,1fr)!important;gap:16px!important;margin-top:38px!important;padding:30px 8px 24px!important;align-items:center!important}
+.five-steps::before{content:"";position:absolute;left:7%;right:7%;top:50%;height:62px;border-top:3px solid #ed7a16;border-radius:50% 50% 0 0;opacity:.65;transform:translateY(-10px)}
+.five-steps>div{position:relative;z-index:2;min-height:155px!important;padding:20px 16px!important;border-radius:50% 50% 16px 16px!important;background:linear-gradient(155deg,rgba(255,255,255,.08),rgba(255,255,255,.035))!important;border:1px solid rgba(255,255,255,.13)!important;box-shadow:0 14px 28px rgba(0,0,0,.14)!important;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.five-steps>div:nth-child(2),.five-steps>div:nth-child(4){transform:translateY(28px)}.five-steps>div:nth-child(3){transform:translateY(-18px)}
+.five-steps b{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#ed7a16;color:#fff!important;margin-bottom:7px;box-shadow:0 7px 16px rgba(237,122,22,.2)}
+
+@media(max-width:900px){
+ .solution-flow{grid-template-columns:1fr 1fr!important}.solution-flow::before{display:none}.solution-flow .flow-node{transform:none!important}
+ .decision-track{grid-template-columns:1fr!important;padding-left:30px!important}.decision-track::before{left:8px;transform:none}.decision-track>div{grid-column:1!important}.decision-track>div::before{left:-28px!important;right:auto!important}
+ .tech-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:auto!important}.tech-grid::before{grid-column:1/-1;grid-row:1;width:110px;height:110px}.tech-grid article:nth-child(n){grid-column:auto;grid-row:auto}.tech-grid article::after{display:none}
+ .balance-grid{grid-template-columns:repeat(3,1fr)!important;gap:10px!important}.balance-grid::before,.balance-grid::after,.balance-grid span::before{display:none}.individual-solution-section .economy-merged .balance-grid span{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;padding:14px!important}
+ .five-steps{grid-template-columns:1fr 1fr!important}.five-steps::before{display:none}.five-steps>div{transform:none!important;border-radius:18px!important}
+}
+@media(max-width:600px){.solution-flow,.tech-grid,.balance-grid,.five-steps{grid-template-columns:1fr!important}.tech-grid::before{grid-column:1}.five-steps>div{min-height:130px!important}}
+
+.existing-structures-section .existing-intro{display:grid;grid-template-columns:1fr 1fr;gap:34px}.structure-map{display:grid;grid-template-columns:1.05fr .72fr 1.2fr;gap:24px;align-items:center;margin-top:34px}.structure-source{padding:28px;border-radius:20px;background:linear-gradient(145deg,#0e293e,#0a1d2c);box-shadow:0 20px 42px rgba(11,26,40,.14);border:1px solid rgba(11,26,40,.08)}.structure-label{color:#f39a4b;font-size:.7rem;font-weight:900;letter-spacing:.14em}.structure-source h3{color:#fff;margin:5px 0 20px}.source-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.source-grid span{padding:18px;border-radius:14px;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.11)}.source-grid b{display:block;color:#fff}.source-grid small{color:#bfcdd7}.structure-evaluation{display:grid;place-items:center}.evaluation-core{width:190px;height:190px;border-radius:50%;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:24px;background:#fff;border:1px dashed rgba(237,122,22,.6);box-shadow:0 18px 42px rgba(11,26,40,.12),0 0 0 10px rgba(237,122,22,.055)}.evaluation-core span{color:#d86608;font-size:.62rem;font-weight:900;letter-spacing:.1em}.evaluation-core strong{color:#0b1a28;margin:8px 0;line-height:1.25}.evaluation-core small{color:#657581}.structure-actions{display:grid;gap:12px}.structure-actions article{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:18px;border-radius:16px;background:#fff;border:1px solid rgba(11,26,40,.1);box-shadow:0 11px 26px rgba(11,26,40,.07);border-left:4px solid #ed7a16}.structure-actions b{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#0b1a28;color:#ed7a16;font-size:.72rem}.structure-actions strong{color:#0b1a28}.structure-actions p{margin:4px 0 0;color:#5f6f7b;font-size:.88rem;line-height:1.5}.existing-result{margin-top:25px;padding:22px 26px;border-radius:17px;background:linear-gradient(90deg,#f5f8fa,#fff);border:1px solid rgba(11,26,40,.1);display:grid;grid-template-columns:270px 1fr;gap:28px;align-items:center;box-shadow:0 10px 24px rgba(11,26,40,.055)}.existing-result div{border-right:1px solid rgba(11,26,40,.11)}.existing-result span{display:block;color:#d86608;font-size:.68rem;font-weight:900;letter-spacing:.13em}.existing-result strong{color:#0b1a28}.existing-result p{margin:0;color:#566b79;line-height:1.6}@media(max-width:900px){.existing-structures-section .existing-intro,.structure-map,.existing-result{grid-template-columns:1fr}.source-grid{grid-template-columns:1fr 1fr}.existing-result div{border-right:0;border-bottom:1px solid rgba(11,26,40,.11);padding-bottom:12px}}@media(max-width:600px){.source-grid{grid-template-columns:1fr}.structure-source{padding:21px}}
+
+
+/* Branchen – inhaltliche Hinführung zu den Registern */
+.branch-context{position:relative;display:grid;grid-template-columns:1fr .88fr 1fr;grid-template-rows:auto auto;gap:18px 30px;align-items:center;margin:34px 0 0;padding:30px 32px;border-radius:22px;background:linear-gradient(145deg,#f8fafb 0%,#fff 58%,#f4f7f9 100%);border:1px solid rgba(11,26,40,.09);box-shadow:0 18px 44px rgba(11,26,40,.075);overflow:hidden}
+.branch-context:before{content:"";position:absolute;left:50%;top:15%;bottom:15%;width:1px;background:linear-gradient(180deg,transparent,rgba(237,122,22,.32),transparent)}
+.context-factor{position:relative;z-index:2;display:grid;grid-template-columns:46px 1fr;gap:14px;align-items:start;padding:18px 19px;border-radius:16px;background:#fff;border:1px solid rgba(11,26,40,.09);box-shadow:0 10px 24px rgba(11,26,40,.055)}
+.context-factor:after{content:"";position:absolute;height:1px;background:linear-gradient(90deg,rgba(237,122,22,.55),rgba(237,122,22,.08));top:50%;width:34px}
+.factor-work{grid-column:1;grid-row:1}.factor-focus{grid-column:1;grid-row:2}.factor-frame{grid-column:3;grid-row:1 / span 2;align-self:center}
+.factor-work:after,.factor-focus:after{right:-35px}.factor-frame:after{left:-35px;transform:rotate(180deg)}
+.context-no{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#0b1a28;color:#ed7a16;font-size:.7rem;font-weight:900;letter-spacing:.05em;box-shadow:0 8px 18px rgba(11,26,40,.12)}
+.context-factor strong{display:block;color:#0b1a28;font-size:1rem;margin:1px 0 5px}.context-factor p{margin:0;color:#5e707c;font-size:.88rem;line-height:1.48}
+.context-center{position:relative;z-index:3;grid-column:2;grid-row:1 / span 2;min-height:220px;border-radius:50%;aspect-ratio:1;max-width:220px;justify-self:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:28px;background:linear-gradient(145deg,#102d43,#091d2c);box-shadow:0 22px 44px rgba(11,26,40,.2),0 0 0 10px rgba(237,122,22,.055);border:1px solid rgba(237,122,22,.28)}
+.context-center:before{content:"";position:absolute;inset:11px;border-radius:50%;border:1px dashed rgba(237,122,22,.34)}
+.context-center>*{position:relative;z-index:1}.context-center small{color:#f19a50;font-size:.62rem;font-weight:900;letter-spacing:.12em}.context-center strong{color:#fff;font-size:1.35rem;line-height:1.15;margin:8px 0}.context-center span{color:#c4d0d8;font-size:.78rem;line-height:1.42}
+.branch-context-bridge{position:relative;margin:22px auto 25px;max-width:760px;padding:15px 52px 18px;text-align:center;border-bottom:1px solid rgba(11,26,40,.12)}
+.branch-context-bridge span{display:block;color:#d86608;font-size:.65rem;font-weight:900;letter-spacing:.14em;margin-bottom:3px}.branch-context-bridge strong{color:#0b1a28;font-size:.96rem;font-weight:750}.branch-context-bridge i{position:absolute;left:50%;bottom:-9px;width:17px;height:17px;background:#fff;border-right:1px solid rgba(11,26,40,.16);border-bottom:1px solid rgba(11,26,40,.16);transform:translateX(-50%) rotate(45deg)}
+@media(max-width:900px){.branch-context{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:14px}.branch-context:before,.context-factor:after{display:none}.factor-work{grid-column:1;grid-row:1}.factor-focus{grid-column:2;grid-row:1}.factor-frame{grid-column:1;grid-row:2}.context-center{grid-column:2;grid-row:2;min-height:190px;max-width:190px}.branch-context-bridge{margin-top:18px}}
+@media(max-width:650px){.branch-context{grid-template-columns:1fr;padding:20px}.factor-work,.factor-focus,.factor-frame,.context-center{grid-column:1;grid-row:auto}.context-center{aspect-ratio:auto;max-width:none;width:100%;min-height:0;border-radius:18px;padding:24px}.context-center:before{border-radius:13px}.branch-context-bridge{padding-left:15px;padding-right:15px}}
+
+/* Bildwechsel: einheitliche Rahmen, individuelle Motivausschnitte */
+.hero-mosaic{grid-template-rows:180px 180px}
+.hero-mosaic img{height:100%;min-height:0;object-fit:cover}
+.hero-mosaic img:nth-child(1){object-position:50% 38%}
+.hero-mosaic img:nth-child(2){object-position:50% 42%}
+.hero-mosaic img:nth-child(3){object-position:50% 35%}
+.hero-mosaic img:nth-child(4){object-position:50% 42%}
+.branch-media{height:100%;min-height:540px}
+.branch-media img{height:100%;max-height:492px;object-fit:cover;object-position:center center}
+@media(max-width:900px){.hero-mosaic{grid-template-rows:135px 135px}.branch-media{min-height:0}.branch-media img{height:220px;max-height:none}}
+@media(max-width:600px){.hero-mosaic{grid-template-rows:112px 112px}.branch-media img{height:180px}}
+
+
+/* Finaler Feinschliff: heller Hero-Abschluss wie bei anderen hellen Hero-Bereichen */
+.hero-custom .statement{
+  background:linear-gradient(135deg,#f7fafc 0%,#eef4f7 100%)!important;
+  border:1px solid rgba(18,43,64,.11)!important;
+  border-left:4px solid #ed7a16!important;
+  box-shadow:0 14px 30px rgba(11,26,40,.08),inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+.hero-custom .statement strong{color:#17364d!important}
+.hero-custom .statement span{color:#536b7c!important}
+
+/* Branchen-Überleitung: linksbündig, größer und als echte Einleitung in die Register */
+.branch-context-bridge{
+  margin:28px 0 24px!important;
+  max-width:none!important;
+  padding:18px 0 20px!important;
+  text-align:left!important;
+  border-bottom:1px solid rgba(11,26,40,.12)!important;
+}
+.branch-context-bridge span{
+  font-size:.76rem!important;
+  margin-bottom:6px!important;
+  letter-spacing:.14em!important;
+}
+.branch-context-bridge strong{
+  display:block;
+  max-width:860px;
+  color:#0b1a28!important;
+  font-size:1.24rem!important;
+  line-height:1.38!important;
+  font-weight:800!important;
+}
+.branch-context-bridge i{
+  left:32px!important;
+  transform:rotate(45deg)!important;
+}
+
+/* Konkrete Herausforderung: vollständig in das helle Branchenfeld integriert */
+.branch-challenge{
+  margin-top:42px!important;
+  padding:34px 0 0!important;
+  border-radius:0!important;
+  background:none!important;
+  border:0!important;
+  border-top:1px solid rgba(11,26,40,.12)!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.branch-challenge:before{display:none!important}
+.branch-challenge .section-title,
+.branch-challenge .body-copy,
+.branch-challenge .compare-grid,
+.branch-challenge .statement{position:relative;z-index:1}
+.branch-challenge .section-kicker{color:#d86608!important}
+.branch-challenge h2{color:#0b1a28!important}
+.branch-challenge .body-copy p{color:#566b79!important;max-width:1040px}
+
+/* Vergleich bleibt grafisch stark, wirkt aber als Bestandteil des hellen Feldes */
+.branch-challenge .compare-grid{
+  margin-top:26px!important;
+  display:grid;
+  grid-template-columns:1fr 72px 1fr;
+  gap:18px;
+  align-items:stretch;
+}
+.branch-challenge .compare-grid article{
+  position:relative;
+  background:linear-gradient(145deg,#f8fafb 0%,#ffffff 100%)!important;
+  border:1px solid rgba(11,26,40,.10)!important;
+  box-shadow:0 12px 28px rgba(11,26,40,.065)!important;
+  border-radius:18px!important;
+  padding:24px 25px!important;
+  overflow:hidden;
+}
+.branch-challenge .compare-grid article:before{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:4px;
+  background:#ed7a16;
+}
+.branch-challenge .compare-grid article span{color:#d86608!important}
+.branch-challenge .compare-grid article strong{
+  color:#0b1a28!important;
+  display:block;
+  margin:5px 0 7px;
+  font-size:1.08rem;
+}
+.branch-challenge .compare-grid article p{color:#5f6f7b!important}
+.branch-challenge .compare-mark{
+  align-self:center;
+  justify-self:center;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#0b1a28;
+  color:#ed7a16!important;
+  box-shadow:0 10px 22px rgba(11,26,40,.14);
+  font-size:1.4rem;
+  font-weight:900;
+}
+.branch-challenge .statement{
+  margin-top:22px!important;
+  background:linear-gradient(90deg,#f4f7f9,#fff)!important;
+  border:1px solid rgba(11,26,40,.10)!important;
+  border-left:4px solid #ed7a16!important;
+  box-shadow:0 10px 24px rgba(11,26,40,.055)!important;
+}
+.branch-challenge .statement strong{color:#17364d!important}
+.branch-challenge .statement span{color:#536b7c!important}
+
+@media(max-width:760px){
+  .branch-challenge .compare-grid{grid-template-columns:1fr;gap:12px}
+  .branch-challenge .compare-mark{transform:none!important}
+  .branch-context-bridge strong{font-size:1.08rem!important}
+}
+
+</style><style id="startseite-footer-exact">
+/* FOOTER – ausschließlich Marken-Textbereich an obere Vorlage angeglichen */
+.site-footer .footer-brand-copy{
+  transform:translateY(0.2cm) !important;
+}
+.site-footer .footer-brand-copy > strong{
+
+}
+.site-footer .footer-brand-copy .brand-triad{
+
+}
+
+
+/* FOOTER – ausschließlich die beauftragte Feinjustierung */
+.site-footer .footer-brand-copy{
+  transform:translateY(0.4cm) !important;
+}
+.site-footer .footer-brand-copy .brand-triad{
+  width:calc(100% - 0.6cm) !important;
+}
+
+
+/* FOOTER – ausschließlich finale Positionskorrektur */
+.site-footer .footer-logo{
+  transform:translateY(-7px) !important;
+}
+.site-footer .footer-brand-copy{
+  transform:translateY(6.1181px) !important;
+}
+
+
+/* FOOTER – ausschließlich Textblock weitere 3 px nach oben */
+.site-footer .footer-brand-copy{
+  transform:translateY(3.1181px) !important;
+}
+
+
+/* FOOTER – ausschließlich unteren Dreiklang insgesamt 3 px breiter */
+.site-footer .footer-brand-copy .brand-triad{
+  width:calc(100% - 0.6cm + 3px) !important;
+}
+
+
+/* FOOTER – ausschließlich unteren Dreiklang weitere 2 px breiter */
+.site-footer .footer-brand-copy .brand-triad{
+  width:calc(100% - 0.6cm + 5px) !important;
+}
+</style></head><body>
+<header class="site-header">
+<div class="nav-shell">
+<a aria-label="KI Beratung Rachau Startseite" class="brand" href="https://www.ki-beratung-rachau.de/Startseite">
+<img alt="KI Beratung Rachau Logo" class="brand-logo" src="logo-gross-dunkel.png"/>
+<span class="brand-copy">
+<strong>KI BERATUNG RACHAU</strong>
+<small class="brand-triad"><span>ANALYSE</span><span>·</span><span>PLANUNG</span><span>·</span><span>UMSETZUNG</span></small>
+</span>
+</a>
+<button aria-controls="mainnav" aria-expanded="false" class="menu-toggle">Menü</button>
+<nav aria-label="Hauptnavigation" class="mainnav" id="mainnav">
+<a href="https://www.ki-beratung-rachau.de/Startseite">Startseite</a>
+<div class="nav-dropdown">
+<button aria-controls="leistungen-dropdown" aria-expanded="false" class="nav-link dropdown-trigger active" type="button">Leistungen</button>
+<div class="dropdown-panel" id="leistungen-dropdown" role="menu">
+<a href="https://www.ki-beratung-rachau.de/Leistungen" role="menuitem">Leistungsübersicht</a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Beratung" role="menuitem">Beratung</a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Automatisierung" role="menuitem">Automatisierung</a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Kundengewinnung" role="menuitem">Kundengewinnung</a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Schulungen" role="menuitem">Schulungen</a>
+<a class="active-service" href="https://www.ki-beratung-rachau.de/Leistungen/Individuelle-Loesungen" role="menuitem">Individuelle Lösungen</a>
+</div>
+</div>
+<a href="https://www.ki-beratung-rachau.de/Wirtschaftlichkeit-ROI">Wirtschaftlichkeit &amp; ROI</a>
+<a href="https://www.ki-beratung-rachau.de/Zusammenarbeit">Zusammenarbeit</a>
+<a href="https://www.ki-beratung-rachau.de/Referenzen">Referenzen</a>
+<div class="nav-dropdown">
+<button aria-controls="unternehmen-dropdown" aria-expanded="false" class="nav-link dropdown-trigger" type="button">KI Beratung Rachau</button>
+<div class="dropdown-panel" id="unternehmen-dropdown" role="menu">
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Haltung" role="menuitem">Haltung</a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Empfehlungsprogramm" role="menuitem">Empfehlungsprogramm</a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Social-Media" role="menuitem">Social Media</a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/FAQ" role="menuitem">FAQ</a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Support" role="menuitem">Support</a>
+</div>
+</div>
+<a class="contact-btn" href="https://www.ki-beratung-rachau.de/Kontakt">Kontakt aufnehmen <span>→</span></a>
+</nav>
+</div>
+</header>
+<main>
+<section class="content-section visual-right is-light hero-custom"><div class="content-inner media-grid"><div class="content-copy"><span class="section-kicker">INDIVIDUELLE LÖSUNGEN</span><h1>Wenn Anforderungen ineinandergreifen, braucht es eine Lösung, die das Ganze betrachtet.</h1><p class="lead">Nicht jede betriebliche Herausforderung lässt sich ausschließlich Beratung, Automatisierung, Kundengewinnung oder Schulung zuordnen.</p><p>Häufig hängen Prozesse, Menschen, bestehende Systeme und unterschiedliche Anforderungen miteinander zusammen. Die individuelle Lösung setzt genau dort an – bei der tatsächlichen Situation des Unternehmens.</p></div><div aria-label="Vier beispielhafte Branchen" class="hero-mosaic"><img alt="Branchenbeispiel" src="Flux_Dev_Ein_deutscher_Bauarbeiter_3045_Jahre_mit_orangenem_Sc_5.jpg"/><img alt="Branchenbeispiel" src="jD8P1IGzOhQWa7ymYYnOv.png"/><img alt="Branchenbeispiel" src="tx6eaTbUWL2Su0TwQjmwv.png"/><img alt="Branchenbeispiel" src="7gIHP7HdE-4KwCOstcDaG.png"/></div><div class="statement"><strong>Nicht die Kategorie bestimmt die Lösung.</strong><span>Entscheidend ist, welche Anforderungen zusammengehören und welches Ergebnis im Arbeitsalltag erreicht werden soll.</span></div></div></section>
+<section class="content-section is-dark"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">AUSGANGSLAGE</span><h2>Wenn einzelne Verbesserungen nur einen Teil des Problems lösen.</h2></div><div class="body-copy"><p>Komplexere Aufgaben entstehen häufig dort, wo mehrere Abläufe, Systeme oder Unternehmensbereiche aufeinander treffen. Dann reicht es nicht, nur einen einzelnen Arbeitsschritt zu betrachten.</p></div><div class="detail-grid six"><article class="detail-card"><strong>Zusammenhängende Probleme</strong><span>Mehrere Ursachen beeinflussen sich gegenseitig.</span></article><article class="detail-card"><strong>Getrennte Systeme</strong><span>Programme und Informationen greifen nicht sauber ineinander.</span></article><article class="detail-card"><strong>Teilweise Lösungen</strong><span>Einzelne Maßnahmen würden nur Symptome verbessern.</span></article><article class="detail-card"><strong>Unklare Umsetzung</strong><span>Das Ziel ist bekannt, der passende Weg dorthin noch nicht.</span></article><article class="detail-card"><strong>Mehrere Bereiche</strong><span>Unterschiedliche Teams, Abläufe oder Verantwortlichkeiten sind beteiligt.</span></article><article class="detail-card"><strong>Besondere Arbeitsweise</strong><span>Vorhandene Standardlösungen passen nicht ausreichend zur Praxis.</span></article></div><div class="statement"><strong>Das Zusammenspiel entscheidet.</strong><span>Nicht das einzelne Problem bestimmt die Lösung, sondern die Verbindung der Anforderungen.</span></div></div></section>
+<section class="content-section is-light branch-section"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">BRANCHEN</span><h2>Die Branche gibt den Rahmen vor. Die Anforderungen unterscheiden sich.</h2></div><div class="body-copy"><p>Arbeitsabläufe, Kundenkontakte, Informationswege und Verantwortlichkeiten unterscheiden sich erheblich. Die Register zeigen beispielhaft, welche Schwerpunkte in verschiedenen Branchen entstehen können.</p></div><div aria-label="Einordnung der Branchenunterschiede" class="branch-context">
+<div class="context-factor factor-work"><span class="context-no">01</span><div><strong>Arbeitsweise</strong><p>Wie entstehen Aufträge, Informationen und Entscheidungen im jeweiligen Betrieb?</p></div></div>
+<div class="context-factor factor-focus"><span class="context-no">02</span><div><strong>Schwerpunkte</strong><p>Wo entstehen Zeitaufwand, Reibungsverluste oder wiederkehrende Aufgaben?</p></div></div>
+<div class="context-center"><small>BETRIEBLICHER KONTEXT</small><strong>Branche verstehen</strong><span>Erst der Kontext zeigt, welche Ansatzpunkte tatsächlich relevant sind.</span></div>
+<div class="context-factor factor-frame"><span class="context-no">03</span><div><strong>Rahmenbedingungen</strong><p>Welche fachlichen Anforderungen, Verantwortlichkeiten und bestehenden Strukturen müssen berücksichtigt werden?</p></div></div>
+</div>
+<div class="branch-context-bridge"><span>12 BRANCHENBEISPIELE</span><strong>Wie unterschiedlich diese Schwerpunkte in der Praxis aussehen können.</strong><i aria-hidden="true"></i></div>
+<div aria-label="Sichtbare Branchenregister" class="branch-tab-strip"></div><div class="branch-deck"><article aria-hidden="false" class="branch-card active" data-index="0">
+<div class="branch-tab"><span>01</span>Handwerk</div>
+<div class="branch-body"><div class="branch-media"><img alt="Handwerk" src="handwerk.jpg"/></div><div class="branch-copy"><span class="branch-count">01 / 12</span><h3>Handwerk</h3><p class="branch-tags">Anfragen · Angebote · Aufträge · Dokumentation</p><p>Viel Facharbeit trifft auf organisatorischen Aufwand. Informationen wechseln zwischen Büro, Werkstatt oder Baustelle und Kunde.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Anfrageinformationen strukturieren</li><li>Angebotsvorbereitung unterstützen</li><li>Auftragsinformationen zusammenführen</li><li>Dokumentation und Übergaben vereinfachen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Routine verarbeiten, Unterlagen vorbereiten und Folgeprozesse anstoßen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Fachliche Bewertung und Entscheidungen bleiben dort beim Menschen, wo Erfahrung und konkrete Gegebenheiten entscheidend sind.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="1">
+<div class="branch-tab"><span>02</span>Immobilienmakler</div>
+<div class="branch-body"><div class="branch-media"><img alt="Immobilienmakler" src="immobilien.jpg"/></div><div class="branch-copy"><span class="branch-count">02 / 12</span><h3>Immobilienmakler</h3><p class="branch-tags">Interessenten · Objekte · Termine · Nachverfolgung</p><p>Viele Interessenten, Objekte, Anfragen und Termine müssen parallel organisiert werden.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Anfragen vorsortieren</li><li>Interessenten und Anforderungen strukturieren</li><li>Objektinformationen bereitstellen</li><li>Termin- und Folgeprozesse unterstützen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Informationen einordnen, Daten zusammenführen und administrative Schritte unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Persönliche Beratung, Objektbewertung und Verhandlung werden nicht automatisiert ersetzt.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="2">
+<div class="branch-tab"><span>03</span>Vermögensberatung</div>
+<div class="branch-body"><div class="branch-media"><img alt="Vermögensberatung" src="xADU6Gwk1W2ShrpyKnmOp.png"/></div><div class="branch-copy"><span class="branch-count">03 / 12</span><h3>Vermögensberatung</h3><p class="branch-tags">Kundeninformationen · Vorbereitung · Folgeprozesse</p><p>Persönliche Beratung ist zentral, gleichzeitig entstehen viele vorbereitende und administrative Tätigkeiten.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Informationen für Gespräche aufbereiten</li><li>Offene Vorgänge strukturieren</li><li>Folgeaktivitäten organisieren</li><li>Dokumentationsabläufe unterstützen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Vorbereitung, Strukturierung und Informationsaufbereitung unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Finanzielle Empfehlungen und regulatorisch relevante Entscheidungen benötigen qualifizierte menschliche Beurteilung.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="3">
+<div class="branch-tab"><span>04</span>Vertrieb</div>
+<div class="branch-body"><div class="branch-media"><img alt="Vertrieb" src="vertrieb.jpg"/></div><div class="branch-copy"><span class="branch-count">04 / 12</span><h3>Vertrieb</h3><p class="branch-tags">Zielgruppen · Recherche · Kontakte · Nachverfolgung</p><p>Viele Kontakte und Informationen erzeugen schnell manuellen Aufwand zwischen Recherche, Ansprache und weiterer Bearbeitung.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Zielgruppen strukturieren</li><li>Relevante Informationen vorbereiten</li><li>Kontaktprozesse organisieren</li><li>Rückmeldungen und Folgeaktivitäten ordnen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Recherche, Informationsverarbeitung und wiederkehrende Schritte unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Verkauf, Verhandlung und Beziehungsaufbau bleiben menschliche Aufgaben.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="4">
+<div class="branch-tab"><span>05</span>Steuerkanzleien</div>
+<div class="branch-body"><div class="branch-media"><img alt="Steuerkanzleien" src="steuerkanzlei.jpg"/></div><div class="branch-copy"><span class="branch-count">05 / 12</span><h3>Steuerkanzleien</h3><p class="branch-tags">Dokumente · Mandanten · Zuordnung · Verwaltung</p><p>Dokumente, Fristen und Mandanteninformationen treffen auf hohe fachliche Anforderungen.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Informationen vorsortieren</li><li>Dokumente zuordnen</li><li>Fehlende Angaben erkennen</li><li>Administrative Kommunikation unterstützen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Dokumente klassifizieren, Daten aufbereiten und organisatorische Prozesse unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Steuerliche Beurteilungen und fachlich relevante Entscheidungen bleiben bei qualifizierten Personen.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="5">
+<div class="branch-tab"><span>06</span>Ärzte / Praxen</div>
+<div class="branch-body"><div class="branch-media"><img alt="Ärzte / Praxen" src="aerzte.jpg"/></div><div class="branch-copy"><span class="branch-count">06 / 12</span><h3>Ärzte / Praxen</h3><p class="branch-tags">Praxisorganisation · Termine · Kommunikation</p><p>Medizinische Arbeit wird von Termin-, Dokumentations- und Verwaltungsaufgaben begleitet.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Organisatorische Anfragen strukturieren</li><li>Termin- und Informationsprozesse unterstützen</li><li>Interne Abläufe ordnen</li><li>Administrative Routine reduzieren</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Vor allem organisatorische und administrative Prozesse unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Diagnosen und Therapieentscheidungen bleiben klar von organisatorischer Unterstützung getrennt; Datenschutz ist besonders wichtig.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="6">
+<div class="branch-tab"><span>07</span>Coaching / Beratung</div>
+<div class="branch-body"><div class="branch-media"><img alt="Coaching / Beratung" src="coaching.jpg"/></div><div class="branch-copy"><span class="branch-count">07 / 12</span><h3>Coaching / Beratung</h3><p class="branch-tags">Interessenten · Termine · Vorbereitung · Nachbereitung</p><p>Persönliche Leistung steht im Mittelpunkt, während Vorbereitung, Organisation und Nachbereitung Zeit binden.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Informationen vor Gesprächen aufbereiten</li><li>Anfragen strukturieren</li><li>Termin- und Folgeprozesse unterstützen</li><li>Ergebnisse und Aufgaben organisieren</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Informationsaufbereitung, Organisation und administrative Routine unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Die eigentliche Beratungsleistung lebt von Erfahrung, Einordnung und persönlicher Interaktion.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="7">
+<div class="branch-tab"><span>08</span>Gastronomie</div>
+<div class="branch-body"><div class="branch-media"><img alt="Gastronomie" src="gastronomie.jpg"/></div><div class="branch-copy"><span class="branch-count">08 / 12</span><h3>Gastronomie</h3><p class="branch-tags">Marketing · Gästekontakte · Kommunikation · Reichweite</p><p>Operatives Tagesgeschäft, Gäste, Personal und Marketing laufen gleichzeitig.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Marketingmaßnahmen strukturieren</li><li>Gästekontakte organisieren</li><li>Kommunikationsprozesse unterstützen</li><li>Wiederkehrende Marketingabläufe aufbauen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Marketing- und Kommunikationsprozesse unterstützen und Folgeprozesse auslösen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Automatisierung muss entlasten statt zusätzlichen Pflegeaufwand zu erzeugen; persönlicher Gästekontakt bleibt zentral.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="8">
+<div class="branch-tab"><span>09</span>Rechtsanwälte</div>
+<div class="branch-body"><div class="branch-media"><img alt="Rechtsanwälte" src="tx6eaTbUWL2Su0TwQjmwv.png"/></div><div class="branch-copy"><span class="branch-count">09 / 12</span><h3>Rechtsanwälte</h3><p class="branch-tags">Anfragen · Dokumente · Mandanten · Organisation</p><p>Mandantenkommunikation und Dokumentenarbeit erzeugen viele Informations- und Verwaltungsprozesse.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Eingänge strukturieren</li><li>Dokumente vorsortieren</li><li>Organisatorische Kommunikation unterstützen</li><li>Interne Informationsflüsse verbessern</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Klassifikation, Informationsaufbereitung und administrative Routine unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Juristische Prüfung und Beratung dürfen nicht durch ungeprüfte KI-Ausgaben ersetzt werden; Vertraulichkeit ist zentral.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="9">
+<div class="branch-tab"><span>10</span>Versicherungen</div>
+<div class="branch-body"><div class="branch-media"><img alt="Versicherungen" src="versicherungen.jpg"/></div><div class="branch-copy"><span class="branch-count">10 / 12</span><h3>Versicherungen</h3><p class="branch-tags">Kundenbetreuung · Anfragen · Folgeprozesse</p><p>Beratung, Kundenbetreuung und Vertragsinformationen erzeugen zahlreiche Kontakt- und Folgeprozesse.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Anfragen strukturieren</li><li>Kundeninformationen vorbereiten</li><li>Offene Vorgänge organisieren</li><li>Wiederkehrende Kommunikation unterstützen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Administrative Abläufe, Informationsverarbeitung und Folgeprozesse unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Produktempfehlungen und regulatorisch relevante Entscheidungen benötigen menschliche Beurteilung.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="10">
+<div class="branch-tab"><span>11</span>Speditionen</div>
+<div class="branch-body"><div class="branch-media"><img alt="Speditionen" src="speditionen.jpg"/></div><div class="branch-copy"><span class="branch-count">11 / 12</span><h3>Speditionen</h3><p class="branch-tags">Aufträge · Status · Dokumente · Übergaben</p><p>Informationen müssen zwischen Kunden, Disposition, Fahrern, Partnern und Verwaltung zuverlässig fließen.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Auftragsinformationen strukturieren</li><li>Statusinformationen weiterleiten</li><li>Dokumente zuordnen</li><li>Interne Übergaben verbessern</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Datenflüsse verbinden, Informationen klassifizieren und Statusprozesse unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Sonderfälle und operative Entscheidungen benötigen menschliche Beurteilung; bestehende Logistiksysteme müssen berücksichtigt werden.</p></div></div></article>
+<article aria-hidden="true" class="branch-card" data-index="11">
+<div class="branch-tab"><span>12</span>E-Commerce</div>
+<div class="branch-body"><div class="branch-media"><img alt="E-Commerce" src="ecommerce.jpg"/></div><div class="branch-copy"><span class="branch-count">12 / 12</span><h3>E-Commerce</h3><p class="branch-tags">Kundenkommunikation · Bestellungen · Support · Daten</p><p>Viele digitale Vorgänge entstehen parallel und Daten liegen häufig über mehrere Systeme verteilt.</p><h4>Mögliche Ansatzpunkte</h4><ul><li>Kundenanfragen strukturieren</li><li>Informationen systemübergreifend weitergeben</li><li>Support vorbereiten</li><li>Marketing- und Folgeprozesse unterstützen</li></ul><div class="branch-ai"><strong>Automatisierung &amp; KI</strong><span>Regelbasierte Abläufe, Informationsverarbeitung und automatisierte Prozessketten unterstützen.</span></div><p class="branch-limit"><strong>Einordnung:</strong> Sonderfälle, Beschwerden und sensible Entscheidungen brauchen weiterhin menschliche Bearbeitung.</p></div></div></article></div><div class="branch-controls"><button aria-label="Vorherige Branche" class="branch-prev" type="button">←</button><div aria-label="Branche auswählen" class="branch-dots"><button aria-label="Handwerk" class="active" data-go="0" type="button"></button><button aria-label="Immobilienmakler" class="" data-go="1" type="button"></button><button aria-label="Vermögensberatung" class="" data-go="2" type="button"></button><button aria-label="Vertrieb" class="" data-go="3" type="button"></button><button aria-label="Steuerkanzleien" class="" data-go="4" type="button"></button><button aria-label="Ärzte / Praxen" class="" data-go="5" type="button"></button><button aria-label="Coaching / Beratung" class="" data-go="6" type="button"></button><button aria-label="Gastronomie" class="" data-go="7" type="button"></button><button aria-label="Rechtsanwälte" class="" data-go="8" type="button"></button><button aria-label="Versicherungen" class="" data-go="9" type="button"></button><button aria-label="Speditionen" class="" data-go="10" type="button"></button><button aria-label="E-Commerce" class="" data-go="11" type="button"></button></div><button aria-label="Nächste Branche" class="branch-next" type="button">→</button></div><div class="branch-outro"><div class="branch-outro-mark">+</div><div><span class="branch-outro-kicker">IHRE BRANCHE NICHT DABEI?</span><h3>Kein Problem – die Beispiele sind keine Begrenzung.</h3><p>Die Register zeigen typische Schwerpunkte aus ausgewählten Branchen. Entscheidend bleibt die konkrete Aufgabenstellung im Unternehmen. Auch außerhalb dieser Beispiele kann geprüft werden, welche Abläufe, Systeme und Anforderungen sinnvoll miteinander verbunden werden können.</p></div></div><div class="branch-challenge"><div class="section-title"><span class="section-kicker">KONKRETE HERAUSFORDERUNG</span><h2>Die Branche allein bestimmt noch nicht die Lösung.</h2></div><div class="body-copy"><p>Zwei Unternehmen derselben Branche können an völlig unterschiedlichen Stellen Unterstützung benötigen. Deshalb dienen Branchen als Orientierung – nicht als fertige Schablone.</p></div><div class="compare-grid"><article><span>HANDWERKSBETRIEB A</span><strong>Freie Kapazitäten besser auslasten</strong><p>Der Betrieb verfügt über Kapazitäten für weitere Aufträge, im Arbeitsalltag fehlt jedoch die Zeit für eine kontinuierliche Kundengewinnung und die Ansprache potenzieller Kunden.</p></article><div class="compare-mark">≠</div><article><span>HANDWERKSBETRIEB B</span><strong>Vorhandene Nachfrage besser nutzen</strong><p>Der Betrieb erhält bereits viele Anfragen. Die Herausforderung besteht darin, passende und wirtschaftlich attraktive Aufträge frühzeitig zu erkennen und vorhandene Kapazitäten gezielter einzusetzen.</p></article></div><div class="statement"><strong>Die Branche gibt Orientierung.</strong><span>Die konkrete Ausgangslage und Herausforderung bestimmen die Lösung.</span></div></div></div></section>
+<section class="content-section individual-solution-section is-dark"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">INDIVIDUELLE LÖSUNG</span><h2>Nicht alles neu bauen – sondern das Richtige sinnvoll zusammenführen.</h2></div><div class="body-copy"><p>Eine individuelle Lösung beginnt nicht mit einem fertigen Produkt. Ausgangslage, Ziel, bestehende Abläufe und vorhandene Systeme bestimmen, welche Bausteine tatsächlich benötigt werden. Entscheidend ist, dass am Ende kein Nebeneinander einzelner Maßnahmen entsteht, sondern ein Ablauf, der im Unternehmen tatsächlich funktioniert.</p></div><div class="solution-principles"><article><span aria-hidden="true" class="principle-symbol principle-focus"></span><strong>Problem vor Produkt</strong><p>Der Ausgangspunkt ist die konkrete Aufgabe – nicht eine bereits festgelegte technische Lösung.</p></article><article><span aria-hidden="true" class="principle-symbol principle-existing"></span><strong>Bestehendes einbeziehen</strong><p>Vorhandene Systeme, Daten und Arbeitsweisen werden berücksichtigt, bevor Neues ergänzt wird.</p></article><article><span aria-hidden="true" class="principle-symbol principle-connect"></span><strong>Passend verbinden</strong><p>Nur die Bausteine werden zusammengeführt, die für das gewünschte Ergebnis wirklich gebraucht werden.</p></article></div><div class="solution-flow"><div class="flow-node"><b>01</b><strong>Ausgangslage verstehen</strong><span>Prozesse, Reibungspunkte und Abhängigkeiten sichtbar machen.</span></div><div class="flow-connector">→</div><div class="flow-node"><b>02</b><strong>Ziel klar bestimmen</strong><span>Festlegen, was im Arbeitsalltag konkret besser funktionieren soll.</span></div><div class="flow-connector">→</div><div class="flow-node"><b>03</b><strong>Bausteine auswählen</strong><span>Technik, Organisation und vorhandene Strukturen passend kombinieren.</span></div><div class="flow-connector">→</div><div class="flow-node flow-node-final"><b>04</b><strong>Gesamtlösung verbinden</strong><span>Die Bestandteile so zusammenführen, dass ein nachvollziehbarer Gesamtprozess entsteht.</span></div></div><div class="solution-note"><strong>Individuell heißt nicht kompliziert.</strong><span>Eine gute Lösung ist so umfangreich wie nötig – und so einfach wie möglich.</span></div><div class="solution-merged-block tech-merged"><div class="section-title"><span class="section-kicker">TECHNIK NACH BEDARF</span><h2>Nicht: „Was können wir mit KI bauen?“ – sondern: „Was muss besser funktionieren?“</h2></div><div class="body-copy"><p>Erst wenn die Aufgabe klar ist, wird entschieden, welche technische oder organisatorische Unterstützung sinnvoll ist. KI und Automatisierung sind mögliche Werkzeuge – nicht automatisch die Antwort.</p></div><div class="tech-grid"><article><strong>KI</strong><span>Wenn Informationen sinnvoll eingeordnet oder aufbereitet werden können.</span></article><article><strong>Automatisierung</strong><span>Wenn wiederkehrende Schritte zuverlässig nach einer klaren Logik ablaufen.</span></article><article><strong>Verbindung</strong><span>Wenn vorhandene Systeme oder Datenflüsse besser zusammenspielen müssen.</span></article><article><strong>Organisation</strong><span>Wenn bereits eine klarere Arbeitsweise das eigentliche Problem löst.</span></article></div><div class="statement"><strong>Technologie ist Bestandteil der Lösung.</strong><span>Sie ist nicht ihr Ausgangspunkt.</span></div></div><div class="solution-merged-block economy-merged"><div class="section-title"><span class="section-kicker">WIRTSCHAFTLICHKEIT &amp; GRENZEN</span><h2>Technisch möglich bedeutet nicht automatisch wirtschaftlich sinnvoll.</h2></div><div class="body-copy"><p>Aufwand, Nutzen, Komplexität, späterer Betrieb und mögliche Weiterentwicklung müssen in einem vernünftigen Verhältnis stehen. Wenn eine einfachere Lösung ausreicht, sollte keine komplizierte gebaut werden.</p><p>Die wirtschaftliche Betrachtung wird auf der Seite <a class="inline-link" href="https://www.ki-beratung-rachau.de/Wirtschaftlichkeit-ROI">Wirtschaftlichkeit &amp; ROI</a> ausführlicher eingeordnet.</p></div><div class="balance-grid"><span>Aufwand</span><span>Nutzen</span><span>Komplexität</span><span>Betrieb</span><span>Weiterentwicklung</span></div></div></div></section>
+<section class="content-section is-light existing-structures-section"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">BESTEHENDE STRUKTUREN</span><h2>Vorhandenes verstehen, bevor Neues ergänzt wird.</h2></div><div class="body-copy existing-intro"><p>Eine individuelle Lösung beginnt nicht automatisch mit neuen Programmen oder einem vollständigen Neuaufbau. Zuerst wird betrachtet, welche Systeme, Daten, Abläufe und Kommunikationswege bereits vorhanden sind – und welche davon im Arbeitsalltag tatsächlich funktionieren.</p><p>So wird sichtbar, wo Bestehendes erhalten werden kann, wo Reibung entsteht und an welchen Stellen eine gezielte Ergänzung mehr bewirkt als ein kompletter Austausch.</p></div><div class="structure-map"><div class="structure-source"><span class="structure-label">HEUTIGE ARBEITSUMGEBUNG</span><h3>Was bereits vorhanden ist</h3><div class="source-grid"><span><b>Systeme</b><small>Programme &amp; Anwendungen</small></span><span><b>Daten</b><small>Informationen &amp; Bestände</small></span><span><b>Abläufe</b><small>Arbeitswege &amp; Routinen</small></span><span><b>Kommunikation</b><small>Übergaben &amp; Kanäle</small></span></div></div><div class="structure-evaluation"><div class="evaluation-core"><span>PRÜFEN &amp; EINORDNEN</span><strong>Was trägt bereits – und wo entsteht Reibung?</strong><small>Nicht jedes bestehende Element braucht dieselbe Behandlung.</small></div></div><div class="structure-actions"><article><b>01</b><div><strong>Bewahren</strong><p>Was zuverlässig funktioniert und zum Arbeitsalltag passt, bleibt Bestandteil der Lösung.</p></div></article><article><b>02</b><div><strong>Verbessern &amp; verbinden</strong><p>Reibungspunkte werden reduziert und getrennte Informationen oder Arbeitsschritte sinnvoll zusammengeführt.</p></div></article><article><b>03</b><div><strong>Gezielt ergänzen</strong><p>Neue Bausteine kommen nur dort hinzu, wo eine echte Lücke besteht oder ein klarer Nutzen entsteht.</p></div></article></div></div><div class="existing-result"><div><span>ERGEBNIS</span><strong>Keine technische Insellösung</strong></div><p>Bestehende Strukturen und neue Bausteine werden so aufeinander abgestimmt, dass ein nachvollziehbarer Gesamtprozess entsteht. Ersetzt wird erst dann, wenn Weiterverwenden oder Anpassen fachlich oder wirtschaftlich keinen Sinn mehr ergibt.</p></div></div></section><section class="content-section is-dark"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">LEISTUNGSBAUSTEINE</span><h2>Mehrere Leistungen können Teil einer Lösung werden – müssen es aber nicht.</h2></div><div class="body-copy"><p>Nicht der Leistungskatalog bestimmt den Aufbau. Die Aufgabe entscheidet, welche Bausteine benötigt werden.</p></div><div class="service-orbit"><a href="https://www.ki-beratung-rachau.de/Leistungen/Beratung">Beratung</a><a href="https://www.ki-beratung-rachau.de/Leistungen/Automatisierung">Automatisierung</a><span>PASSENDE<br/>GESAMTLÖSUNG</span><a href="https://www.ki-beratung-rachau.de/Leistungen/Kundengewinnung">Kundengewinnung</a><a href="https://www.ki-beratung-rachau.de/Leistungen/Schulungen">Schulungen</a></div><p class="microcopy">Je nach Aufgabe kann beispielsweise Beratung mit Automatisierung verbunden werden oder Kundengewinnung durch geeignete Automatisierung ergänzt werden. Die einzelnen Leistungsbereiche werden auf ihren jeweiligen Seiten erläutert.</p></div></section>
+<section class="content-section is-light total-picture-section"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">GESAMTBILD</span><h2>Mensch, Organisation und Technik müssen zusammenpassen.</h2></div><div class="body-copy"><p>Eine technisch funktionierende Lösung reicht nicht, wenn Verantwortlichkeiten, Übergaben oder die tatsächliche Nutzung im Arbeitsalltag nicht berücksichtigt werden. Erst das Zusammenspiel entscheidet, ob eine Lösung im Tagesgeschäft trägt.</p></div><div class="triad-solution"><article><b>M</b><strong>Mensch</strong><span>Verantwortung · Erfahrung · Entscheidungen</span><p>Menschen müssen wissen, wann sie handeln, prüfen oder entscheiden.</p></article><article><b>O</b><strong>Organisation</strong><span>Abläufe · Zuständigkeiten · Übergaben</span><p>Prozesse brauchen klare Wege, Verantwortlichkeiten und sinnvolle Übergaben.</p></article><article><b>T</b><strong>Technik</strong><span>Systeme · Automatisierung · KI</span><p>Technik unterstützt dort, wo sie Abläufe verlässlich einfacher oder besser macht.</p></article><div aria-hidden="true" class="triad-join"><span></span><span></span><span></span></div><div class="solution-center"><small>ZUSAMMENGEFÜHRT ZU</small><strong>FUNKTIONIERENDER GESAMTLÖSUNG</strong><span>für den tatsächlichen Arbeitsalltag</span></div></div><div class="total-picture-note"><strong>Keiner der drei Bereiche funktioniert isoliert.</strong><span>Die technische Umsetzung muss zur Organisation passen – und die Organisation zu den Menschen, die damit arbeiten.</span></div></div></section>
+<section class="content-section is-dark"><div class="content-inner text-only"><div class="section-title"><span class="section-kicker">VOM PROBLEM ZUR NUTZUNG</span><h2>Die Lösung muss dort funktionieren, wo sie tatsächlich gebraucht wird.</h2></div><div class="body-copy"><p>Der Weg führt von der Ausgangslage über ein klares Zielbild und die passenden Bausteine bis zur Nutzung im tatsächlichen Arbeitsalltag.</p></div><div class="five-steps"><div><b>01</b><strong>Ausgangslage</strong><span>Problem und Zusammenhänge verstehen</span></div><div><b>02</b><strong>Zielbild</strong><span>Gewünschte Verbesserung definieren</span></div><div><b>03</b><strong>Lösungsbausteine</strong><span>Benötigte Elemente bestimmen</span></div><div><b>04</b><strong>Umsetzung</strong><span>Bausteine sinnvoll verbinden</span></div><div><b>05</b><strong>Arbeitsalltag</strong><span>Praktische Nutzung sicherstellen</span></div></div></div></section>
+<section class="closing closing-light"><div class="closing-inner"><span class="top-streak"></span><p class="eyebrow">INDIVIDUELLE LÖSUNGEN</p><h2>Ihre Herausforderung passt in keine Schublade?</h2><p class="closing-copy">Dann kann zunächst betrachtet werden, welche Anforderungen tatsächlich zusammengehören, welche bestehenden Strukturen berücksichtigt werden sollten und welche Bausteine für eine sinnvolle Gesamtlösung benötigt werden.</p><div class="closing-actions"><a class="primary-btn" href="https://www.ki-beratung-rachau.de/Kontakt">Kontakt aufnehmen <span>→</span></a><a class="secondary-btn" href="https://airtable.com/appXjP2MmCNHtTgzl/pag46WgV0N948j5iQ/form" rel="noopener noreferrer" target="_blank">Kostenlose Potenzialanalyse anfordern <span>→</span></a></div></div><div aria-hidden="true" class="closing-shapes"><span></span><span></span><span></span><span></span><span></span></div></section>
+</main>
+<footer class="site-footer">
+<div class="footer-main">
+<div class="footer-brand">
+<img alt="" class="footer-logo" src="logo-gross-dunkel.png"/>
+<div class="footer-brand-copy">
+<strong>KI BERATUNG RACHAU</strong>
+<small class="brand-triad"><span>ANALYSE</span><span>·</span><span>PLANUNG</span><span>·</span><span>UMSETZUNG</span></small>
+<p>Moderne Unternehmensberatung für KI, Technologie und Automatisierung.</p>
+</div>
+</div>
+<div class="footer-column">
+<h3>LEISTUNGEN</h3>
+<a href="https://www.ki-beratung-rachau.de/Leistungen">Leistungsübersicht <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Beratung">Beratung <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Automatisierung">Automatisierung <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Kundengewinnung">Kundengewinnung <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Schulungen">Schulungen <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Leistungen/Individuelle-Loesungen">Individuelle Lösungen <span>→</span></a>
+</div>
+<div class="footer-column">
+<h3>UNTERNEHMEN</h3>
+<a href="https://www.ki-beratung-rachau.de/Wirtschaftlichkeit-ROI">Wirtschaftlichkeit &amp; ROI <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Zusammenarbeit">Zusammenarbeit <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/Referenzen">Referenzen <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Haltung">Haltung <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Empfehlungsprogramm">Empfehlungsprogramm <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Social-Media">Social Media <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/FAQ">FAQ <span>→</span></a>
+<a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Support">Support <span>→</span></a>
+</div>
+<div class="footer-column footer-contact">
+<h3>KONTAKT</h3>
+<p>Der direkte Einstieg für ein erstes Gespräch.</p>
+<a class="footer-contact-link" href="https://www.ki-beratung-rachau.de/Kontakt">Kontakt aufnehmen <span>→</span></a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2024–<span id="current-year">2026</span> KI Beratung Rachau</span>
+<div><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Impressum">Impressum</a><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Datenschutz">Datenschutz</a><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/AGB">AGB</a></div>
+</div>
+</footer>
+<script>
+
+const menuButton = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('.mainnav');
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+
+menuButton.addEventListener('click', () => {
+  const open = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', String(!open));
+  mainNav.classList.toggle('open');
+});
+
+dropdowns.forEach((dropdown) => {
+  const trigger = dropdown.querySelector('.dropdown-trigger');
+
+  trigger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const shouldOpen = !dropdown.classList.contains('open');
+
+    dropdowns.forEach((otherDropdown) => {
+      otherDropdown.classList.remove('open');
+      otherDropdown.querySelector('.dropdown-trigger').setAttribute('aria-expanded', 'false');
+    });
+
+    if (shouldOpen) {
+      dropdown.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+document.addEventListener('click', (event) => {
+  dropdowns.forEach((dropdown) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove('open');
+      dropdown.querySelector('.dropdown-trigger').setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    dropdowns.forEach((dropdown) => {
+      const trigger = dropdown.querySelector('.dropdown-trigger');
+      if (dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      }
+    });
+  }
+});
+
+
+// Markiert automatisch die Hauptkategorie der aktuell geöffneten Seite.
+// Dadurch bleibt der orange Strich auch auf Unterseiten unter der richtigen Hauptkategorie.
+(function setActiveNavigationFromUrl() {
+  if (window.location.protocol === 'file:') return;
+
+  const normalizePath = (value) => {
+    try {
+      const url = new URL(value, window.location.origin);
+      return decodeURIComponent(url.pathname).replace(/\/+$/, '') || '/';
+    } catch (_) {
+      return '/';
+    }
+  };
+
+  const currentPath = normalizePath(window.location.href);
+  const nav = document.querySelector('.mainnav');
+  if (!nav) return;
+
+  nav.querySelectorAll('.active, .active-service').forEach((el) => {
+    el.classList.remove('active', 'active-service');
+  });
+
+  const serviceDropdown = document.querySelector('#leistungen-dropdown')?.closest('.nav-dropdown');
+  const companyDropdown = document.querySelector('#unternehmen-dropdown')?.closest('.nav-dropdown');
+
+  const activateDropdown = (dropdown) => {
+    if (!dropdown) return;
+    dropdown.querySelector('.dropdown-trigger')?.classList.add('active');
+    dropdown.querySelectorAll('.dropdown-panel a').forEach((link) => {
+      if (normalizePath(link.href) === currentPath) link.classList.add('active-service');
+    });
+  };
+
+  if (currentPath === '/Leistungen' || currentPath.startsWith('/Leistungen/') || currentPath === '/individuelle-loesungen.html' || currentPath.endsWith('/individuelle-loesungen.html')) {
+    activateDropdown(serviceDropdown);
+    if (currentPath === '/individuelle-loesungen.html' || currentPath.endsWith('/individuelle-loesungen.html')) {
+      serviceDropdown?.querySelector('a[href="https://www.ki-beratung-rachau.de/Leistungen/Individuelle-Loesungen"]')?.classList.add('active-service');
+    }
+    return;
+  }
+
+  if (currentPath === '/KI-Beratung-Rachau' || currentPath.startsWith('/KI-Beratung-Rachau/')) {
+    activateDropdown(companyDropdown);
+    return;
+  }
+
+  nav.querySelectorAll(':scope > a:not(.contact-btn)').forEach((link) => {
+    if (normalizePath(link.href) === currentPath) link.classList.add('active');
+  });
+})();
+
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  
+
+const cards=[...document.querySelectorAll('.branch-card')],dots=[...document.querySelectorAll('.branch-dots button')],tabStrip=document.querySelector('.branch-tab-strip');let current=0;
+function visibleTabIndexes(){const last=cards.length-1;if(current===0)return[0,1,2];if(current===last)return[last-2,last-1,last];return[current-1,current,current+1]}
+function renderTabs(){if(!tabStrip)return;tabStrip.innerHTML='';visibleTabIndexes().forEach(i=>{const card=cards[i],label=card.querySelector('.branch-copy h3')?.textContent?.trim()||'';const b=document.createElement('button');b.type='button';b.className=i===current?'active':'';b.setAttribute('aria-current',i===current?'true':'false');b.innerHTML=`<span class="tab-num">${String(i+1).padStart(2,'0')}</span>${label}`;b.addEventListener('click',()=>show(i));tabStrip.appendChild(b)})}
+function show(n){current=(n+cards.length)%cards.length;cards.forEach((c,i)=>{c.classList.toggle('active',i===current);c.setAttribute('aria-hidden',i===current?'false':'true')});dots.forEach((d,i)=>d.classList.toggle('active',i===current));renderTabs()}
+document.querySelector('.branch-prev')?.addEventListener('click',()=>show(current-1));document.querySelector('.branch-next')?.addEventListener('click',()=>show(current+1));dots.forEach(d=>d.addEventListener('click',()=>show(+d.dataset.go)));document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(current-1);if(e.key==='ArrowRight')show(current+1)});show(0);document.getElementById('current-year')?.replaceChildren(String(new Date().getFullYear()));
+
+</script></body></html>
