@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html lang="de"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Zusammenarbeit mit der KI Beratung Rachau – strukturiert analysieren, durchdacht planen und transparent umsetzen." name="description"/><title>Zusammenarbeit | KI Beratung Rachau</title>
+<style>
+:root{
+  --navy:#0b1624;
+  --navy-2:#08111c;
+  --navy-3:#0d1b2b;
+  --steel:#7fa4bd;
+  --steel-2:#9db9ca;
+  --paper:#eef4f8;
+  --white:#ffffff;
+  --orange:#ed7a16;
+  --orange-2:#ff9228;
+  --ink:#0d1a27;
+  --muted:#5f7890;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;width:100%;max-width:100%;overflow-x:hidden}
+body{margin:0;width:100%;max-width:100%;overflow-x:hidden;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--navy-2);color:var(--ink)}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+.site-header,main,.placeholder,.closing,.site-footer{width:100%;max-width:100%}
+a{transition:.22s ease}
+
+/* =========================
+   HAUPTNAVIGATION
+   ========================= */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(180deg,rgba(7,17,29,.985),rgba(10,24,39,.985));
+  color:#fff;
+  box-shadow:0 14px 34px rgba(5,12,20,.22);
+}
+.nav-shell{
+  width:min(100%,var(--max));max-width:var(--max);height:84px;margin:auto;padding:0 32px;
+  display:flex;align-items:center;gap:30px;
+  border-bottom:1px solid rgba(132,168,192,.13);
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;min-width:max-content}
+.brand-logo{
+  width:62px;height:62px;object-fit:cover;border-radius:50%;
+  box-shadow:0 9px 24px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.06);
+}
+.brand-copy{display:flex;flex-direction:column;gap:8px}
+.brand-copy strong{font-size:20px;line-height:1;font-weight:850;letter-spacing:.065em}
+.brand-copy small{color:#8baac0;font-size:11px;font-weight:760;letter-spacing:.16em}
+.mainnav{margin-left:auto;min-width:0;height:100%;display:flex;align-items:center;gap:clamp(16px,1.55vw,30px)}
+.mainnav>a,.mainnav .nav-link{position:relative;height:100%;display:flex;align-items:center;color:#edf4f8;text-decoration:none;font-size:14px;font-weight:700;white-space:nowrap}
+.mainnav>a:not(.contact-btn)::after,.mainnav .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:2px;background:var(--orange);transform:scaleX(0);transition:transform .22s ease;box-shadow:0 0 10px rgba(237,122,22,.35)}
+.mainnav>a.active:not(.contact-btn)::after,.mainnav>a:hover:not(.contact-btn)::after,.mainnav .nav-link.active::after,.mainnav .nav-link:hover::after,.nav-dropdown.open .nav-link::after{transform:scaleX(1)}
+.mainnav>a:hover:not(.contact-btn),.mainnav .nav-link:hover{color:#fff}
+.contact-btn{
+  height:auto!important;padding:14px 18px!important;border-radius:9px;
+  background:linear-gradient(180deg,#f28a2a 0%,#e96f0d 100%);
+  box-shadow:0 10px 24px rgba(237,122,22,.24),0 0 24px rgba(237,122,22,.12),inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(124,47,0,.35);
+  border:1px solid rgba(255,150,67,.35);
+}
+.contact-btn span{margin-left:12px;font-size:17px}
+.contact-btn:hover{transform:translateY(-2px);box-shadow:0 15px 30px rgba(237,122,22,.32),0 0 32px rgba(237,122,22,.18),inset 0 1px 0 rgba(255,255,255,.4)}
+.menu-toggle{display:none}
+
+/* =========================
+   LEISTUNGEN-DROPDOWN
+   ========================= */
+.nav-dropdown{position:relative;height:100%;display:flex;align-items:center}
+.nav-link{font:inherit;border:0;background:transparent;padding:0;cursor:pointer}
+.dropdown-panel{
+  position:absolute;top:calc(100% - 10px);left:50%;z-index:160;
+  width:292px;padding:10px;border-radius:14px;
+  background:linear-gradient(155deg,rgba(255,255,255,.98),rgba(235,243,248,.97));
+  border:1px solid rgba(123,157,180,.34);
+  box-shadow:0 24px 55px rgba(2,12,22,.34),0 8px 18px rgba(27,61,84,.18),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(14px);
+  transform:translate(-50%,-8px) scale(.985);transform-origin:top center;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+}
+.dropdown-panel::before{
+  content:"";position:absolute;top:-7px;left:50%;width:14px;height:14px;
+  background:#f8fbfd;border-left:1px solid rgba(123,157,180,.30);border-top:1px solid rgba(123,157,180,.30);
+  transform:translateX(-50%) rotate(45deg);
+}
+.nav-dropdown.open .dropdown-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0) scale(1)}
+.dropdown-panel a{
+  position:relative;height:auto!important;display:flex!important;align-items:center;
+  padding:13px 14px!important;border-radius:9px;color:#132333!important;
+  text-decoration:none;font-size:14px!important;font-weight:700!important;line-height:1.2;
+  transition:background .16s ease,color .16s ease,transform .16s ease,box-shadow .16s ease;
+}
+.dropdown-panel a::after{display:none!important}
+.dropdown-panel a:hover,.dropdown-panel a:focus-visible{
+  color:#081522!important;background:rgba(255,255,255,.88);transform:translateX(3px);
+  box-shadow:0 6px 14px rgba(61,91,111,.11),inset 3px 0 0 var(--orange);outline:none;
+}
+.dropdown-panel a.active-service{
+  color:#0b1a28!important;background:linear-gradient(90deg,rgba(237,122,22,.12),rgba(255,255,255,.62));
+  box-shadow:inset 3px 0 0 var(--orange);
+}
+.dropdown-panel a+a{margin-top:2px}
+
+/* =========================
+   DEMO-INHALTSBEREICH
+   ========================= */
+.placeholder{
+  position:relative;overflow:hidden;min-height:380px;padding:38px 32px;
+  display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 84% 48%,rgba(131,164,187,.18),transparent 29%),
+    linear-gradient(105deg,#e7f0f7 0%,#f7fafc 50%,#dce9f2 100%);
+  box-shadow:inset 0 14px 28px rgba(40,73,96,.12),inset 0 -18px 30px rgba(40,73,96,.06);
+}
+.placeholder-card{
+  position:relative;z-index:3;width:min(1100px,100%);text-align:center;padding:26px 50px 32px;
+  border:1px solid rgba(255,255,255,.82);border-radius:24px;
+  background:linear-gradient(155deg,rgba(255,255,255,.90),rgba(247,250,253,.75));
+  box-shadow:0 24px 50px rgba(53,83,105,.24),0 4px 10px rgba(53,83,105,.08),inset 0 1px 0 rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+}
+.section-kicker{font-size:12px;font-weight:850;letter-spacing:.22em;color:var(--orange)}
+h1{margin:14px 0 16px;color:#071524;font-size:clamp(42px,4.5vw,64px);line-height:.96;letter-spacing:-.035em}
+.orange-rule{display:block;width:70px;height:3px;background:linear-gradient(90deg,var(--orange),#ffa344);margin:0 auto 17px;border-radius:99px;box-shadow:0 0 10px rgba(237,122,22,.2)}
+.placeholder p{margin:0;color:#56718a;font-size:17px;line-height:1.58}
+.network{position:absolute;top:32px;width:300px;height:220px;opacity:.62;background-image:radial-gradient(circle,#fff 0 2px,transparent 3px),linear-gradient(33deg,transparent 48.7%,rgba(255,255,255,.58) 49%,rgba(255,255,255,.58) 49.5%,transparent 49.8%),linear-gradient(145deg,transparent 48.8%,rgba(255,255,255,.55) 49%,rgba(255,255,255,.55) 49.5%,transparent 49.8%);background-size:74px 70px,122px 82px,146px 96px;filter:drop-shadow(0 1px 2px rgba(100,130,150,.06))}
+.network-left{left:-30px;transform:rotate(-3deg)}
+.network-right{right:-15px;transform:scaleX(-1) rotate(-4deg)}
+.floating-cubes{position:absolute;right:34px;bottom:-26px;width:220px;height:160px;z-index:2}
+.cube{position:absolute;width:70px;height:70px;transform:rotate(30deg) skew(-10deg,-10deg);background:linear-gradient(145deg,rgba(107,139,161,.22),rgba(255,255,255,.08));border:1px solid rgba(255,255,255,.76);box-shadow:12px 15px 20px rgba(54,87,108,.10),inset 0 0 22px rgba(255,255,255,.18)}
+.cube-1{right:0;bottom:12px;width:92px;height:92px;border-color:rgba(237,122,22,.76);box-shadow:0 0 18px rgba(237,122,22,.18),12px 18px 28px rgba(54,87,108,.12)}
+.cube-2{right:94px;bottom:42px;width:62px;height:62px}.cube-3{right:45px;bottom:96px;width:48px;height:48px}
+
+/* =========================
+   ABSCHLUSS-CTA
+   ========================= */
+.closing{
+  position:relative;overflow:hidden;color:#fff;padding:34px 32px 38px;
+  background:
+    radial-gradient(circle at 78% 45%,rgba(26,64,96,.44),transparent 35%),
+    linear-gradient(105deg,#071525 0%,#0b1c2e 53%,#06111f 100%);
+  border-top:1px solid rgba(255,255,255,.04);
+}
+.closing-inner{position:relative;z-index:3;width:min(100%,var(--max));max-width:var(--max);margin:auto}
+.top-streak{display:block;width:60px;height:2px;margin:0 0 13px;background:linear-gradient(90deg,var(--orange),rgba(237,122,22,0));box-shadow:0 0 10px rgba(237,122,22,.25)}
+.eyebrow{margin:0;color:var(--orange);font-size:11px;font-weight:850;letter-spacing:.18em}
+.closing h2{margin:12px 0 8px;max-width:900px;font-size:clamp(30px,3vw,42px);line-height:1.08;letter-spacing:-.02em}
+.closing-copy{margin:0 0 20px;color:#d1dce4;font-size:16px;line-height:1.55}
+.primary-btn{
+  display:inline-flex;align-items:center;gap:22px;padding:13px 19px;border-radius:8px;
+  color:#fff;text-decoration:none;font-size:15px;font-weight:800;
+  background:linear-gradient(180deg,#ff932c 0%,#e96d0c 100%);
+  border:1px solid rgba(255,153,72,.46);
+  box-shadow:0 12px 22px rgba(237,122,22,.34),0 0 24px rgba(237,122,22,.20),inset 0 1px 0 rgba(255,255,255,.42),inset 0 -2px 0 rgba(116,42,0,.28);
+}
+.primary-btn span{font-size:18px}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 17px 30px rgba(237,122,22,.40),0 0 34px rgba(237,122,22,.25),inset 0 1px 0 rgba(255,255,255,.45)}
+.closing-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.secondary-btn{
+  display:inline-flex;align-items:center;gap:22px;padding:13px 19px;border-radius:8px;
+  color:var(--orange);text-decoration:none;font-size:15px;font-weight:800;
+  background:linear-gradient(180deg,#fff 0%,#edf3f7 100%);
+  border:1px solid rgba(255,255,255,.78);
+  box-shadow:0 12px 22px rgba(0,0,0,.24),0 0 20px rgba(255,255,255,.07),inset 0 1px 0 rgba(255,255,255,.98),inset 0 -2px 0 rgba(74,100,118,.16);
+}
+.secondary-btn span{font-size:18px}
+.secondary-btn:hover{transform:translateY(-2px);background:linear-gradient(180deg,#fff 0%,#f5f8fa 100%);box-shadow:0 17px 30px rgba(0,0,0,.30),0 0 26px rgba(255,255,255,.10),inset 0 1px 0 rgba(255,255,255,1)}
+
+.closing-shapes{position:absolute;right:-10px;top:0;width:520px;height:100%;opacity:.9}
+.closing-shapes span{position:absolute;width:120px;height:120px;transform:rotate(30deg) skew(-10deg,-10deg);border:1px solid rgba(64,105,136,.18);background:linear-gradient(145deg,rgba(49,88,119,.12),rgba(10,28,45,.02))}
+.closing-shapes span:nth-child(1){right:50px;bottom:-35px;border-color:rgba(237,122,22,.72);box-shadow:0 0 18px rgba(237,122,22,.16)}
+.closing-shapes span:nth-child(2){right:170px;bottom:8px;border-color:rgba(237,122,22,.52)}
+.closing-shapes span:nth-child(3){right:280px;bottom:-22px}.closing-shapes span:nth-child(4){right:340px;bottom:65px}.closing-shapes span:nth-child(5){right:75px;bottom:85px}
+
+/* =========================
+   FOOTER
+   ========================= */
+.site-footer{background:linear-gradient(180deg,#06111c,#07131e);color:#dce5eb;border-top:1px solid rgba(127,164,189,.14)}
+.footer-main{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:27px 32px 25px;display:grid;grid-template-columns:1.55fr .9fr 1fr 1fr;gap:58px}
+.footer-brand{display:flex;align-items:flex-start;gap:15px}
+.footer-logo{
+  width:62px;height:62px;object-fit:cover;border-radius:50%;
+  box-shadow:0 9px 24px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.06);
+}
+.footer-brand-copy{display:flex;flex-direction:column;gap:8px}
+.footer-brand strong{
+  display:block;color:#fff;font-size:20px;line-height:1;font-weight:850;letter-spacing:.065em;margin:0;
+}
+.footer-brand small{
+  color:#8baac0;font-size:11px;font-weight:760;letter-spacing:.16em;
+}
+.footer-brand p{margin:7px 0 0;color:#86a3b8;font-size:13px;line-height:1.6}
+.brand-triad{display:flex !important;justify-content:space-between;align-items:center;width:100%;white-space:nowrap}
+.brand-triad span{display:inline-block}
+
+.footer-column h3{margin:3px 0 15px;color:#7da3bf;font-size:11px;letter-spacing:.19em}
+.footer-column>a{display:flex;justify-content:flex-start;gap:12px;color:#fff;text-decoration:none;font-size:13px;margin:0 0 9px;line-height:1.25}
+.footer-column>a span{color:var(--orange);opacity:.95}.footer-column>a:hover{color:#a9c1d2;transform:translateX(2px)}
+.footer-contact p{margin:0 0 14px;color:#8aa4b7;font-size:13px;line-height:1.55}
+.footer-contact-link{font-weight:800!important}
+.footer-bottom{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:18px 32px 21px;border-top:1px solid rgba(127,164,189,.11);display:flex;justify-content:space-between;color:#7392a9;font-size:11px}
+.footer-bottom div{display:flex;gap:30px}.footer-bottom a{color:#83a1b7;text-decoration:none}.footer-bottom a:hover{color:#fff}
+
+@media(max-width:1380px){
+  .nav-shell{padding-left:24px;padding-right:24px;gap:22px}
+  .mainnav{gap:16px}
+  .mainnav>a,.mainnav .nav-link{font-size:13px}
+  .contact-btn{padding-left:15px!important;padding-right:15px!important}
+}
+@media(max-width:1250px){
+  .nav-shell{padding:0 22px}.mainnav{gap:18px}.mainnav>a,.mainnav .nav-link{font-size:12px}.brand-copy strong{font-size:17px}.brand-copy small{font-size:10px}.footer-main{gap:34px}
+}
+@media(max-width:1000px){
+  .nav-shell{height:82px}.brand-logo{width:52px;height:52px}.brand-copy strong{font-size:16px}.brand-copy small{font-size:9px}
+  .menu-toggle{display:block;margin-left:auto;color:#fff;border:1px solid rgba(132,168,192,.24);background:rgba(255,255,255,.04);padding:10px 12px;border-radius:8px;font-weight:800}
+  .mainnav{display:none;position:absolute;top:82px;left:0;right:0;height:auto;background:#081523;flex-direction:column;align-items:stretch;gap:0;padding:10px 22px 20px;box-shadow:0 20px 35px rgba(0,0,0,.3)}
+  .mainnav.open{display:flex}.mainnav>a,.mainnav .nav-link{height:auto;padding:13px 0;border-bottom:1px solid rgba(127,164,189,.11)}.mainnav>a::after,.mainnav .nav-link::after{display:none}.contact-btn{justify-content:center;margin-top:12px;border-bottom:0!important}
+  .nav-dropdown{height:auto;display:block}.nav-link{width:100%;justify-content:flex-start}
+  .dropdown-panel{position:static;width:100%;margin:4px 0 8px;padding:8px;transform:none!important;border-radius:11px;box-shadow:0 14px 30px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.9);display:none;opacity:1;visibility:visible;pointer-events:auto}
+  .dropdown-panel::before{display:none}.nav-dropdown.open .dropdown-panel{display:block}.dropdown-panel a{border-bottom:0!important;padding:12px 13px!important}
+  .placeholder{min-height:360px}.placeholder-card{width:min(1100px,100%)}
+  .closing-shapes{opacity:.55;right:-150px}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .brand-copy strong{font-size:14px}.brand-copy small{font-size:8px;letter-spacing:.12em}.brand-logo{width:46px;height:46px}
+  .placeholder{padding:45px 18px;min-height:430px}.placeholder-card{padding:30px 20px}.placeholder p{font-size:15px}.placeholder p br{display:none}.network{opacity:.35}.floating-cubes{right:-80px}
+  .closing{padding:35px 20px 40px}.closing-copy br{display:none}.closing h2{font-size:32px}
+  .footer-main{padding:30px 20px;grid-template-columns:1fr;gap:27px}.footer-brand{grid-column:auto}.footer-bottom{padding:17px 20px;flex-direction:column;gap:13px}.footer-bottom div{gap:20px}
+}
+
+@media (max-width:1200px){.footer-brand small{font-size:10px}}
+@media (max-width:900px){.footer-brand small{font-size:9px}}
+@media (max-width:650px){.footer-brand small{font-size:8px;letter-spacing:.12em}}
+
+
+:root{--navy:#071525;--navy2:#0b1d30;--ink:#102b3f;--text:#50697b;--muted:#718596;--orange:#ed7a16;--line:#d8e2e9;--radius:32px;--padx:56px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{overflow-x:hidden} main{padding:32px 0 44px;background:linear-gradient(110deg,#e4edf4 0%,#f9fbfd 48%,#dce8f0 100%)}
+.page-card{width:1176px;max-width:calc(100% - 64px);margin:36px auto 0;border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:0 28px 64px rgba(31,58,78,.17),0 6px 18px rgba(31,58,78,.08)} .page-card:first-child{margin-top:0}.card-inner{padding:64px var(--padx) 68px}.dark-card{background:linear-gradient(125deg,#061321 0%,#0a1d30 55%,#071727 100%);color:#fff;border:1px solid rgba(255,255,255,.09)}.light-card{background:linear-gradient(145deg,#fff 0%,#f7fafc 100%);color:var(--ink);border:1px solid rgba(255,255,255,.82)}
+.kicker,.mini-label{display:block;color:var(--orange);font-size:11px;font-weight:850;letter-spacing:.17em;text-transform:uppercase;margin-bottom:12px}.section-head{max-width:940px;margin-bottom:34px}.section-head h2{margin:0;font-size:clamp(31px,3vw,44px);line-height:1.08;letter-spacing:-.025em}.section-head h3{margin:14px 0 0;font-size:20px;line-height:1.4;color:#587083;font-weight:700}.dark-card .section-head h3{color:#c8d4dd}.section-lead{max-width:800px;font-size:17px;line-height:1.7;color:#c6d4de}.light-card p,.light-card li{color:var(--text)}.dark-card p,.dark-card li{color:#c5d2db}.card-inner p{font-size:16px;line-height:1.72}.card-inner strong{color:inherit}
+/* Hero */
+.hero-grid{display:grid;grid-template-columns:minmax(280px,34%) 1fr;gap:52px;align-items:start}.hero-visual{margin:0;border-radius:18px;overflow:hidden;box-shadow:0 24px 54px rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.11)}.hero-visual img{display:block;width:100%;aspect-ratio:5/6;object-fit:cover}.hero-copy{padding-top:2px}.hero-title{margin:0 0 24px;font-size:clamp(34px,3.3vw,48px);line-height:1.07;letter-spacing:-.035em;color:#fff}.hero-title span{display:block;white-space:nowrap}.hero-copy p{font-size:17px;max-width:700px}.hero-copy p:first-of-type{font-size:19px;color:#eef4f8}
+/* Intro */
+.triad-title{white-space:nowrap;font-size:clamp(25px,3vw,42px)!important;letter-spacing:.01em!important}.intro-layout{display:grid;grid-template-columns:.88fr 1.12fr;gap:46px;align-items:start}.intro-narrative{padding-right:26px;border-right:1px solid var(--line)}.intro-facts{padding-left:6px;padding-top:2px}.facts-label{font-weight:800;color:var(--ink)!important;margin:0 0 8px}.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin:18px 0 26px}.fact-item{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #e4ebf0}.fact-mark{width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none;margin-top:9px}.fact-item p{margin:0;font-size:15px}
+/* Phase hub */
+.phase-selector{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.phase-card{appearance:none;border:1px solid rgba(255,255,255,.12);background:#0c2237;color:#fff;padding:0;text-align:left;border-radius:22px;overflow:hidden;cursor:pointer;transition:.22s ease;box-shadow:0 16px 34px rgba(0,0,0,.2)}.phase-card:hover,.phase-card[aria-expanded=true]{transform:translateY(-3px);border-color:rgba(237,122,22,.7);box-shadow:0 18px 42px rgba(0,0,0,.3),0 0 0 1px rgba(237,122,22,.18)}.phase-card img{display:block;width:100%;aspect-ratio:16/8.5;object-fit:cover;filter:saturate(.88) contrast(1.03)}.phase-card-copy{display:block;padding:24px}.phase-card-copy strong{display:block;font-size:24px;letter-spacing:.04em}.phase-card-copy>span{display:block;margin-top:9px;color:#c5d2dc;line-height:1.5}.phase-card-copy em{display:inline-flex;margin-top:18px;color:#ff9a3d;font-style:normal;font-weight:800;font-size:13px}.phase-card-copy b{margin-left:8px}.phase-panel{margin-top:26px;padding:34px;border:1px solid rgba(255,255,255,.11);background:#0a1d30;border-radius:22px}.phase-panel[hidden]{display:none}.phase-deck h2{font-size:38px;margin:0}.phase-intro{max-width:910px}.phase-intro h3{font-size:22px;margin:14px 0;color:#fff}.phase-intro p{margin:10px 0}.phase-rhetoric{font-weight:800;color:#fff!important;font-size:19px!important}.timeline{position:relative;display:grid;grid-template-columns:repeat(var(--count,7),1fr);gap:0;margin:36px 0 18px;padding-top:10px}.timeline:before{content:"";position:absolute;left:5%;right:5%;top:31px;height:2px;background:linear-gradient(90deg,rgba(237,122,22,.25),var(--orange),rgba(237,122,22,.25))}.timeline-step{position:relative;z-index:1;background:none;border:0;color:#fff;padding:0 6px;cursor:pointer;min-width:0}.timeline-letter{display:flex;width:44px;height:44px;margin:0 auto 10px;border-radius:50%;align-items:center;justify-content:center;background:#0b1b2b;border:2px solid var(--orange);font-weight:900;color:#fff;box-shadow:0 0 0 5px #0a1d30}.timeline-name{display:block;font-size:11.5px;line-height:1.3;color:#b9cad6;font-weight:700;hyphens:none;word-break:normal;overflow-wrap:normal}.timeline-name wbr{display:inline}.timeline-dense .timeline-name{font-size:10.4px;line-height:1.22;padding:0 2px;white-space:normal}.timeline-dense .timeline-step{padding-left:3px;padding-right:3px}.timeline-step[aria-expanded=true] .timeline-letter{background:var(--orange)}.timeline-step[aria-expanded=true] .timeline-name{color:#fff}.step-stage{margin-top:22px}.step-panel{background:#0a1d30;border-top:1px solid rgba(255,255,255,.11);padding:34px 0 4px}.step-title-row{display:flex;gap:16px;align-items:center;margin-bottom:20px}.step-letter{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:var(--orange);font-size:22px;font-weight:900;color:#fff;flex:none}.step-phase{font-size:10px;letter-spacing:.16em;color:#8da5b6}.step-title-row h4{margin:4px 0 0;font-size:27px}.step-subtitle{font-size:20px!important;font-weight:800;color:#fff!important;max-width:850px}.step-main-copy{max-width:930px}.clean-list{margin:14px 0 18px;padding:0;list-style:none;display:grid;gap:7px}.clean-list li{position:relative;padding-left:18px}.clean-list li:before{content:"";position:absolute;left:0;top:.72em;width:6px;height:2px;background:var(--orange)}.rhetorical-line{font-size:20px!important;font-weight:850;color:#fff!important;margin:24px 0!important}.step-support-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px;align-items:stretch}.step-support{padding:20px;border-top:2px solid rgba(237,122,22,.65);background:rgba(255,255,255,.035)}.step-support h5{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#ff9b43}.step-support p{font-size:14.5px;margin:0}.step-support.result{grid-column:1/-1;display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start;border-top:1px solid rgba(237,122,22,.78);border-left:3px solid var(--orange);background:rgba(237,122,22,.065);padding:20px 22px}.step-support.result h5{margin:2px 0 0;font-size:12px}.step-support.result p{font-size:15px;line-height:1.62}.phase-result{margin-top:26px;padding:22px 24px;border-left:3px solid var(--orange);background:rgba(255,255,255,.04)}.phase-result>span{display:block;color:#ff9a3d;font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.phase-result p{margin:8px 0 0;color:#fff;font-weight:700}
+/* Transparency */
+.transparency-flow{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px}.prose-column{padding-right:20px}.principle-field{border-left:1px solid var(--line);padding-left:34px;padding-top:2px}.principle-label{font-weight:800;color:var(--ink)!important;margin:0 0 12px}.principle-list{display:grid;gap:0}.principle-item{display:grid;grid-template-columns:12px 1fr;gap:13px;padding:11px 0;border-bottom:1px solid #e3eaf0}.principle-item>span{width:8px;height:8px;background:var(--orange);border-radius:50%;margin-top:9px}.principle-item p{margin:0}.section-tail{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);max-width:950px}
+/* Responsibilities */
+.responsibility-intro{max-width:900px}.roles-composition{display:grid;grid-template-columns:1fr 1fr;margin-top:28px;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}.role-column{padding:30px 34px 30px 0}.role-column+ .role-column{padding-left:34px;padding-right:0;border-left:1px solid rgba(255,255,255,.12)}.role-column h3{font-size:22px;margin:0 0 18px}.role-column ul{list-style:none;margin:0;padding:0}.role-column li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08)}.role-column li:last-child{border-bottom:0}.shared-conclusion{max-width:960px;padding-top:24px}.shared-conclusion p:last-child{font-weight:750;color:#fff}
+/* Decisions */
+.decision-intro{max-width:820px}.decision-path{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:38px 0 26px;padding-top:18px}.decision-path:before{content:"";position:absolute;left:7%;right:7%;top:29px;height:2px;background:linear-gradient(90deg,#d9e3ea,var(--orange),#d9e3ea)}.decision-stop{position:relative;padding-top:38px}.decision-node{position:absolute;top:0;left:0;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid var(--orange);box-shadow:0 0 0 6px #f8fafc}.decision-stop h4{font-size:17px;margin:0 0 10px}.decision-stop p{font-size:14.5px;margin:0}.decision-closing{padding-top:22px;border-top:1px solid var(--line);max-width:930px}
+/* Entry */
+.entry-narrative{max-width:940px}.foundation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:26px 0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}.foundation-item{display:flex;gap:12px;align-items:flex-start;padding:20px 22px;border-right:1px solid rgba(255,255,255,.10)}.foundation-item:nth-child(3n){border-right:0}.foundation-item:nth-child(-n+3){border-bottom:1px solid rgba(255,255,255,.10)}.foundation-item p{margin:0}.foundation-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);margin-top:9px;flex:none}.assurance-panel{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:30px;border-top:1px solid rgba(255,255,255,.12);align-items:stretch}.assurance-panel>div{padding:28px 28px 8px 0}.assurance-panel>.benefit-panel{padding-left:30px;border-left:1px solid rgba(255,255,255,.12)}.assurance-panel h4,.benefit-panel h4{font-size:22px;line-height:1.3;margin:0 0 14px;color:#fff}.benefit-panel p:last-child{font-weight:750;color:#fff}
+/* After */
+.after-intro{max-width:900px}.after-options{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:28px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.after-option{position:relative;padding:28px 28px 28px 0}.after-option+ .after-option{padding-left:28px;border-left:1px solid var(--line)}.option-mark{display:block;width:34px;height:3px;background:var(--orange);margin-bottom:15px}.after-option h4{font-size:20px;margin:0 0 8px}.after-option p{margin:0}.after-closing{max-width:900px}
+/* Final */
+.method-road{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12);align-items:stretch}.method-phase{padding:28px 30px 30px 0;display:flex;flex-direction:column}.method-phase+ .method-phase{padding-left:30px;border-left:1px solid rgba(255,255,255,.12)}.method-phase h3{font-size:24px;margin:0 0 18px}.method-steps{display:grid;gap:7px}.method-step{display:grid;grid-template-columns:20px 10px 1fr;gap:6px;align-items:start}.method-step b{color:#ff9a3d}.method-step span{font-size:13px;line-height:1.35;color:#c5d2db}.method-summary{margin-top:auto;padding-top:15px;border-top:1px solid rgba(255,255,255,.08)}.method-summary p{font-size:14px;margin:0;color:#fff;font-weight:700}.principle-zone{margin:0;padding:0;border-top:0}.triad-title.invert{color:#fff;margin:0 0 22px}.principle-copy{max-width:900px}.principle-copy p{margin:9px 0}.principle-copy p:nth-child(2){font-size:20px;color:#fff;font-weight:850}.principle-copy p:nth-child(3){font-size:18px;color:#ffb06b;font-weight:800}.mantra-zone{margin:0;padding:0 0 0 38px;border-top:0;border-left:1px solid rgba(255,255,255,.12)}.mantra-line{display:grid;gap:12px;align-items:start;justify-content:stretch}.mantra-line span{font-size:clamp(22px,2.05vw,30px);font-weight:850;letter-spacing:-.025em;white-space:nowrap}.mantra-line span:not(:last-child):after{content:none}.mantra-zone>p{margin:22px 0 0;max-width:880px}
+
+/* Audited refinements */
+.intro-narrative p:last-child{font-weight:800;color:var(--ink);margin-bottom:0}
+.final-logic{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:46px;margin-top:42px;padding-top:4px;align-items:start}
+/* Responsive */
+@media(max-width:1380px) and (min-width:1251px){.page-card{width:1192px;max-width:calc(100% - 48px)}}
+@media(max-width:1250px) and (min-width:1001px){.page-card{width:calc(100% - 44px);max-width:none}.card-inner{padding-left:44px;padding-right:44px}}
+@media(max-width:1000px){.final-logic{grid-template-columns:1fr;gap:28px;margin-top:32px}.mantra-zone{border-left:0;border-top:1px solid rgba(255,255,255,.12);padding-left:0;padding-top:26px}.timeline-dense .timeline-name{font-size:13px}.page-card{width:calc(100% - 36px);max-width:none;margin-top:24px;border-radius:24px}.card-inner{padding:50px 34px 56px}.hero-grid{grid-template-columns:1fr}.hero-visual{max-width:430px}.hero-title span{white-space:nowrap}.intro-layout,.transparency-flow,.assurance-panel{grid-template-columns:1fr}.intro-narrative,.principle-field{border:0;padding:0}.facts-grid{grid-template-columns:1fr}.phase-selector{grid-template-columns:1fr}.phase-card{display:grid;grid-template-columns:34% 1fr}.phase-card img{height:100%;aspect-ratio:auto}.phase-panel{padding:28px}.timeline{display:block;margin-left:12px;padding:0}.timeline:before{left:21px;right:auto;top:22px;bottom:22px;width:2px;height:auto}.timeline-step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;text-align:left;padding:9px 0;width:100%}.timeline-letter{margin:0;box-shadow:0 0 0 5px #0a1d30}.timeline-name{font-size:13px}.step-support-grid{grid-template-columns:1fr}.step-support.result{grid-column:auto;grid-template-columns:1fr;gap:6px}.roles-composition,.decision-path,.foundation-grid,.after-options,.method-road{grid-template-columns:1fr}.role-column,.role-column+.role-column{padding:24px 0;border-left:0;border-top:1px solid rgba(255,255,255,.12)}.role-column:first-child{border-top:0}.decision-path{padding-left:24px}.decision-path:before{left:10px;right:auto;top:10px;bottom:10px;width:2px;height:auto}.decision-stop{padding:0 0 22px 26px}.decision-node{left:-24px;top:2px}.foundation-item,.foundation-item:nth-child(3n),.foundation-item:nth-child(-n+3){border-right:0;border-bottom:1px solid rgba(255,255,255,.10)}.foundation-item:last-child{border-bottom:0}.assurance-panel>.benefit-panel{border-left:0;border-top:1px solid rgba(255,255,255,.12);padding-left:0}.after-option,.after-option+.after-option,.method-phase,.method-phase+.method-phase{padding:24px 0;border-left:0;border-top:1px solid var(--line)}.method-phase+.method-phase{border-color:rgba(255,255,255,.12)}.after-option:first-child,.method-phase:first-child{border-top:0}.mantra-line span{white-space:nowrap}}
+@media(max-width:640px){main{padding-top:18px}.page-card{width:calc(100% - 28px);margin-top:20px;border-radius:22px}.card-inner{padding:42px 22px 48px}.hero-title{font-size:clamp(23px,7vw,31px)}.hero-title span{white-space:nowrap}.triad-title{font-size:clamp(13px,4.35vw,25px)!important;letter-spacing:-.01em!important}.phase-panel{padding:22px 18px}.phase-card{grid-template-columns:1fr}.phase-card img{aspect-ratio:16/7.5}.step-title-row h4{font-size:23px}.roles-composition{margin-top:20px}.method-step span{font-size:12.5px}.mantra-line span{font-size:24px}}
+
+/* CTA – helle Mastervariante, identisch zur verbindlichen Website-Logik */
+main > .closing{
+  width:1176px;
+  max-width:calc(100% - 64px);
+  margin:36px auto 0;
+  box-sizing:border-box;
+  border-radius:var(--radius);
+  overflow:hidden;
+  padding:34px var(--padx) 38px;
+  position:relative;
+}
+main > .closing .closing-inner{width:100%;max-width:none;margin:0;position:relative;z-index:3}
+.closing.closing-light{
+  color:#0b1c2e;
+  border:1px solid rgba(18,43,64,.12);
+  background:
+    radial-gradient(circle at 82% 24%,rgba(37,78,111,.13),transparent 31%),
+    radial-gradient(circle at 18% 82%,rgba(11,28,46,.055),transparent 34%),
+    linear-gradient(118deg,#ffffff 0%,#f7fafc 48%,#edf3f7 100%);
+  box-shadow:
+    0 34px 72px rgba(7,21,37,.18),
+    0 12px 28px rgba(18,43,64,.10),
+    inset 0 1px 0 rgba(255,255,255,.98),
+    inset 0 -1px 0 rgba(18,43,64,.05);
+}
+.closing.closing-light::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(11,28,46,.035),transparent 23%,transparent 72%,rgba(18,43,64,.045)),
+    linear-gradient(180deg,rgba(255,255,255,.72),transparent 38%);
+  z-index:1;
+}
+.closing.closing-light .eyebrow{color:var(--orange)}
+.closing.closing-light h2{color:#0a2032;text-shadow:0 1px 0 rgba(255,255,255,.92)}
+.closing.closing-light .closing-copy{color:#536c7d}
+.closing.closing-light .top-streak{
+  background:linear-gradient(90deg,var(--orange),rgba(237,122,22,.06));
+  box-shadow:0 5px 14px rgba(237,122,22,.17);
+}
+.closing.closing-light .closing-shapes{opacity:.74}
+.closing.closing-light .closing-shapes span{
+  border-color:rgba(18,43,64,.13);
+  background:linear-gradient(145deg,rgba(38,79,111,.10),rgba(255,255,255,.02));
+  box-shadow:10px 16px 28px rgba(7,21,37,.055),inset 0 1px 0 rgba(255,255,255,.58);
+}
+.closing.closing-light .closing-shapes span:nth-child(1){
+  border-color:rgba(237,122,22,.58);
+  box-shadow:0 0 18px rgba(237,122,22,.12),12px 18px 30px rgba(7,21,37,.06);
+}
+.closing.closing-light .closing-shapes span:nth-child(2){border-color:rgba(237,122,22,.38)}
+.closing.closing-light .primary-btn{
+  box-shadow:0 14px 26px rgba(237,122,22,.28),0 5px 12px rgba(7,21,37,.10),inset 0 1px 0 rgba(255,255,255,.44),inset 0 -2px 0 rgba(116,42,0,.22);
+}
+.closing.closing-light .secondary-btn{
+  color:#17364d;
+  background:linear-gradient(180deg,#fff 0%,#f1f6f9 100%);
+  border:1px solid rgba(18,43,64,.16);
+  box-shadow:0 14px 28px rgba(7,21,37,.14),0 4px 10px rgba(18,43,64,.08),inset 0 1px 0 rgba(255,255,255,1),inset 0 -2px 0 rgba(18,43,64,.06);
+}
+.closing.closing-light .secondary-btn:hover{
+  background:linear-gradient(180deg,#fff 0%,#f6f9fb 100%);
+  box-shadow:0 18px 34px rgba(7,21,37,.17),0 5px 12px rgba(18,43,64,.09),inset 0 1px 0 rgba(255,255,255,1);
+}
+@media(max-width:1380px) and (min-width:1251px){main > .closing{width:1192px;max-width:calc(100% - 48px)}}
+@media(max-width:1250px) and (min-width:1001px){main > .closing{width:calc(100% - 44px);max-width:none;padding-left:44px;padding-right:44px}}
+@media(max-width:1000px){main > .closing{width:calc(100% - 36px);max-width:none;margin-top:24px;border-radius:24px;padding:34px 34px 38px}}
+@media(max-width:640px){main > .closing{width:calc(100% - 28px);margin-top:20px;border-radius:22px;padding:34px 22px 38px}}
+
+/* =========================
+   FOOTER – verbindliche Startseite
+   ========================= */
+.site-footer{background:linear-gradient(180deg,#06111c,#07131e);color:#dce5eb;border-top:1px solid rgba(127,164,189,.14)}
+.footer-main{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:27px 32px 25px;display:grid;grid-template-columns:1.55fr .9fr 1fr 1fr;gap:58px}
+.footer-brand{display:flex;align-items:flex-start;gap:15px}
+.footer-logo{
+  width:62px;height:62px;object-fit:cover;border-radius:50%;
+  box-shadow:0 9px 24px rgba(0,0,0,.34),0 0 0 1px rgba(255,255,255,.06);
+}
+.footer-brand-copy{display:flex;flex-direction:column;gap:8px}
+.footer-brand strong{
+  display:block;color:#fff;font-size:20px;line-height:1;font-weight:850;letter-spacing:.065em;margin:0;
+}
+.footer-brand small{
+  color:#8baac0;font-size:11px;font-weight:760;letter-spacing:.16em;
+}
+.footer-brand p{margin:7px 0 0;color:#86a3b8;font-size:13px;line-height:1.6}
+.brand-triad{display:flex !important;justify-content:space-between;align-items:center;width:100%;white-space:nowrap}
+.brand-triad span{display:inline-block}
+
+.footer-column h3{margin:3px 0 15px;color:#7da3bf;font-size:11px;letter-spacing:.19em}
+.footer-column>a{display:flex;justify-content:flex-start;gap:12px;color:#fff;text-decoration:none;font-size:13px;margin:0 0 9px;line-height:1.25}
+.footer-column>a span{color:var(--orange);opacity:.95}.footer-column>a:hover{color:#a9c1d2;transform:translateX(2px)}
+.footer-contact p{margin:0 0 14px;color:#8aa4b7;font-size:13px;line-height:1.55}
+.footer-contact-link{font-weight:800!important}
+.footer-bottom{width:min(100%,var(--max));max-width:var(--max);margin:auto;padding:18px 32px 21px;border-top:1px solid rgba(127,164,189,.11);display:flex;justify-content:space-between;color:#7392a9;font-size:11px}
+.footer-bottom div{display:flex;gap:30px}.footer-bottom a{color:#83a1b7;text-decoration:none}.footer-bottom a:hover{color:#fff}
+
+
+
+/* FOOTER – finale Feinjustierungen der verbindlichen Startseite */
+.site-footer .footer-logo{transform:translateY(-7px) !important;}
+.site-footer .footer-brand-copy{transform:translateY(3.1181px) !important;}
+.site-footer .footer-brand-copy .brand-triad{width:calc(100% - 0.6cm + 5px) !important;}
+
+</style>
+</head><body><header class="site-header"><div class="nav-shell">
+<a aria-label="KI Beratung Rachau Startseite" class="brand" href="https://www.ki-beratung-rachau.de/Startseite"><img alt="KI Beratung Rachau Logo" class="brand-logo" src="logo-gross-dunkel.png"/><span class="brand-copy"><strong>KI BERATUNG RACHAU</strong><small class="brand-triad"><span>ANALYSE</span><span>·</span><span>PLANUNG</span><span>·</span><span>UMSETZUNG</span></small></span></a>
+<button aria-controls="mainnav" aria-expanded="false" class="menu-toggle">Menü</button>
+<nav id="mainnav" class="mainnav" aria-label="Hauptnavigation">
+      <a href="https://www.ki-beratung-rachau.de/Startseite">Startseite</a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" type="button" aria-expanded="false" aria-controls="leistungen-dropdown">Leistungen</button>
+        <div class="dropdown-panel" id="leistungen-dropdown" role="menu">
+          <a href="https://www.ki-beratung-rachau.de/Leistungen" role="menuitem">Leistungsübersicht</a>
+          <a href="https://www.ki-beratung-rachau.de/Leistungen/Beratung" role="menuitem">Beratung</a>
+          <a href="https://www.ki-beratung-rachau.de/Leistungen/Automatisierung" role="menuitem">Automatisierung</a>
+          <a href="https://www.ki-beratung-rachau.de/Leistungen/Kundengewinnung" role="menuitem">Kundengewinnung</a>
+          <a href="https://www.ki-beratung-rachau.de/Leistungen/Schulungen" role="menuitem">Schulungen</a>
+          <a href="https://www.ki-beratung-rachau.de/Leistungen/Individuelle-Loesungen" role="menuitem">Individuelle Lösungen</a>
+        </div>
+      </div>
+      <a href="https://www.ki-beratung-rachau.de/Wirtschaftlichkeit-ROI">Wirtschaftlichkeit &amp; ROI</a>
+      <a class="active" aria-current="page" href="https://www.ki-beratung-rachau.de/Zusammenarbeit">Zusammenarbeit</a>
+      <a href="https://www.ki-beratung-rachau.de/Referenzen">Referenzen</a>
+      <div class="nav-dropdown">
+        <button class="nav-link dropdown-trigger" type="button" aria-expanded="false" aria-controls="unternehmen-dropdown">KI Beratung Rachau</button>
+        <div class="dropdown-panel" id="unternehmen-dropdown" role="menu">
+          <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Haltung" role="menuitem">Haltung</a>
+          <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Empfehlungsprogramm" role="menuitem">Empfehlungsprogramm</a>
+          <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Social-Media" role="menuitem">Social Media</a>
+          <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/FAQ" role="menuitem">FAQ</a>
+          <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Support" role="menuitem">Support</a>
+        </div>
+      </div>
+      <a class="contact-btn" href="https://www.ki-beratung-rachau.de/Kontakt">Kontakt aufnehmen <span>→</span></a>
+    </nav></div></header><main><section class="page-card hero-card dark-card"><div class="card-inner hero-grid"><figure class="hero-visual"><img alt="Geordneter mehrstufiger Aufbau als Symbol für die Zusammenarbeit" src="hero.jpg"/></figure><div class="hero-copy"><span class="kicker">ZUSAMMENARBEIT</span><h1 class="hero-title"><span>Strukturiert analysieren.</span><span>Durchdacht planen.</span><span>Transparent umsetzen.</span></h1><p>Eine erfolgreiche Zusammenarbeit beginnt nicht mit einer vorgefertigten Lösung.</p><p>Bevor über Automatisierung, künstliche Intelligenz, digitale Systeme oder konkrete technische Möglichkeiten gesprochen wird, muss zunächst verstanden werden, <strong>was ein Unternehmen erreichen möchte und ob eine Zusammenarbeit dafür überhaupt sinnvoll ist.</strong></p><p>Die Zusammenarbeit mit der KI Beratung Rachau folgt deshalb einem klaren Grundprinzip:</p></div></div></section><section class="page-card light-card intro-card"><div class="card-inner"><div class="section-head"><span class="kicker">GRUNDPRINZIP</span><h2 class="triad-title">ANALYSE · PLANUNG · UMSETZUNG</h2></div><div class="intro-layout"><div class="intro-narrative"><p>Diese drei Hauptphasen bilden den Rahmen der Zusammenarbeit.</p><p>Jede Hauptphase besteht aus mehreren aufeinander aufbauenden Unterphasen. Dadurch entsteht ein nachvollziehbarer Projektverlauf, bei dem Entscheidungen nicht vorweggenommen werden und technische Lösungen erst dann betrachtet werden, wenn ausreichend Klarheit über Ziel, Anforderungen und Nutzen besteht.</p><p>Der Ablauf soll für Sie jederzeit nachvollziehbar bleiben.</p></div><div class="intro-facts"><p class="facts-label">Sie sollen wissen:</p><div class="facts-grid"><div class="fact-item"><span class="fact-mark"></span><p>wo sich das Projekt aktuell befindet,</p></div><div class="fact-item"><span class="fact-mark"></span><p>was in der jeweiligen Phase betrachtet oder erarbeitet wird,</p></div><div class="fact-item"><span class="fact-mark"></span><p>warum dieser Schritt notwendig ist,</p></div><div class="fact-item"><span class="fact-mark"></span><p>welche Erkenntnisse daraus entstehen,</p></div><div class="fact-item"><span class="fact-mark"></span><p>welche Mitwirkung von Ihrem Unternehmen erforderlich ist,</p></div><div class="fact-item"><span class="fact-mark"></span><p>und welche Entscheidung anschließend getroffen werden kann.</p></div></div><p>Zusammenarbeit wird dabei nicht als undurchsichtiger Prozess verstanden, bei dem ein Auftrag übergeben und zu einem späteren Zeitpunkt lediglich eine fertige Lösung präsentiert wird.</p><p>Gerade während Planung, Entwicklung und Erprobung bleiben relevante Projektstände transparent.</p><p>Sie werden dort einbezogen, wo Ihre betriebliche Erfahrung, Ihre Entscheidung oder Ihre Freigabe erforderlich ist.</p></div></div></div></section><section class="page-card dark-card process-card"><div class="card-inner"><div class="section-head"><span class="kicker">PROJEKTVERLAUF</span><h2>Analyse, Planung und Umsetzung bilden einen aufeinander aufbauenden Projektweg.</h2><p class="section-lead">Wählen Sie eine Hauptphase aus. Innerhalb der geöffneten Phase führt der Zeitstrahl zu den einzelnen Unterphasen.</p></div><div class="phase-selector"><button aria-expanded="false" class="phase-card" data-phase="analyse" type="button"><img alt="ANALYSE – Leitbild" src="analyse.jpg"/><span class="phase-card-copy"><strong>ANALYSE</strong><span>Verstehen, bevor entschieden wird.</span><em>Phase öffnen <b>→</b></em></span></button><button aria-expanded="false" class="phase-card" data-phase="planung" type="button"><img alt="PLANUNG – Leitbild" src="planung.jpg"/><span class="phase-card-copy"><strong>PLANUNG</strong><span>Aus einer sinnvollen Möglichkeit wird ein konkreter Weg.</span><em>Phase öffnen <b>→</b></em></span></button><button aria-expanded="false" class="phase-card" data-phase="umsetzung" type="button"><img alt="UMSETZUNG – Leitbild" src="umsetzung.jpg"/><span class="phase-card-copy"><strong>UMSETZUNG</strong><span>Aus Planung wird eine nutzbare Lösung.</span><em>Phase öffnen <b>→</b></em></span></button></div><div class="phase-panel" hidden="" id="phase-analyse"><div class="phase-deck"><span class="kicker">HAUPTPHASE</span><h2>ANALYSE</h2><div class="phase-intro"><h3>Verstehen, bevor entschieden wird.</h3><p>Die Analyse bildet die Grundlage der Zusammenarbeit.</p><p>Sie beginnt bewusst nicht mit einer detaillierten Betrachtung bestehender Prozesse.</p><p>Denn bevor untersucht werden kann, <strong>welche Abläufe relevant sind</strong>, muss zunächst verstanden werden, <strong>wer das Unternehmen ist, welches Anliegen besteht und welches Ziel überhaupt verfolgt werden soll.</strong></p><p>Erst auf dieser Grundlage kann gezielt entschieden werden, welche Bereiche näher betrachtet werden müssen.</p><p>Die Analyse folgt deshalb sieben aufeinander aufbauenden Schritten:</p></div><div aria-label="Ablauf ANALYSE" class="timeline" style="--count:7"><button aria-expanded="false" class="timeline-step" data-step="analyse-step-0" type="button"><span class="timeline-letter">A</span><span class="timeline-name">Annäherung</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-1" type="button"><span class="timeline-letter">N</span><span class="timeline-name">Nutzenziel bestimmen</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-2" type="button"><span class="timeline-letter">A</span><span class="timeline-name">Abläufe untersuchen</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-3" type="button"><span class="timeline-letter">L</span><span class="timeline-name">Leistungs<wbr/>potenziale identifizieren</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-4" type="button"><span class="timeline-letter">Y</span><span class="timeline-name">Yield bewerten</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-5" type="button"><span class="timeline-letter">S</span><span class="timeline-name">Sinnhaftigkeit bewerten</span></button><button aria-expanded="false" class="timeline-step" data-step="analyse-step-6" type="button"><span class="timeline-letter">E</span><span class="timeline-name">Entscheidung vorbereiten</span></button></div></div><div class="step-stage"><article class="step-panel" hidden="" id="analyse-step-0">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">A</span><div><span class="step-phase">ANALYSE</span><h4>A – Annäherung</h4></div></div>
+<p class="step-subtitle">Zunächst geht es darum, einander kennenzulernen.</p>
+<div class="step-main-copy"><p>Die erste Phase dient der Orientierung.</p><p>Dabei geht es zunächst nicht um eine tiefgehende Prozessaufnahme und auch nicht darum, bereits eine bestimmte technische Lösung zu entwickeln.</p><p>Im Vordergrund steht ein grundlegendes Verständnis dafür, welches Unternehmen hinter der Anfrage steht, welches Anliegen besteht und aus welchem Grund eine mögliche Zusammenarbeit gesucht wird.</p><p>Dabei werden beispielsweise betrachtet:</p><ul class="clean-list"><li>welches Unternehmen hinter der Anfrage steht,</li><li>in welchem Umfeld das Unternehmen tätig ist,</li><li>welches grundlegende Anliegen besteht,</li><li>welche Erwartungen mit einer möglichen Zusammenarbeit verbunden sind,</li><li>ob bereits konkrete Vorstellungen vorhanden sind,</li><li>und ob das Thema grundsätzlich in den Leistungsbereich der KI Beratung Rachau passt.</li></ul><p>Ebenso wichtig ist die gegenseitige Passung.</p><p>Eine professionelle Zusammenarbeit entsteht nicht allein dadurch, dass ein Unternehmen eine Dienstleistung anfragt.</p><p>Auch aus Sicht der KI Beratung Rachau muss die Einschätzung bestehen, dass die Aufgabenstellung sinnvoll bearbeitet werden kann und die Voraussetzungen für eine konstruktive Zusammenarbeit gegeben sind.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Sie verhindert, dass bereits zu Beginn über Lösungen gesprochen wird, obwohl noch nicht klar ist, welches eigentliche Anliegen besteht.</p><p>Gleichzeitig schafft sie eine Grundlage für ein gemeinsames Verständnis der Zusammenarbeit.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten eine erste fachliche Einordnung Ihrer Anfrage, ohne bereits einen vollständigen Projektprozess durchlaufen zu müssen.</p><p>Gleichzeitig entsteht Klarheit darüber, ob und in welcher Form eine weitere Zusammenarbeit sinnvoll erscheint.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein grundlegendes gegenseitiges Verständnis und eine erste Einschätzung, ob das Anliegen sinnvoll weiterverfolgt werden kann.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-1">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">N</span><div><span class="step-phase">ANALYSE</span><h4>N – Nutzenziel bestimmen</h4></div></div>
+<p class="step-subtitle">Was soll sich für Ihr Unternehmen tatsächlich verbessern?</p>
+<div class="step-main-copy"><p>Nachdem ein grundlegendes Verständnis für Unternehmen und Anliegen besteht, wird das angestrebte Ergebnis genauer betrachtet.</p><p>Dabei geht es ausdrücklich noch nicht darum, eine technische Lösung festzulegen.</p><p>Zunächst wird geklärt, <strong>welche Verbesserung das Unternehmen erreichen möchte.</strong></p><p>Ein Nutzenziel kann sehr unterschiedlich aussehen.</p><p>Beispielsweise kann es darum gehen:</p><ul class="clean-list"><li>wiederkehrende Tätigkeiten zu reduzieren,</li><li>Bearbeitungszeiten zu verkürzen,</li><li>Abläufe zuverlässiger zu gestalten,</li><li>Informationen schneller verfügbar zu machen,</li><li>Fehlerquellen zu verringern,</li><li>bestehende Strukturen besser miteinander zu verbinden,</li><li>Mitarbeiter zu entlasten,</li><li>Kundenprozesse zu verbessern,</li><li>oder neue digitale Möglichkeiten sinnvoll zu erschließen.</li></ul><p>Entscheidend ist nicht, ob der Kunde bereits weiß, wie dieses Ziel technisch erreicht werden könnte.</p><p>Die Aufgabe dieser Phase besteht gerade darin, <strong>das gewünschte Ergebnis von einer vorschnell angenommenen Lösung zu trennen.</strong></p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ohne ein klares Ziel lässt sich später nicht bestimmen, welche Abläufe überhaupt untersucht werden müssen.</p><p>Wer zu früh mit einer Prozessanalyse beginnt, läuft Gefahr, große Teile eines Unternehmens zu betrachten, die mit dem eigentlichen Anliegen gar nichts zu tun haben.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten Klarheit darüber, welches Ergebnis tatsächlich verfolgt werden soll.</p><p>Das schafft einen klaren Bezugspunkt für alle folgenden Entscheidungen.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein nachvollziehbar definiertes Nutzenziel als Orientierung für die weitere Analyse.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-2">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">A</span><div><span class="step-phase">ANALYSE</span><h4>A – Abläufe untersuchen</h4></div></div>
+<p class="step-subtitle">Jetzt wird gezielt betrachtet, was für das zuvor definierte Ziel relevant ist.</p>
+<div class="step-main-copy"><p>Erst nachdem feststeht, welche Veränderung oder Verbesserung erreicht werden soll, werden die dafür relevanten Abläufe untersucht.</p><p>Es geht dabei nicht darum, sämtliche Prozesse eines Unternehmens vollständig aufzunehmen.</p><p>Betrachtet werden die Bereiche, die für das definierte Nutzenziel tatsächlich relevant sind.</p><p>Dabei kann beispielsweise untersucht werden:</p><ul class="clean-list"><li>welche Arbeitsschritte aufeinander folgen,</li><li>welche Informationen benötigt werden,</li><li>wo Übergaben stattfinden,</li><li>welche Systeme beteiligt sind,</li><li>wo manuelle Tätigkeiten entstehen,</li><li>wo Informationen mehrfach verarbeitet werden,</li><li>wo Wartezeiten oder Medienbrüche auftreten,</li><li>und welche Abhängigkeiten zwischen einzelnen Arbeitsschritten bestehen.</li></ul><p>Dabei wird nicht nur der einzelne Arbeitsschritt betrachtet.</p><p>Entscheidend ist das Zusammenspiel innerhalb des relevanten Prozesses.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine technische Verbesserung kann nur dann sinnvoll geplant werden, wenn verstanden wurde, wie der betreffende Ablauf tatsächlich funktioniert.</p><p>Ein einzelner Schritt lässt sich möglicherweise sehr einfach automatisieren.</p><p>Das bedeutet jedoch nicht automatisch, dass dadurch der gesamte Prozess besser wird.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Die Untersuchung konzentriert sich auf die Bereiche, die für Ihr definiertes Ziel relevant sind.</p><p>Dadurch entsteht kein unnötig breites Analyseprojekt.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein strukturiertes Verständnis der für das Nutzenziel relevanten Abläufe und Zusammenhänge.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-3">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">L</span><div><span class="step-phase">ANALYSE</span><h4>L – Leistungspotenziale identifizieren</h4></div></div>
+<p class="step-subtitle">Wo kann tatsächlich eine Verbesserung entstehen?</p>
+<div class="step-main-copy"><p>Nachdem die relevanten Abläufe verstanden wurden, wird untersucht, an welchen Stellen ein konkretes Verbesserungspotenzial besteht.</p><p>Dabei wird bewusst technologieoffen betrachtet.</p><p>Die Lösung muss nicht zwangsläufig in künstlicher Intelligenz oder umfassender Automatisierung bestehen.</p><p>Je nach Ausgangslage kann eine sinnvolle Verbesserung beispielsweise durch:</p><ul class="clean-list"><li>Vereinfachung eines Ablaufs,</li><li>bessere Strukturierung von Informationen,</li><li>Reduzierung manueller Tätigkeiten,</li><li>Verbindung bestehender Systeme,</li><li>gezielte Automatisierung,</li><li>Unterstützung durch KI,</li><li>bessere Datenverfügbarkeit,</li><li>klarere Zuständigkeiten,</li><li>oder eine Kombination verschiedener Maßnahmen</li></ul><p>entstehen.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Nicht jede technische Möglichkeit ist automatisch ein relevantes Leistungspotenzial.</p><p>Eine Maßnahme ist erst dann interessant, wenn sie einen sinnvollen Beitrag zum zuvor definierten Ziel leisten kann.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten keine allgemeine Sammlung möglicher Technologien.</p><p>Stattdessen werden konkrete Bereiche identifiziert, bei denen eine Verbesserung im Zusammenhang mit Ihrem tatsächlichen Unternehmensziel sinnvoll erscheint.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Nachvollziehbare Handlungsfelder mit erkennbarem Verbesserungspotenzial.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-4">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">Y</span><div><span class="step-phase">ANALYSE</span><h4>Y – Yield bewerten</h4></div></div>
+<p class="step-subtitle">Welchen Nutzen kann die Veränderung tatsächlich erzeugen?</p>
+<div class="step-main-copy"><p>Nachdem relevante Leistungspotenziale identifiziert wurden, wird betrachtet, welchen möglichen Nutzen diese für das Unternehmen haben können.</p><p>Der Begriff <strong>Yield</strong> beschreibt an dieser Stelle den erwartbaren Ertrag beziehungsweise den betrieblichen Nutzen einer möglichen Veränderung.</p><p>Dieser Nutzen muss nicht ausschließlich finanzieller Natur sein.</p><p>Relevant können beispielsweise sein:</p><ul class="clean-list"><li>eingesparte Arbeitszeit,</li><li>geringerer manueller Aufwand,</li><li>schnellere Bearbeitung,</li><li>verbesserte Prozesssicherheit,</li><li>geringere Fehleranfälligkeit,</li><li>bessere Verfügbarkeit von Informationen,</li><li>Entlastung von Mitarbeitern,</li><li>höhere Skalierbarkeit,</li><li>oder eine bessere Qualität bestehender Abläufe.</li></ul><p>Die zentrale Frage lautet:</p><p class="rhetorical-line">Was kann diese Veränderung Ihrem Unternehmen tatsächlich bringen?</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Viele technische Lösungen wirken zunächst interessant.</p><p>Erst die Betrachtung des konkreten Nutzens zeigt jedoch, ob daraus ein relevanter Mehrwert für das Unternehmen entstehen kann.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Mögliche Maßnahmen werden nicht nach ihrer technischen Attraktivität bewertet, sondern danach, welchen konkreten Beitrag sie für Ihr Unternehmen leisten können.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine nachvollziehbare Einschätzung des erwartbaren betrieblichen Nutzens.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-5">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">S</span><div><span class="step-phase">ANALYSE</span><h4>S – Sinnhaftigkeit bewerten</h4></div></div>
+<p class="step-subtitle">Nicht alles, was Nutzen verspricht, sollte automatisch umgesetzt werden.</p>
+<div class="step-main-copy"><p>Ein mögliches Leistungspotenzial und ein erkennbarer Nutzen reichen noch nicht aus, um eine Umsetzung zu empfehlen.</p><p>Deshalb wird anschließend betrachtet, ob die jeweilige Maßnahme unter den tatsächlichen Bedingungen sinnvoll erscheint.</p><p>Dabei können unter anderem folgende Faktoren eine Rolle spielen:</p><ul class="clean-list"><li>erwartbarer Nutzen,</li><li>erforderlicher Aufwand,</li><li>technische Komplexität,</li><li>organisatorische Auswirkungen,</li><li>Abhängigkeiten von bestehenden Systemen,</li><li>notwendige Ressourcen,</li><li>mögliche Risiken,</li><li>und die langfristige Praktikabilität.</li></ul><p>Dabei kann auch die Entscheidung entstehen, eine ursprünglich angedachte Lösung nicht weiterzuverfolgen.</p><p>Ebenso kann sich herausstellen, dass eine einfachere Maßnahme geeigneter ist als eine technisch umfangreichere Lösung.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Die Aufgabe einer Beratung besteht nicht darin, möglichst viel Technologie einzusetzen.</p><p>Sie besteht darin, eine Lösung zu empfehlen, die zur tatsächlichen Aufgabenstellung und zum Unternehmen passt.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten eine realistische Einschätzung darüber, welche Möglichkeiten tatsächlich sinnvoll weiterverfolgt werden sollten.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine fundierte Bewertung der identifizierten Handlungsfelder und ihrer tatsächlichen Sinnhaftigkeit.</p></div></div>
+</article><article class="step-panel" hidden="" id="analyse-step-6">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">E</span><div><span class="step-phase">ANALYSE</span><h4>E – Entscheidung vorbereiten</h4></div></div>
+<p class="step-subtitle">Aus Erkenntnissen entsteht eine belastbare Entscheidungsgrundlage.</p>
+<div class="step-main-copy"><p>Zum Abschluss der Analyse werden die gewonnenen Informationen zusammengeführt.</p><p>Zu diesem Zeitpunkt ist geklärt:</p><ul class="clean-list"><li>welches Ziel verfolgt wird,</li><li>welche Abläufe dafür relevant sind,</li><li>welche Verbesserungspotenziale bestehen,</li><li>welchen möglichen Nutzen diese erzeugen können,</li><li>und welche davon tatsächlich sinnvoll erscheinen.</li></ul><p>Auf dieser Grundlage kann entschieden werden, welche Themen in die nächste Hauptphase überführt werden.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Die Entscheidung für eine spätere Lösung erfolgt nicht auf Grundlage einer Vermutung oder einer spontanen technischen Idee.</p><p>Sie basiert auf einer nachvollziehbaren Analyse.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie können fundiert entscheiden, ob ein Thema weiterverfolgt werden soll und welche Bereiche für eine konkrete Planung geeignet sind.</p></div></div>
+</article></div><div class="phase-result"><span>Ergebnis der ANALYSE</span><p>Eine klare Zielsetzung, ein strukturiertes Verständnis der relevanten Abläufe, identifizierte Verbesserungspotenziale und eine fundierte Grundlage für die Entscheidung über die weitere Planung.</p></div></div><div class="phase-panel" hidden="" id="phase-planung"><div class="phase-deck"><span class="kicker">HAUPTPHASE</span><h2>PLANUNG</h2><div class="phase-intro"><h3>Aus einer sinnvollen Möglichkeit wird ein konkreter Weg.</h3><p>Die Analyse beantwortet die Frage:</p><p><strong>Wo besteht ein sinnvoller Ansatzpunkt?</strong></p><p>Die Planung beantwortet anschließend:</p><p class="phase-rhetoric">Wie soll daraus eine tragfähige Lösung entstehen?</p><p>Jetzt wird aus einer grundsätzlich sinnvollen Möglichkeit ein konkretes Projekt.</p><p>Dabei werden Prioritäten gesetzt, geeignete Lösungswege entwickelt, Anforderungen definiert und die Voraussetzungen für eine spätere Umsetzung geklärt.</p><p>Die Planung folgt sieben aufeinander aufbauenden Schritten:</p></div><div aria-label="Ablauf PLANUNG" class="timeline" style="--count:7"><button aria-expanded="false" class="timeline-step" data-step="planung-step-0" type="button"><span class="timeline-letter">P</span><span class="timeline-name">Prioritäten festlegen</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-1" type="button"><span class="timeline-letter">L</span><span class="timeline-name">Lösungsweg entwickeln</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-2" type="button"><span class="timeline-letter">A</span><span class="timeline-name">Anforderungen definieren</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-3" type="button"><span class="timeline-letter">N</span><span class="timeline-name">Neben<wbr/>bedingungen und Ressourcen klären</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-4" type="button"><span class="timeline-letter">U</span><span class="timeline-name">Umsetzung strukturieren</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-5" type="button"><span class="timeline-letter">N</span><span class="timeline-name">Nutzenkriterien festlegen</span></button><button aria-expanded="false" class="timeline-step" data-step="planung-step-6" type="button"><span class="timeline-letter">G</span><span class="timeline-name">Gemeinsame Entscheidung<wbr/> treffen</span></button></div></div><div class="step-stage"><article class="step-panel" hidden="" id="planung-step-0">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">P</span><div><span class="step-phase">PLANUNG</span><h4>P – Prioritäten festlegen</h4></div></div>
+<p class="step-subtitle">Nicht jedes Potenzial muss gleichzeitig umgesetzt werden.</p>
+<div class="step-main-copy"><p>Aus der Analyse können mehrere sinnvolle Handlungsfelder entstehen.</p><p>Diese werden nun eingeordnet und priorisiert.</p><p>Dabei kann beispielsweise betrachtet werden:</p><ul class="clean-list"><li>welcher Nutzen erwartet wird,</li><li>welche Dringlichkeit besteht,</li><li>welche Maßnahmen aufeinander aufbauen,</li><li>welche Bereiche besonders relevant sind,</li><li>und welche Umsetzung im Verhältnis zum Aufwand sinnvoll erscheint.</li></ul></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ein Unternehmen muss nicht alle erkannten Möglichkeiten gleichzeitig verfolgen.</p><p>Eine klare Priorisierung verhindert unnötig große Projekte und konzentriert Ressourcen auf die Bereiche mit der höchsten Relevanz.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten eine nachvollziehbare Reihenfolge und können gezielt dort beginnen, wo der sinnvollste Ansatzpunkt besteht.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine priorisierte Auswahl der Handlungsfelder, die konkret weitergeplant werden sollen.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-1">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">L</span><div><span class="step-phase">PLANUNG</span><h4>L – Lösungsweg entwickeln</h4></div></div>
+<p class="step-subtitle">Wie kann das definierte Ziel sinnvoll erreicht werden?</p>
+<div class="step-main-copy"><p>Für die priorisierten Handlungsfelder wird nun ein geeigneter Lösungsweg entwickelt.</p><p>Dabei wird betrachtet, welche Kombination aus organisatorischen Anpassungen, vorhandenen Systemen, Automatisierung, künstlicher Intelligenz oder weiteren digitalen Möglichkeiten geeignet ist.</p><p>Bestehende Lösungen werden berücksichtigt, sofern deren weitere Nutzung sinnvoll ist.</p><p>Es geht nicht darum, bestehende Strukturen unnötig zu ersetzen.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ein erkanntes Problem kann auf unterschiedliche Weise gelöst werden.</p><p>Die erste technisch mögliche Lösung ist nicht automatisch die beste.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten einen Lösungsansatz, der sich an Ihrer tatsächlichen Aufgabenstellung und den vorhandenen Rahmenbedingungen orientiert.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein fachlich und technisch geeigneter Lösungsweg als Grundlage der weiteren Projektplanung.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-2">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">A</span><div><span class="step-phase">PLANUNG</span><h4>A – Anforderungen definieren</h4></div></div>
+<p class="step-subtitle">Was muss die spätere Lösung tatsächlich leisten?</p>
+<div class="step-main-copy"><p>Nachdem der grundsätzliche Lösungsweg feststeht, werden die Anforderungen genauer definiert.</p><p>Dabei wird unter anderem geklärt:</p><ul class="clean-list"><li>welche Funktionen erforderlich sind,</li><li>welche Ergebnisse erwartet werden,</li><li>welche Informationen verarbeitet werden,</li><li>welche Systeme beteiligt sein müssen,</li><li>welche Grenzen bestehen,</li><li>welche Nutzer oder Bereiche betroffen sind,</li><li>und welche betrieblichen Anforderungen berücksichtigt werden müssen.</li></ul><p>Dabei wird bewusst zwischen notwendigen Funktionen und möglichen zusätzlichen Erweiterungen unterschieden.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine unklare Anforderung führt häufig dazu, dass Lösungen entwickelt werden, die technisch funktionieren, aber nicht genau das leisten, was später tatsächlich benötigt wird.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Der Projektumfang wird klarer und spätere Missverständnisse werden reduziert.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein nachvollziehbar definierter fachlicher und funktionaler Projektumfang.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-3">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">N</span><div><span class="step-phase">PLANUNG</span><h4>N – Nebenbedingungen und Ressourcen klären</h4></div></div>
+<p class="step-subtitle">Welche Voraussetzungen müssen für die Umsetzung gegeben sein?</p>
+<div class="step-main-copy"><p>Eine Lösung kann nur erfolgreich umgesetzt werden, wenn die notwendigen Rahmenbedingungen bekannt sind.</p><p>Deshalb werden nun die relevanten Nebenbedingungen und benötigten Ressourcen betrachtet.</p><p>Dazu können abhängig vom Projekt beispielsweise gehören:</p><ul class="clean-list"><li>vorhandene Systeme,</li><li>notwendige Daten,</li><li>technische Zugänge,</li><li>Berechtigungen,</li><li>verantwortliche Ansprechpartner,</li><li>interne Freigaben,</li><li>externe Anbieter,</li><li>organisatorische Anforderungen,</li><li>Datenschutzanforderungen,</li><li>und weitere projektbezogene Voraussetzungen.</li></ul><p>Nicht jeder dieser Punkte ist in jedem Projekt relevant.</p><p>Entscheidend ist, frühzeitig zu erkennen, welche Voraussetzungen für die konkrete Umsetzung tatsächlich benötigt werden.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ungeklärte Abhängigkeiten können später zu Verzögerungen oder unnötigen Änderungen führen.</p><p>Werden sie früh erkannt, können sie bereits in der weiteren Planung berücksichtigt werden.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie wissen rechtzeitig, welche Voraussetzungen Ihr Unternehmen schaffen oder bereitstellen muss.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein belastbarer Überblick über die für die Umsetzung relevanten Rahmenbedingungen und benötigten Ressourcen.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-4">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">U</span><div><span class="step-phase">PLANUNG</span><h4>U – Umsetzung strukturieren</h4></div></div>
+<p class="step-subtitle">Aus dem Lösungsweg entsteht ein nachvollziehbarer Projektablauf.</p>
+<div class="step-main-copy"><p>Nachdem Ziel, Anforderungen und Voraussetzungen geklärt sind, wird die spätere Umsetzung strukturiert.</p><p>Dabei wird festgelegt, in welcher sinnvollen Reihenfolge einzelne Bestandteile entstehen sollen.</p><p>Größere Lösungen können beispielsweise in einzelne Module, Funktionsbereiche oder Entwicklungsschritte gegliedert werden.</p><p>Auch Abhängigkeiten zwischen einzelnen Bestandteilen werden berücksichtigt.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine strukturierte Umsetzung ermöglicht es, komplexere Projekte kontrolliert aufzubauen.</p><p>Gleichzeitig können relevante Zwischenstände geprüft werden, bevor weitere Bestandteile folgen.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten keinen undurchsichtigen Entwicklungsprozess.</p><p>Der geplante Aufbau der Lösung wird nachvollziehbar und in sinnvolle Schritte gegliedert.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein strukturierter Ablauf für die spätere Entwicklung und Umsetzung.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-5">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">N</span><div><span class="step-phase">PLANUNG</span><h4>N – Nutzenkriterien festlegen</h4></div></div>
+<p class="step-subtitle">Woran lässt sich später erkennen, ob die Lösung ihren Zweck erfüllt?</p>
+<div class="step-main-copy"><p>Bevor die Umsetzung beginnt, wird festgelegt, anhand welcher Kriterien der spätere Projekterfolg beurteilt werden soll.</p><p>Diese Kriterien müssen nicht ausschließlich aus klassischen Kennzahlen bestehen.</p><p>Je nach Projekt kann beispielsweise relevant sein:</p><ul class="clean-list"><li>ob ein bestimmter Ablauf zuverlässig funktioniert,</li><li>ob manuelle Arbeitsschritte reduziert werden,</li><li>ob Informationen korrekt verarbeitet werden,</li><li>ob ein definierter Prozess vollständig durchgeführt werden kann,</li><li>ob Bearbeitungszeiten reduziert werden,</li><li>oder ob die ursprünglich definierte Zielwirkung tatsächlich unterstützt wird.</li></ul></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ohne vorher definierte Kriterien lässt sich später nur schwer beurteilen, ob eine technische Lösung tatsächlich erfolgreich ist.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Bereits vor Beginn der Entwicklung besteht Klarheit darüber, was die spätere Lösung leisten muss und woran ihr Nutzen beurteilt wird.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Nachvollziehbare Kriterien für die spätere Bewertung der Lösung.</p></div></div>
+</article><article class="step-panel" hidden="" id="planung-step-6">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">G</span><div><span class="step-phase">PLANUNG</span><h4>G – Gemeinsame Entscheidung treffen</h4></div></div>
+<p class="step-subtitle">Erst wenn der Weg klar ist, beginnt die Umsetzung.</p>
+<div class="step-main-copy"><p>Zum Abschluss der Planung werden die wesentlichen Projektbestandteile gemeinsam betrachtet.</p><p>Zu diesem Zeitpunkt bestehen Klarheit über:</p><ul class="clean-list"><li>Prioritäten,</li><li>Lösungsweg,</li><li>Anforderungen,</li><li>relevante Rahmenbedingungen,</li><li>benötigte Ressourcen,</li><li>den geplanten Projektablauf,</li><li>und die Kriterien für die spätere Bewertung.</li></ul><p>Auf dieser Grundlage wird entschieden, ob die geplante Lösung in die Umsetzung überführt wird.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Die Umsetzung beginnt nicht auf Basis einer groben Idee.</p><p>Beide Seiten wissen, was entwickelt werden soll und welche Voraussetzungen dafür bestehen.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie behalten die Entscheidungshoheit und können den geplanten Weg nachvollziehen, bevor Entwicklungsaufwand entsteht.</p></div></div>
+</article></div><div class="phase-result"><span>Ergebnis der PLANUNG</span><p>Ein abgestimmter und nachvollziehbarer Projektplan mit klar definiertem Ziel, Anforderungen, Voraussetzungen, Umsetzungsschritten und Nutzenkriterien.</p></div></div><div class="phase-panel" hidden="" id="phase-umsetzung"><div class="phase-deck"><span class="kicker">HAUPTPHASE</span><h2>UMSETZUNG</h2><div class="phase-intro"><h3>Aus Planung wird eine nutzbare Lösung.</h3><p>Mit der Umsetzung beginnt die praktische Realisierung des zuvor gemeinsam abgestimmten Lösungswegs.</p><p>Auch hier folgt die Zusammenarbeit einer klaren Reihenfolge.</p><p>Die Umsetzung ist kein abgeschotteter technischer Prozess.</p><p>Gerade während der Entwicklung individueller Module oder Automatisierungen können neue Erkenntnisse entstehen, die erst durch die praktische Realisierung sichtbar werden.</p><p>Deshalb bleibt das Unternehmen während der Umsetzung eingebunden.</p><p>Relevante Zwischenstände werden transparent gemacht.</p><p>Notwendige Entscheidungen werden erläutert und abgestimmt.</p><p>Dabei geht es nicht darum, jedes technische Detail gemeinsam zu bearbeiten.</p><p>Der Kunde soll jedoch jederzeit nachvollziehen können:</p><ul class="clean-list"><li>welcher Projektstand erreicht wurde,</li><li>welcher Teil der Lösung gerade entsteht,</li><li>welche Funktion dieser Bestandteil erfüllt,</li><li>welche Erkenntnisse entstanden sind,</li><li>und ob eine Entscheidung oder Freigabe erforderlich ist.</li></ul><p>Die Umsetzung folgt neun aufeinander aufbauenden Schritten:</p></div><div aria-label="Ablauf UMSETZUNG" class="timeline timeline-dense" style="--count:9"><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-0" type="button"><span class="timeline-letter">U</span><span class="timeline-name">Umgebung vorbereiten</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-1" type="button"><span class="timeline-letter">M</span><span class="timeline-name">Module entwickeln</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-2" type="button"><span class="timeline-letter">S</span><span class="timeline-name">Systematisch testen</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-3" type="button"><span class="timeline-letter">E</span><span class="timeline-name">Einsatz<wbr/>fähigkeit bewerten</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-4" type="button"><span class="timeline-letter">T</span><span class="timeline-name">Testbetrieb durchführen</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-5" type="button"><span class="timeline-letter">Z</span><span class="timeline-name">Zielgerichtet optimieren</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-6" type="button"><span class="timeline-letter">U</span><span class="timeline-name">Unternehmens<wbr/>integration vorbereiten</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-7" type="button"><span class="timeline-letter">N</span><span class="timeline-name">Nutzung freigeben</span></button><button aria-expanded="false" class="timeline-step" data-step="umsetzung-step-8" type="button"><span class="timeline-letter">G</span><span class="timeline-name">Geordnet abschließen</span></button></div></div><div class="step-stage"><article class="step-panel" hidden="" id="umsetzung-step-0">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">U</span><div><span class="step-phase">UMSETZUNG</span><h4>U – Umgebung vorbereiten</h4></div></div>
+<p class="step-subtitle">Die geplante Entwicklung benötigt eine verlässliche Grundlage.</p>
+<div class="step-main-copy"><p>Bevor einzelne Funktionen oder Module entwickelt werden, werden die für das jeweilige Projekt notwendigen Voraussetzungen geschaffen.</p><p>Abhängig von der Lösung können dazu beispielsweise technische Umgebungen, Zugänge, Berechtigungen, bestehende Systeme, Datenstrukturen oder weitere erforderliche Grundlagen gehören.</p><p>Dabei wird nicht pauschal eine neue Infrastruktur aufgebaut.</p><p>Vorbereitet wird ausschließlich, was für das vereinbarte Projekt tatsächlich notwendig ist.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine strukturierte technische Grundlage reduziert spätere Störungen und verhindert, dass Entwicklungsarbeit auf ungeklärten Voraussetzungen aufbaut.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Die eigentliche Entwicklung beginnt auf einer vorbereiteten und überprüften Grundlage.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine einsatzbereite Entwicklungs- beziehungsweise Projektumgebung für die vereinbarte Lösung.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-1">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">M</span><div><span class="step-phase">UMSETZUNG</span><h4>M – Module entwickeln</h4></div></div>
+<p class="step-subtitle">Die geplante Lösung entsteht Schritt für Schritt.</p>
+<div class="step-main-copy"><p>Nun beginnt die eigentliche Entwicklung beziehungsweise Einrichtung der vereinbarten Bestandteile.</p><p>Abhängig vom Projekt kann eine Lösung aus einzelnen Funktionen, Modulen, Schnittstellen oder anderen Komponenten bestehen.</p><p>Diese werden entsprechend der zuvor definierten Struktur entwickelt und schrittweise miteinander verbunden.</p><p>Dabei bleibt die Entwicklung transparent.</p><p>Relevante Zwischenstände können gemeinsam betrachtet werden, bevor weitere Projektbestandteile darauf aufbauen.</p><p class="rhetorical-line">Transparenz während der Entwicklung</p><p>Sie müssen die technische Umsetzung nicht selbst nachvollziehen können.</p><p>Sie sollen jedoch grundsätzlich verstehen:</p><ul class="clean-list"><li>welche Aufgabe ein Modul erfüllt,</li><li>welchen Teil des Gesamtprozesses es unterstützt,</li><li>welche Funktion bereits umgesetzt wurde,</li><li>und wie sich der aktuelle Entwicklungsstand in das Gesamtprojekt einfügt.</li></ul><p>Technische Interna werden dabei nur in dem Umfang erläutert, wie sie für Ihr Verständnis und die spätere Nutzung relevant sind.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Gerade bei individuellen Lösungen können während der praktischen Entwicklung Anforderungen sichtbar werden, die in einer theoretischen Planung nicht vollständig vorhersehbar waren.</p><p>Eine transparente Zusammenarbeit ermöglicht es, solche Erkenntnisse frühzeitig einzuordnen.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten keine fertige Lösung, deren Entstehung Sie nicht nachvollziehen konnten.</p><p>Sie erleben die wesentlichen Entwicklungsfortschritte und können dort eingebunden werden, wo Ihre betriebliche Einschätzung erforderlich ist.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Die geplanten Module und Funktionen werden schrittweise zu einer funktionsfähigen Lösung entwickelt.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-2">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">S</span><div><span class="step-phase">UMSETZUNG</span><h4>S – Systematisch testen</h4></div></div>
+<p class="step-subtitle">Funktion muss überprüfbar sein.</p>
+<div class="step-main-copy"><p>Nach der Entwicklung einzelner Bestandteile werden diese systematisch geprüft.</p><p>Dabei wird nicht ausschließlich betrachtet, ob eine Funktion unter idealen Bedingungen arbeitet.</p><p>Soweit für das Projekt relevant, werden auch:</p><ul class="clean-list"><li>Abweichungen,</li><li>typische Fehlerfälle,</li><li>unterschiedliche Eingaben,</li><li>Schnittstellen,</li><li>Abhängigkeiten,</li><li>und das Zusammenspiel verschiedener Komponenten</li></ul><p>berücksichtigt.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine Lösung muss nicht nur während einer Demonstration funktionieren.</p><p>Sie soll möglichst zuverlässig mit den Bedingungen umgehen können, die im vorgesehenen Einsatz zu erwarten sind.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Technische Fehler und erkennbare Schwachstellen werden möglichst vor dem praktischen Einsatz identifiziert.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Ein systematisch geprüfter Entwicklungsstand.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-3">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">E</span><div><span class="step-phase">UMSETZUNG</span><h4>E – Einsatzfähigkeit bewerten</h4></div></div>
+<p class="step-subtitle">Ist die Lösung bereit für den nächsten Schritt?</p>
+<div class="step-main-copy"><p>Nach den systematischen Tests wird beurteilt, ob der erreichte Entwicklungsstand ausreichend stabil und vollständig ist, um unter realistischeren Bedingungen eingesetzt zu werden.</p><p>Dabei wird nicht nur betrachtet, ob einzelne Funktionen technisch arbeiten.</p><p>Es wird auch geprüft, ob das Zusammenspiel der wesentlichen Bestandteile den zuvor definierten Anforderungen entspricht.</p><p>Relevante Erkenntnisse werden transparent mit dem Unternehmen besprochen.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ein Testbetrieb sollte erst beginnen, wenn der Entwicklungsstand dafür geeignet ist.</p><p>Dadurch wird vermieden, dass unfertige oder erkennbar fehlerhafte Funktionen unnötig in reale Abläufe eingebracht werden.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Der Übergang vom technischen Entwicklungsstand in eine praxisnahe Erprobung erfolgt kontrolliert.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine begründete Entscheidung darüber, ob die Lösung bereit für den Testbetrieb ist.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-4">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">T</span><div><span class="step-phase">UMSETZUNG</span><h4>T – Testbetrieb durchführen</h4></div></div>
+<p class="step-subtitle">Technische Funktion trifft auf die betriebliche Realität.</p>
+<div class="step-main-copy"><p>Wo es die Art des Projekts sinnvoll zulässt, wird die entwickelte Lösung anschließend unter möglichst realistischen Bedingungen erprobt.</p><p>Dabei zeigt sich, wie sich die Lösung im tatsächlichen oder praxisnahen Ablauf verhält.</p><p>Der Kunde wird bewusst einbezogen.</p><p>Denn bestimmte Erkenntnisse lassen sich nur durch die tatsächliche Nutzung im betrieblichen Kontext gewinnen.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ein technisch korrekter Ablauf kann sich in der Praxis anders verhalten als erwartet.</p><p>Der Testbetrieb verbindet deshalb technische Prüfung mit tatsächlicher Nutzung.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie können beurteilen, wie sich die Lösung in Ihrem Arbeitsumfeld verhält, bevor sie vollständig freigegeben wird.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Praxiserfahrungen und konkrete Erkenntnisse über die tatsächliche Nutzbarkeit der Lösung.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-5">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">Z</span><div><span class="step-phase">UMSETZUNG</span><h4>Z – Zielgerichtet optimieren</h4></div></div>
+<p class="step-subtitle">Erkenntnisse aus der Praxis werden gezielt verarbeitet.</p>
+<div class="step-main-copy"><p>Die Ergebnisse aus Tests und Testbetrieb werden ausgewertet.</p><p>Erkannte Anpassungen werden innerhalb des vereinbarten Projektumfangs vorgenommen.</p><p>Dabei wird transparent unterschieden zwischen:</p><ul class="clean-list"><li>Fehlerkorrekturen,</li><li>notwendigen Anpassungen,</li><li>vereinbarten Optimierungen,</li><li>und zusätzlichen neuen Anforderungen.</li></ul><p>Nicht jede neue Idee während eines Projekts ist automatisch Bestandteil der ursprünglichen Beauftragung.</p><p>Diese Abgrenzung wird offen kommuniziert.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Dadurch kann die Lösung gezielt verbessert werden, ohne dass der ursprünglich vereinbarte Projektumfang unkontrolliert erweitert wird.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Praktische Erkenntnisse fließen in die finale Lösung ein und gleichzeitig bleibt transparent, welche Leistungen Bestandteil des Projekts sind.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine auf den vorgesehenen Einsatz abgestimmte und optimierte Lösung.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-6">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">U</span><div><span class="step-phase">UMSETZUNG</span><h4>U – Unternehmensintegration vorbereiten</h4></div></div>
+<p class="step-subtitle">Die entwickelte Lösung wird auf den tatsächlichen Einsatz vorbereitet.</p>
+<div class="step-main-copy"><p>Nach Entwicklung, Prüfung und Optimierung beginnt die Vorbereitung der dauerhaften Nutzung im Unternehmen.</p><p>Nun wird betrachtet, was für die geordnete Einbindung der Lösung erforderlich ist.</p><p>Abhängig vom Projekt kann dies beispielsweise bedeuten:</p><ul class="clean-list"><li>notwendige Zugänge vorzubereiten,</li><li>Verantwortlichkeiten zu klären,</li><li>betroffene Anwender einzubeziehen,</li><li>erforderliche Informationen bereitzustellen,</li><li>Dokumentationen oder Hinweise vorzubereiten,</li><li>und den Übergang aus der Entwicklungs- beziehungsweise Testphase in die tatsächliche Nutzung zu organisieren.</li></ul></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Eine technisch fertige Lösung ist noch nicht automatisch vollständig in ein Unternehmen integriert.</p><p>Auch der Übergang in den betrieblichen Alltag muss vorbereitet werden.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Die Lösung wird nicht lediglich technisch fertiggestellt, sondern kontrolliert auf ihren tatsächlichen Einsatz vorbereitet.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine für die betriebliche Nutzung vorbereitete Lösung mit geklärten Voraussetzungen für die Integration.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-7">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">N</span><div><span class="step-phase">UMSETZUNG</span><h4>N – Nutzung freigeben</h4></div></div>
+<p class="step-subtitle">Der Übergang in den vorgesehenen Betrieb erfolgt bewusst.</p>
+<div class="step-main-copy"><p>Nach erfolgreicher Prüfung, Optimierung und Vorbereitung wird gemeinsam betrachtet, ob die Lösung für ihren vorgesehenen Einsatz freigegeben werden kann.</p><p>Dabei wird geprüft, ob:</p><ul class="clean-list"><li>die vereinbarten Funktionen vorhanden sind,</li><li>relevante Tests erfolgreich abgeschlossen wurden,</li><li>die definierten Nutzenkriterien angemessen berücksichtigt wurden,</li><li>notwendige Voraussetzungen für den Einsatz bestehen,</li><li>und keine wesentlichen offenen Punkte gegen die Nutzung sprechen.</li></ul><p>Erst danach erfolgt die Freigabe.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Der produktive Einsatz beginnt nicht allein deshalb, weil ein Entwicklungszeitraum beendet ist.</p><p>Es gibt einen klaren Übergang zwischen Entwicklung und tatsächlicher Nutzung.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten einen nachvollziehbar abgestimmten Projektstand und wissen, wann die Lösung offiziell für ihren vorgesehenen Einsatz bereitsteht.</p></div><div class="step-support result"><h5>Ergebnis</h5><p>Eine gemeinsam abgestimmte Freigabe für die vorgesehene Nutzung.</p></div></div>
+</article><article class="step-panel" hidden="" id="umsetzung-step-8">
+<div class="step-title-row"><span aria-hidden="true" class="step-letter">G</span><div><span class="step-phase">UMSETZUNG</span><h4>G – Geordnet abschließen</h4></div></div>
+<p class="step-subtitle">Ein professionelles Projekt besitzt einen klaren Abschluss.</p>
+<div class="step-main-copy"><p>Mit der erfolgreichen Nutzung endet nicht automatisch jede Projektphase.</p><p>Zum Abschluss wird deshalb der erreichte Projektstand gemeinsam eingeordnet.</p><p>Dabei wird klar dargestellt:</p><ul class="clean-list"><li>welche Leistungen umgesetzt wurden,</li><li>welchen Stand die Lösung besitzt,</li><li>welche Unterlagen oder Informationen übergeben werden,</li><li>welche offenen Punkte gegebenenfalls noch bestehen,</li><li>und welche Themen nicht Bestandteil des abgeschlossenen Projektumfangs sind.</li></ul><p>Ebenso wird zwischen abgeschlossenem Projekt und möglichen zukünftigen Leistungen unterschieden.</p></div>
+<div class="step-support-grid"><div class="step-support reason"><h5>Warum ist diese Phase wichtig?</h5><p>Ein Projekt soll nicht dauerhaft in einem undefinierten Zwischenzustand verbleiben.</p><p>Beide Seiten müssen erkennen können, wann die vereinbarte Leistung abgeschlossen ist.</p></div><div class="step-support benefit"><h5>Ihr Nutzen</h5><p>Sie erhalten einen klar definierten Projektabschluss und wissen genau, welche Leistung erbracht wurde und welcher Stand anschließend besteht.</p></div></div>
+</article></div><div class="phase-result"><span>Ergebnis der UMSETZUNG</span><p>Eine entwickelte, systematisch geprüfte, praxisnah erprobte, optimierte und für den vorgesehenen betrieblichen Einsatz freigegebene Lösung mit transparentem und geordnetem Projektabschluss.</p></div></div></div></section><section class="page-card light-card transparency-card"><div class="card-inner"><div class="section-head"><span class="kicker">TRANSPARENZ</span><h2>Transparenz über den gesamten Projektverlauf</h2><h3>Zusammenarbeit bedeutet, Entwicklungen nachvollziehen zu können.</h3></div><div class="transparency-flow"><div class="prose-column"><p>Transparenz ist bei der KI Beratung Rachau keine einzelne Projektphase.</p><p>Sie begleitet die gesamte Zusammenarbeit.</p><p>Von der ersten Annäherung über Analyse und Planung bis zur Entwicklung, Erprobung und Freigabe sollen wesentliche Entscheidungen nachvollziehbar bleiben.</p><p>Dabei wird bewusst unterschieden zwischen <strong>Transparenz und technischer Überinformation.</strong></p><p>Sie müssen nicht jeden technischen Arbeitsschritt verstehen.</p></div><div class="principle-field"><p class="principle-label">Sie sollen jedoch jederzeit nachvollziehen können:</p><div class="principle-list"><div class="principle-item"><span></span><p>welches Ziel verfolgt wird,</p></div><div class="principle-item"><span></span><p>woran aktuell gearbeitet wird,</p></div><div class="principle-item"><span></span><p>welche Funktion ein relevanter Bestandteil erfüllt,</p></div><div class="principle-item"><span></span><p>welche Ergebnisse bereits vorliegen,</p></div><div class="principle-item"><span></span><p>welche Erkenntnisse entstanden sind,</p></div><div class="principle-item"><span></span><p>ob Veränderungen gegenüber der ursprünglichen Planung notwendig werden,</p></div><div class="principle-item"><span></span><p>und wann eine Entscheidung oder Freigabe von Ihrer Seite erforderlich ist.</p></div></div></div></div><div class="section-tail"><p>Gerade bei individuell entwickelten Modulen ist dieser Austausch wichtig.</p><p>Die KI Beratung Rachau bringt die fachliche und technische Umsetzungskompetenz ein.</p><p>Ihr Unternehmen bringt das Wissen über seine betrieblichen Abläufe, Anforderungen und tatsächliche Nutzung ein.</p><p>Erst aus dem Zusammenspiel beider Perspektiven entsteht eine Lösung, die nicht nur technisch funktioniert, sondern im Unternehmen sinnvoll eingesetzt werden kann.</p></div></div></section><section class="page-card dark-card responsibilities-card"><div class="card-inner"><div class="section-head"><span class="kicker">VERANTWORTLICHKEITEN</span><h2>Klare Verantwortlichkeiten</h2><h3>Gute Zusammenarbeit bedeutet nicht, dass beide Seiten dieselben Aufgaben übernehmen.</h3></div><div class="responsibility-intro"><p>Die Verantwortlichkeiten bleiben klar getrennt.</p></div><div class="roles-composition"><div class="role-column"><h3>KI Beratung Rachau</h3><p>Ich übernehme im vereinbarten Projektumfang unter anderem:</p><ul><li>die Strukturierung der Aufgabenstellung,</li><li>die fachliche Analyse,</li><li>die Entwicklung geeigneter Lösungswege,</li><li>die Planung der Umsetzung,</li><li>die technische beziehungsweise organisatorische Realisierung der vereinbarten Bestandteile,</li><li>die strukturierte Prüfung der Lösung,</li><li>die transparente Kommunikation relevanter Projektstände,</li><li>die Abstimmung erforderlicher Entscheidungen,</li><li>und den geordneten Projektabschluss.</li></ul></div><div class="role-column"><h3>Ihr Unternehmen</h3><p>Sie bringen insbesondere ein:</p><ul><li>Wissen über Ihr Unternehmen und Ihre betrieblichen Abläufe,</li><li>notwendige Informationen,</li><li>erforderliche Zugänge und Freigaben,</li><li>geeignete Ansprechpartner,</li><li>fachliche Einschätzungen,</li><li>betriebliche Entscheidungen,</li><li>und Rückmeldungen aus der tatsächlichen Nutzung.</li></ul></div></div><div class="shared-conclusion"><p>Sie müssen nicht wissen, wie eine technische Lösung aufgebaut wird.</p><p>Ihre Aufgabe besteht darin, mir das notwendige Verständnis für Ihr Unternehmen und die tatsächliche Anwendung zu vermitteln.</p><p>Meine Aufgabe besteht darin, daraus einen geeigneten Lösungsweg zu entwickeln, diesen mit Ihnen abzustimmen und professionell umzusetzen.</p></div></div></section><section class="page-card light-card decisions-card"><div class="card-inner"><div class="section-head"><span class="kicker">ENTSCHEIDUNGSPUNKTE</span><h2>Entscheidungspunkte statt Blackbox</h2><h3>Nicht jeder nächste Schritt ist automatisch vorgegeben.</h3></div><div class="decision-intro"><p>Die drei Hauptphasen bauen aufeinander auf.</p><p>Trotzdem entsteht daraus keine automatische Verpflichtung, jedes erkannte Potenzial bis zur technischen Umsetzung weiterzuführen.</p><p>An relevanten Übergängen wird bewusst entschieden.</p></div><div class="decision-path"><div class="decision-stop"><span class="decision-node"></span><h4>Nach der ANALYSE</h4><p>Ist ein identifiziertes Handlungsfeld tatsächlich sinnvoll genug, um eine konkrete Planung zu beginnen?</p></div><div class="decision-stop"><span class="decision-node"></span><h4>Nach der PLANUNG</h4><p>Ist der entwickelte Lösungsweg klar, sinnvoll und ausreichend vorbereitet, um in die Umsetzung überführt zu werden?</p></div><div class="decision-stop"><span class="decision-node"></span><h4>Während der UMSETZUNG</h4><p>Entspricht der Entwicklungsstand weiterhin dem vereinbarten Ziel oder müssen Erkenntnisse berücksichtigt und Entscheidungen angepasst werden?</p></div><div class="decision-stop"><span class="decision-node"></span><h4>Vor der NUTZUNGSFREIGABE</h4><p>Ist die Lösung ausreichend geprüft und für den vorgesehenen betrieblichen Einsatz vorbereitet?</p></div></div><div class="decision-closing"><p>Diese Entscheidungspunkte schaffen Transparenz und Kontrolle.</p><p>Auch die Erkenntnis, dass eine ursprünglich angedachte Maßnahme nicht sinnvoll ist, kann ein wertvolles Ergebnis sein.</p><p>Sie verhindert unnötige Investitionen und schafft Klarheit.</p></div></div></section><section class="page-card dark-card entry-card"><div class="card-inner"><div class="section-head"><span class="kicker">FLEXIBLER EINSTIEG</span><h2>Einstieg dort, wo Ihr Unternehmen tatsächlich steht</h2><h3>Nicht jede Zusammenarbeit muss vollständig bei der Annäherung beginnen.</h3></div><div class="entry-narrative"><p>Ein Unternehmen kann bereits über vorbereitete Grundlagen verfügen.</p><p>Vielleicht besteht bereits:</p></div><div class="foundation-grid"><div class="foundation-item"><span class="foundation-dot"></span><p>eine belastbare Analyse,</p></div><div class="foundation-item"><span class="foundation-dot"></span><p>ein klar definiertes Ziel,</p></div><div class="foundation-item"><span class="foundation-dot"></span><p>ein dokumentierter Prozess,</p></div><div class="foundation-item"><span class="foundation-dot"></span><p>ein vorhandenes Konzept,</p></div><div class="foundation-item"><span class="foundation-dot"></span><p>eine teilweise entwickelte Lösung,</p></div><div class="foundation-item"><span class="foundation-dot"></span><p>oder eine andere geeignete Projektgrundlage.</p></div></div><div class="entry-narrative"><p>In solchen Fällen können vorhandene Ergebnisse zunächst geprüft werden.</p><p>Wenn sie ausreichend belastbar sind, kann eine Zusammenarbeit auch zu einem späteren Punkt des Modells beginnen.</p><p>Dabei gilt jedoch:</p></div><div class="assurance-panel"><div><h4>Auf unsicheren Grundlagen wird nicht ungeprüft aufgebaut.</h4><p>Fehlen relevante Informationen oder bestehen erkennbare Unklarheiten, werden diese zunächst geklärt.</p></div><div class="benefit-panel"><h4>Ihr Nutzen</h4><p>Vorhandene Arbeit wird nicht unnötig wiederholt.</p><p>Gleichzeitig wird verhindert, dass spätere Entwicklungsarbeit auf fehlerhaften Annahmen aufbaut.</p></div></div></div></section><section class="page-card light-card after-card"><div class="card-inner"><div class="section-head"><span class="kicker">NACH DEM PROJEKT</span><h2>Nach der Umsetzung</h2><h3>Ein Projekt darf abgeschlossen sein.</h3></div><div class="after-intro"><p>Mit dem geordneten Abschluss endet der vereinbarte Projektumfang.</p><p>Es entsteht daraus keine automatische dauerhafte Bindung.</p><p>Wenn anschließend weitere Anforderungen entstehen, können daraus abhängig vom jeweiligen Bedarf neue Leistungen entstehen.</p><p>Beispielsweise:</p></div><div class="after-options"><div class="after-option"><span class="option-mark"></span><h4>Support</h4><p>für vereinbarte Unterstützung im laufenden Betrieb.</p></div><div class="after-option"><span class="option-mark"></span><h4>Weiterentwicklung</h4><p>wenn bestehende Lösungen erweitert oder an neue Anforderungen angepasst werden sollen.</p></div><div class="after-option"><span class="option-mark"></span><h4>Neues Projekt</h4><p>wenn ein weiteres eigenständiges Handlungsfeld analysiert und bearbeitet werden soll.</p></div></div><div class="after-closing"><p>Dadurch bleibt eindeutig erkennbar, was Bestandteil des abgeschlossenen Projekts war und wo eine neue Leistung beginnt.</p></div></div></section><section class="page-card dark-card final-card"><div class="card-inner"><div class="section-head"><span class="kicker">GESAMTBILD</span><h2>Das Vorgehen auf einen Blick</h2></div><div class="method-road"><div class="method-phase"><h3>ANALYSE</h3><div class="method-steps"><div class="method-step"><b>A</b><span class="method-dash">–</span><span>Annäherung</span></div><div class="method-step"><b>N</b><span class="method-dash">–</span><span>Nutzenziel bestimmen</span></div><div class="method-step"><b>A</b><span class="method-dash">–</span><span>Abläufe untersuchen</span></div><div class="method-step"><b>L</b><span class="method-dash">–</span><span>Leistungspotenziale identifizieren</span></div><div class="method-step"><b>Y</b><span class="method-dash">–</span><span>Yield bewerten</span></div><div class="method-step"><b>S</b><span class="method-dash">–</span><span>Sinnhaftigkeit bewerten</span></div><div class="method-step"><b>E</b><span class="method-dash">–</span><span>Entscheidung vorbereiten</span></div></div><div class="method-summary"><p><strong>Verstehen, was Ihr Unternehmen erreichen möchte, welche Bereiche dafür relevant sind und welche Veränderungen tatsächlich sinnvoll erscheinen.</strong></p></div></div><div class="method-phase"><h3>PLANUNG</h3><div class="method-steps"><div class="method-step"><b>P</b><span class="method-dash">–</span><span>Prioritäten festlegen</span></div><div class="method-step"><b>L</b><span class="method-dash">–</span><span>Lösungsweg entwickeln</span></div><div class="method-step"><b>A</b><span class="method-dash">–</span><span>Anforderungen definieren</span></div><div class="method-step"><b>N</b><span class="method-dash">–</span><span>Nebenbedingungen und Ressourcen klären</span></div><div class="method-step"><b>U</b><span class="method-dash">–</span><span>Umsetzung strukturieren</span></div><div class="method-step"><b>N</b><span class="method-dash">–</span><span>Nutzenkriterien festlegen</span></div><div class="method-step"><b>G</b><span class="method-dash">–</span><span>Gemeinsame Entscheidung treffen</span></div></div><div class="method-summary"><p><strong>Aus einer sinnvollen Möglichkeit einen klar definierten, nachvollziehbaren und umsetzbaren Projektweg entwickeln.</strong></p></div></div><div class="method-phase"><h3>UMSETZUNG</h3><div class="method-steps"><div class="method-step"><b>U</b><span class="method-dash">–</span><span>Umgebung vorbereiten</span></div><div class="method-step"><b>M</b><span class="method-dash">–</span><span>Module entwickeln</span></div><div class="method-step"><b>S</b><span class="method-dash">–</span><span>Systematisch testen</span></div><div class="method-step"><b>E</b><span class="method-dash">–</span><span>Einsatzfähigkeit bewerten</span></div><div class="method-step"><b>T</b><span class="method-dash">–</span><span>Testbetrieb durchführen</span></div><div class="method-step"><b>Z</b><span class="method-dash">–</span><span>Zielgerichtet optimieren</span></div><div class="method-step"><b>U</b><span class="method-dash">–</span><span>Unternehmensintegration vorbereiten</span></div><div class="method-step"><b>N</b><span class="method-dash">–</span><span>Nutzung freigeben</span></div><div class="method-step"><b>G</b><span class="method-dash">–</span><span>Geordnet abschließen</span></div></div><div class="method-summary"><p><strong>Die geplante Lösung kontrolliert entwickeln, transparent abstimmen, unter realistischen Bedingungen prüfen und geordnet in die betriebliche Nutzung überführen.</strong></p></div></div></div><div class="final-logic"><div class="principle-zone"><h3 class="triad-title invert">Analyse · Planung · Umsetzung</h3><div class="principle-copy"><p>Der Grundgedanke des Vorgehens ist einfach:</p><p>Der Ausgangspunkt ist nicht die Technologie.</p><p>Im Mittelpunkt stehen zunächst Ihr Unternehmen und das Ergebnis, das Sie erreichen möchten.</p><p>Erst wenn verstanden wurde, <strong>was sinnvoll verändert werden kann</strong>, wird geplant, <strong>wie eine geeignete Lösung aussehen sollte.</strong></p><p>Und erst wenn diese Planung ausreichend belastbar ist, beginnt die eigentliche Umsetzung.</p><p>Dadurch entsteht ein strukturierter Projektverlauf, bei dem Entscheidungen in der richtigen Reihenfolge getroffen werden.</p></div></div><div class="mantra-zone"><div class="mantra-line"><span>Erst verstehen.</span><span>Dann planen.</span><span>Danach umsetzen.</span></div><p>Und während des gesamten Weges bleibt nachvollziehbar, wo das Projekt steht und warum der nächste Schritt erfolgt.</p></div></div></div></section><section class="closing closing-light" id="kontakt">
+<div aria-hidden="true" class="closing-shapes"><span></span><span></span><span></span><span></span><span></span></div>
+<div class="closing-inner">
+<span aria-hidden="true" class="top-streak"></span>
+<p class="eyebrow">KI BERATUNG RACHAU</p>
+<h2>Nicolas Rachau – Ihr direkter Ansprechpartner für KI-Implementierung und Automatisierung in der Region Neckar/Alb.</h2>
+<p class="closing-copy">Persönlich, praxisnah und mit klarem Blick auf die Anforderungen Ihres Unternehmens.</p>
+<div class="closing-actions">
+<a class="primary-btn" href="https://www.ki-beratung-rachau.de/Kontakt">Unverbindliches Kennenlernen vereinbaren <span>→</span></a>
+</div>
+</div>
+</section></main><footer class="site-footer">
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img class="footer-logo" src="logo-gross-dunkel.png" alt="">
+      <div class="footer-brand-copy">
+        <strong>KI BERATUNG RACHAU</strong>
+        <small class="brand-triad"><span>ANALYSE</span><span>·</span><span>PLANUNG</span><span>·</span><span>UMSETZUNG</span></small>
+        <p>Moderne Unternehmensberatung für KI, Technologie und Automatisierung.</p>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>LEISTUNGEN</h3>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen">Leistungsübersicht <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen/Beratung">Beratung <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen/Automatisierung">Automatisierung <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen/Kundengewinnung">Kundengewinnung <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen/Schulungen">Schulungen <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Leistungen/Individuelle-Loesungen">Individuelle Lösungen <span>→</span></a>
+    </div>
+
+    <div class="footer-column">
+      <h3>UNTERNEHMEN</h3>
+      <a href="https://www.ki-beratung-rachau.de/Wirtschaftlichkeit-ROI">Wirtschaftlichkeit &amp; ROI <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Zusammenarbeit">Zusammenarbeit <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/Referenzen">Referenzen <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Haltung">Haltung <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Empfehlungsprogramm">Empfehlungsprogramm <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Social-Media">Social Media <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/FAQ">FAQ <span>→</span></a>
+      <a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Support">Support <span>→</span></a>
+    </div>
+
+    <div class="footer-column footer-contact">
+      <h3>KONTAKT</h3>
+      <p>Der direkte Einstieg für ein erstes Gespräch.</p>
+      <a class="footer-contact-link" href="https://www.ki-beratung-rachau.de/Kontakt">Kontakt aufnehmen <span>→</span></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024–<span id="current-year">2026</span> KI Beratung Rachau</span>
+    <div><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Impressum">Impressum</a><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/Datenschutz">Datenschutz</a><a href="https://www.ki-beratung-rachau.de/KI-Beratung-Rachau/AGB">AGB</a></div>
+  </div>
+</footer>
+<script>
+
+(()=>{const q=(s,c=document)=>c.querySelector(s),qa=(s,c=document)=>[...c.querySelectorAll(s)];const menu=q('.menu-toggle'),nav=q('#mainnav');if(menu&&nav)menu.addEventListener('click',()=>{const o=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!o));nav.classList.toggle('open',!o)});qa('.dropdown-trigger').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const d=b.parentElement,o=b.getAttribute('aria-expanded')==='true';qa('.nav-dropdown.open').forEach(x=>{if(x!==d){x.classList.remove('open');q('.dropdown-trigger',x)?.setAttribute('aria-expanded','false')}});d.classList.toggle('open',!o);b.setAttribute('aria-expanded',String(!o))}));document.addEventListener('click',()=>qa('.nav-dropdown.open').forEach(x=>{x.classList.remove('open');q('.dropdown-trigger',x)?.setAttribute('aria-expanded','false')}));qa('.phase-card').forEach(btn=>btn.addEventListener('click',()=>{const key=btn.dataset.phase,p=q('#phase-'+key),open=btn.getAttribute('aria-expanded')==='true';qa('.phase-card').forEach(x=>x.setAttribute('aria-expanded','false'));qa('.phase-panel').forEach(x=>{x.hidden=true;qa('.timeline-step',x).forEach(s=>s.setAttribute('aria-expanded','false'));qa('.step-panel',x).forEach(s=>s.hidden=true)});if(!open){btn.setAttribute('aria-expanded','true');p.hidden=false;const firstStep=q('.timeline-step',p),firstPanel=firstStep?q('#'+firstStep.dataset.step):null;if(firstStep){firstStep.setAttribute('aria-expanded','true')}if(firstPanel){firstPanel.hidden=false}requestAnimationFrame(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}))}}));qa('.timeline-step').forEach(btn=>btn.addEventListener('click',()=>{const panel=q('#'+btn.dataset.step),parent=btn.closest('.phase-panel'),open=btn.getAttribute('aria-expanded')==='true';qa('.timeline-step',parent).forEach(x=>x.setAttribute('aria-expanded','false'));qa('.step-panel',parent).forEach(x=>x.hidden=true);if(!open){btn.setAttribute('aria-expanded','true');panel.hidden=false;requestAnimationFrame(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}))}}));const y=q('#current-year');if(y)y.textContent=new Date().getFullYear();})();
+
+</script>
+</body></html>
