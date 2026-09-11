@@ -5501,6 +5501,34 @@ body.kibr-cookie-open{overflow:hidden}
   .site-footer .footer-brand-copy{transform:translateY(7px) !important;}
 }
 
+/* Startseite: persönliches Hero-Foto statt doppelter Logo-Darstellung */
+.hero-home .hero-consulting-photo{
+  transform:none !important;
+  width:100%;
+  max-width:430px;
+  aspect-ratio:4/5;
+  justify-self:end;
+  min-height:0;
+  overflow:hidden;
+  border-radius:22px;
+  background:#dfe8ee;
+  box-shadow:0 24px 52px rgba(12,37,57,.20),0 8px 20px rgba(12,37,57,.10);
+}
+.hero-home .hero-consulting-photo img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:53% center;
+  mix-blend-mode:normal;
+}
+@media(max-width:1000px){
+  .hero-home .hero-consulting-photo{justify-self:start;max-width:520px;aspect-ratio:3/2}
+}
+@media(max-width:640px){
+  .hero-home .hero-consulting-photo{max-width:100%;aspect-ratio:4/3;border-radius:18px}
+}
+
 </style>
 
 </head>
@@ -5636,12 +5664,8 @@ body.kibr-cookie-open{overflow:hidden}
       
       <div class="hero-left-cta"><a href="https://airtable.com/appqrcQwkzvNVx93h/pagIEyBwfo7dGLEff/form" class="hero-cta hero-left-button" target="_blank" rel="noopener noreferrer">Kostenlose Potenzialanalyse anfordern <span>→</span></a></div>
     </div>
-      <figure class="media-card hero-logo-card" aria-label="KI Beratung Rachau Logo">
-        <img src="https://ki-beratung-rachau.de/logo-klein-hell.jpg" alt="KI Beratung Rachau">
-        <figcaption class="hero-logo-caption">
-          <strong>KI BERATUNG RACHAU</strong>
-          <span class="logo-triad"><b>ANALYSE</b><i>·</i><b>PLANUNG</b><i>·</i><b>UMSETZUNG</b></span>
-        </figcaption>
+      <figure class="media-card hero-logo-card hero-consulting-photo">
+        <img src="startseite-hero-beratung.jpg" alt="Nicolas Rachau im persönlichen Beratungsgespräch mit einem Unternehmer">
       </figure>
     </div>
   </section>
@@ -5649,7 +5673,7 @@ body.kibr-cookie-open{overflow:hidden}
 <section class="content-section is-dark home-field2" aria-labelledby="field2-title">
   <div class="field2-head">
     <div class="field2-collage" aria-label="Vier Beispiele unterschiedlicher Unternehmenssituationen">
-      <img src="https://ki-beratung-rachau.de/Flux_Dev_Ein_deutscher_Bauarbeiter_3045_Jahre_mit_orangenem_Sc_5.jpg" alt="">
+      <img src="startseite-praxis-umsetzung.jpg" alt="Nicolas Rachau bei der Prozessbesprechung in einem Industriebetrieb">
       <img src="https://ki-beratung-rachau.de/jD8P1IGzOhQWa7ymYYnOv.png" alt="">
       <img src="https://ki-beratung-rachau.de/tx6eaTbUWL2Su0TwQjmwv.png" alt="">
       <img src="https://ki-beratung-rachau.de/7gIHP7HdE-4KwCOstcDaG.png" alt="">
@@ -6212,7 +6236,7 @@ body.kibr-cookie-open{overflow:hidden}
   <div class="f8-head">
     <div class="f8-photo-wrap">
       <figure class="f8-photo">
-        <img class="f8-photo-main" src="https://ki-beratung-rachau.de/nicolas-rachau-feld8.jpg" alt="Nicolas Rachau als persönlicher Ansprechpartner">
+        <img class="f8-photo-main" src="startseite-nicolas-portrait.jpg" alt="Nicolas Rachau als persönlicher Ansprechpartner der KI Beratung Rachau">
 </figure>
     </div>
 
