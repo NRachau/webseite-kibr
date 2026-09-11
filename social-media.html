@@ -904,7 +904,7 @@ document.addEventListener('keydown', (event) => {
     return;
   }
 
-  if (currentPath === '/KI-Beratung-Rachau' || currentPath.startsWith('/KI-Beratung-Rachau/')) {
+  if (['/haltung.html','/empfehlungsprogramm.html','/social-media.html','/faq.html','/support.html'].includes(currentPath)) {
     activateDropdown(companyDropdown);
     return;
   }
