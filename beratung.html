@@ -6387,7 +6387,7 @@ document.addEventListener('keydown', (event) => {
     return;
   }
 
-  if (currentPath === '/Leistungen' || currentPath === '/leistungen.html' || currentPath.startsWith('/Leistungen/')) {
+  if (currentPath === '/leistungen.html' || ['/beratung.html','/automatisierung.html','/kundengewinnung.html','/schulungen.html','/individuelle-loesungen.html'].includes(currentPath)) {
     activateDropdown(serviceDropdown);
     return;
   }
