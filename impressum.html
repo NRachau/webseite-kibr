@@ -626,6 +626,17 @@ main{
 .site-footer .footer-brand-copy{transform:translateY(3.1181px) !important;}
 .site-footer .footer-brand-copy .brand-triad{width:calc(100% - 0.6cm + 5px) !important;}
 .kibr-tracking-pixel{position:absolute;width:1px;height:1px;opacity:.01;pointer-events:none}.cookie-overlay{position:fixed;inset:0;z-index:9999;display:none;place-items:center;background:rgba(4,13,22,.58);backdrop-filter:blur(4px)}.cookie-overlay.open{display:grid}.cookie-box{width:min(380px,calc(100vw - 28px));height:260px;overflow:auto;padding:18px;border-radius:16px;background:#fff;color:#172b3f;box-shadow:0 28px 80px rgba(0,0,0,.35)}.cookie-box h2{margin:0 0 12px}.cookie-box button{width:100%;margin:5px 0;padding:11px;border-radius:8px;font-weight:800;cursor:pointer}.cookie-accept{background:#ed7a16;color:#fff;border:1px solid #ed7a16}.cookie-settings,.cookie-save{background:#fff;color:#172b3f;border:1px solid #172b3f}.cookie-options{display:none;margin:10px 0}.cookie-options.open{display:block}.cookie-options label{display:block;padding:7px 0}.primary-btn{color:#fff!important}.secondary-btn{color:#17364d!important}
+/* Mobilkorrektur Impressum; Desktop bleibt unverändert. */
+@media(max-width:760px){
+ main .content-section,main .closing,main .content-inner,main .closing-inner,
+ main .media-grid,main .content-copy,main .body-copy,main .section-title,
+ main .legal-block,main .legal-grid{min-width:0;max-width:100%}
+ main h1,main h2,main h3,main p,main li,main strong{white-space:normal!important;overflow-wrap:anywhere}
+ main img,main svg{max-width:100%!important}
+ main a{box-sizing:border-box;min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere}
+ .site-footer .footer-brand-copy,.site-footer .footer-brand-copy>strong,
+ .site-footer .brand-triad{min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere}
+}
 </style></head>
 <body>
 <div class="cookie-overlay" id="cookie-overlay" aria-hidden="true"><section class="cookie-box" role="dialog" aria-modal="true"><h2>Cookie-Einstellungen</h2><p>Sie entscheiden, welche optionalen Funktionen verwendet werden.</p><button class="cookie-accept" id="cookie-accept">ALLE AKZEPTIEREN</button><button class="cookie-settings" id="cookie-settings">PERSÖNLICHE EINSTELLUNGEN</button><div class="cookie-options" id="cookie-options"><label><input id="cookie-analytics" type="checkbox"/> Statistik &amp; Analyse</label><label><input id="cookie-marketing" type="checkbox"/> Marketing</label><label><input id="cookie-media" type="checkbox"/> Externe Medien</label><button class="cookie-save" id="cookie-save">AUSWAHL SPEICHERN</button><button class="cookie-settings" id="cookie-reject">ALLE ABLEHNEN</button></div></section></div>
