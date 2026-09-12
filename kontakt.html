@@ -750,6 +750,19 @@ main{
 .site-footer .footer-brand-copy{transform:translateY(3.1181px) !important;}
 .site-footer .footer-brand-copy .brand-triad{width:calc(100% - 0.6cm + 5px) !important;}
 figure.contact-image img{object-position:44% center!important}
+</style><style>
+/* Mobilkorrektur Kontakt; Desktop bleibt unverändert. */
+@media(max-width:760px){
+ main .content-section,main .closing,main .content-inner,main .closing-inner,
+ main .media-grid,main .content-copy,main .body-copy,main .section-title,
+ main .contact-form,main .contact-choice-grid,main .form-grid,
+ main .customer-route{min-width:0;max-width:100%}
+ main h1,main h2,main h3,main p,main li{white-space:normal!important;overflow-wrap:anywhere}
+ main img,main svg{max-width:100%!important}
+ main a,main button,main input,main textarea,main select{box-sizing:border-box;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+ .site-footer .footer-brand-copy,.site-footer .footer-brand-copy>strong,
+ .site-footer .brand-triad{min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere}
+}
 </style></head>
 <body>
 <!-- MASTER: Beim Erstellen einer Unterseite Browser-Titel, Meta-Beschreibung und aktive Navigation an die jeweilige Seite anpassen. -->
