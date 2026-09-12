@@ -5529,6 +5529,45 @@ body.kibr-cookie-open{overflow:hidden}
   .hero-home .hero-consulting-photo{max-width:100%;aspect-ratio:4/3;border-radius:18px}
 }
 
+/* Startseite – ausschließlich mobile Breiten: Inhalte statt Abschneiden umbrechen. */
+@media(max-width:760px){
+  .content-section,
+  .closing,
+  .home-field6{min-width:0 !important;max-width:calc(100% - 28px) !important}
+  .content-inner,
+  .closing-inner,
+  .media-grid,
+  .content-copy,
+  .body-copy,
+  .section-title,
+  .home-field9 .f9-map,
+  .site-footer .footer-brand-copy{min-width:0 !important;max-width:100% !important}
+  .content-section h1,
+  .content-section h2,
+  .content-section h3,
+  .closing h2,
+  .content-section p,
+  .closing p{overflow-wrap:anywhere;white-space:normal !important}
+  .content-section img,
+  .closing img{max-width:100% !important;height:auto}
+  .home-field9 .f9-link a,
+  .closing .primary-btn,
+  .closing .secondary-btn{max-width:100%;min-width:0;white-space:normal !important;text-align:center;overflow-wrap:anywhere}
+  .home-field7 .f7-case-label span{white-space:normal;overflow-wrap:anywhere}
+  .site-footer .footer-brand-copy > strong,
+  .site-footer .footer-brand-copy .brand-triad{white-space:normal !important;overflow-wrap:anywhere}
+}
+@media(max-width:480px){
+  .content-section,
+  .closing,
+  .home-field6{width:calc(100% - 20px) !important;max-width:calc(100% - 20px) !important}
+  .home-field9 .f9-center::before{width:min(245px,100%) !important;height:auto !important;aspect-ratio:1}
+  .home-field9 .f9-center::after{width:min(215px,88%) !important;height:auto !important;aspect-ratio:1}
+  .home-field9 .f9-center-ring{width:min(190px,78%) !important;height:auto !important;aspect-ratio:1}
+  .site-footer .footer-brand{min-width:0}
+  .site-footer .footer-brand-copy{width:auto !important;flex:1 1 auto}
+}
+
 </style>
 
 </head>
