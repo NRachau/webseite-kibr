@@ -5531,6 +5531,13 @@ body.kibr-cookie-open{overflow:hidden}
 
 /* Startseite – ausschließlich mobile Breiten: Inhalte statt Abschneiden umbrechen. */
 @media(max-width:760px){
+  .hero-home .hero-left-cta{width:100%;min-width:0}
+  .hero-home .hero-left-button{
+    width:100%;min-width:0;max-width:100%;
+    white-space:normal;text-align:center;overflow-wrap:anywhere;
+    padding:14px 16px;gap:8px
+  }
+  .hero-home .hero-left-button span{flex:0 0 auto}
   .content-section,
   .closing,
   .home-field6{min-width:0 !important;max-width:calc(100% - 28px) !important}
