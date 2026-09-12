@@ -1010,7 +1010,34 @@ main{
  main a{max-width:100%;min-width:0;white-space:normal!important;overflow-wrap:anywhere}
  .site-footer .footer-brand-copy,.site-footer .footer-brand-copy>strong,.site-footer .brand-triad{min-width:0;max-width:100%;white-space:normal!important;overflow-wrap:anywhere}
  .branch-card,.branch-body,.branch-media,.hero-mosaic{min-width:0;max-width:100%}
+ /* Branchenregister: die aktive Karte bestimmt ihre Höhe selbst. */
+ .branch-deck{min-height:0!important;height:auto}
+ .branch-card{display:none;position:relative;inset:auto;transform:none}
+ .branch-card.active{display:block}
+ .branch-body{height:auto;min-height:0}
+ .branch-media,.branch-copy{min-width:0}
+ /* Individuelle Lösung: mobile Prozessgrafiken ohne feste Desktop-Geometrie. */
+ .individual-solution-section .solution-principles{grid-template-columns:minmax(0,1fr)}
+ .individual-solution-section .solution-flow{grid-template-columns:minmax(0,1fr)!important;gap:12px!important;padding:18px 0 6px!important;align-items:stretch!important}
+ .individual-solution-section .solution-flow::before{display:none}
+ .individual-solution-section .solution-flow .flow-node{min-width:0;min-height:0;transform:none!important}
+ .individual-solution-section .tech-grid{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto!important;gap:12px!important}
+ .individual-solution-section .tech-grid::before{grid-column:1!important;grid-row:auto!important;width:100px;height:100px}
+ .individual-solution-section .tech-grid article{grid-column:1!important;grid-row:auto!important;min-width:0;min-height:0!important}
+ .individual-solution-section .tech-grid article::after{display:none}
+ .individual-solution-section .balance-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .existing-structures-section .structure-map,.existing-structures-section .existing-result{grid-template-columns:minmax(0,1fr)}
+ .service-orbit{grid-template-columns:minmax(0,1fr)}
+ .service-orbit>span{grid-column:1;grid-row:auto}
+ /* Gesamtbild: Ergebniskarte fließt nach den drei Karten statt über ihnen zu liegen. */
+ .total-picture-section .triad-solution{grid-template-columns:minmax(0,1fr);padding-bottom:0;gap:14px}
+ .total-picture-section .triad-join{display:none}
+ .total-picture-section .solution-center{position:static;left:auto;bottom:auto;transform:none;min-width:0;width:100%;grid-column:1}
+ .five-steps{grid-template-columns:minmax(0,1fr)!important;gap:12px!important;padding:12px 0!important}
+ .five-steps::before{display:none}
+ .five-steps>div{min-width:0;min-height:0!important;transform:none!important;border-radius:18px!important}
 }
+@media(max-width:600px){.individual-solution-section .balance-grid{grid-template-columns:minmax(0,1fr)!important}}
 </style>
 </head>
 <body>
