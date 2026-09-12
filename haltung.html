@@ -391,10 +391,29 @@ main{
 .narrative-grid,
 .collaboration-grid{
   display:grid;
-  grid-template-columns:1fr;
-  gap:22px;
+  grid-template-columns:minmax(280px,31%) 1fr;
+  gap:22px 52px;
   align-items:start;
 }
+.collaboration-heading{grid-column:1/-1}
+.partner-portrait{
+  grid-column:1;
+  grid-row:2;
+  margin:0;
+  align-self:start;
+  overflow:hidden;
+  border-radius:4px;
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 24px 52px rgba(8,26,39,.24),0 6px 16px rgba(8,26,39,.12);
+}
+.partner-portrait img{
+  display:block;
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+.collaboration-copy{grid-column:2;grid-row:2}
+.collaboration-grid .final-statement{grid-column:1/-1}
 .section-title h2,
 .collaboration-heading h2{max-width:820px}
 .narrative-copy,
@@ -482,8 +501,9 @@ main{
   .story-section{padding:52px 34px 58px}
   .closing{padding:35px 34px 40px}
   .closing h2{font-size:clamp(30px,4.2vw,38px)}
-  .opening-grid{grid-template-columns:1fr;gap:34px}
-  .portrait{max-width:430px}
+  .opening-grid,.collaboration-grid{grid-template-columns:1fr;gap:34px}
+  .collaboration-heading,.partner-portrait,.collaboration-copy,.collaboration-grid .final-statement{grid-column:1;grid-row:auto}
+  .portrait,.partner-portrait{max-width:430px}
   .qualification-line{grid-template-columns:1fr 1fr}
   .qualification-line span:nth-child(2){border-right:0}
   .qualification-line span:nth-child(-n+2){border-bottom:1px solid #dbe3e8}
@@ -775,6 +795,9 @@ main{
 <section class="story-section soft collaboration">
 <div class="story-inner collaboration-grid">
 <div class="collaboration-heading"><span class="story-kicker">NICOLAS RACHAU ALS GESCHÄFTSPARTNER</span><h2>Persönliche Verantwortung in der Zusammenarbeit.</h2></div>
+<figure class="partner-portrait">
+<img alt="Nicolas Rachau als persönlicher und verantwortlicher Geschäftspartner" loading="lazy" src="haltung-nicolas-neutral.jpg"/>
+</figure>
 <div class="collaboration-copy">
 <p>Als Inhaber der KI Beratung Rachau bin ich nicht nur für die fachliche Beratung verantwortlich, sondern auch für die Qualität der Zusammenarbeit. Mir sind klare Aussagen, nachvollziehbare Entscheidungen und ein verlässlicher Umgang miteinander wichtig. Wenn ich bei einer Idee fachliche oder wirtschaftliche Bedenken sehe, spreche ich diese offen an. Ebenso gehört es für mich dazu, bei Schwierigkeiten nicht nach Zuständigkeiten zu suchen, sondern nach einer tragfähigen Lösung.</p>
 <p>Kunden haben bei mir einen direkten Ansprechpartner, der die Ausgangssituation und den Verlauf eines Projekts kennt. Entscheidungen und Hintergründe gehen dadurch nicht zwischen unterschiedlichen Stellen verloren. Diese direkte Verantwortlichkeit ist ein wesentlicher Bestandteil der Art, wie ich mein Unternehmen führe.</p>
