@@ -785,6 +785,19 @@ main .haltung-bild-jahr{position:absolute;top:clamp(10px,2vw,28px);padding:5px 1
 main .haltung-bild-jahr-links{left:clamp(10px,2vw,28px)}
 main .haltung-bild-jahr-rechts{right:clamp(10px,2vw,28px)}
 </style>
+
+<style>
+/* Die Logistikillustration trägt rechts oben eine eingebrannte, falsche Jahreszahl.
+   Opake Korrekturfläche deckt ausschließlich diese ab und zeigt 2005–2011. */
+main .haltung-bild-jahr-korrektur{
+  top:0 !important;right:0 !important;
+  width:25%;min-height:12%;box-sizing:border-box;
+  border-radius:0 !important;
+  display:flex;align-items:flex-start;justify-content:flex-end;
+  padding:clamp(10px,2.2vw,30px) clamp(12px,2.2vw,32px) !important;
+  background:#071e31 !important;
+}
+</style>
 </head>
 <body>
 <div class="cookie-overlay" id="cookie-overlay"><section class="cookie-box" role="dialog" aria-modal="true"><h2>Cookie-Einstellungen</h2><p>Sie entscheiden, welche optionalen Funktionen verwendet werden.</p><button class="cookie-accept" id="cookie-accept">ALLE AKZEPTIEREN</button><button class="cookie-settings" id="cookie-settings">PERSÖNLICHE EINSTELLUNGEN</button><div class="cookie-options" id="cookie-options"><label><input id="cookie-analytics" type="checkbox"/> Statistik &amp; Analyse</label><label><input id="cookie-marketing" type="checkbox"/> Marketing</label><label><input id="cookie-media" type="checkbox"/> Externe Medien</label><button class="cookie-settings" id="cookie-save">AUSWAHL SPEICHERN</button><button class="cookie-settings" id="cookie-reject">ALLE ABLEHNEN</button></div></section></div>
@@ -844,9 +857,8 @@ main .haltung-bild-jahr-rechts{right:clamp(10px,2vw,28px)}
 <section class="story-section soft">
 
 <figure class="haltung-chronik-bild">
-  <img src="Haltung_b01.png" alt="Illustrative Darstellung der Lebensmittelproduktion und der frühen Erfahrung mit Maschinen und Arbeitsabläufen" loading="lazy" decoding="async"/>
-  <span class="haltung-bild-jahr haltung-bild-jahr-links" aria-hidden="true">2005–2011</span>
-  <span class="haltung-bild-jahr haltung-bild-jahr-rechts" aria-hidden="true">2000–2005</span>
+  <img src="Haltung_b02.png" alt="Illustrative Darstellung der Lebensmittelproduktion und der frühen Erfahrung mit Maschinen und Arbeitsabläufen" loading="lazy" decoding="async"/>
+  <span class="haltung-bild-jahr haltung-bild-jahr-links" aria-hidden="true">2000–2005</span>
 </figure>
 
 <div class="story-inner narrative-grid">
@@ -861,7 +873,8 @@ main .haltung-bild-jahr-rechts{right:clamp(10px,2vw,28px)}
 <section class="story-section">
 
 <figure class="haltung-chronik-bild">
-  <img src="Haltung_b02.png" alt="Illustrative Darstellung von Produktion und Logistik aus unterschiedlichen Berufsfeldern" loading="lazy" decoding="async"/>
+  <img src="Haltung_b01.png" alt="Illustrative Darstellung von Produktion und Logistik aus unterschiedlichen Berufsfeldern" loading="lazy" decoding="async"/>
+  <span class="haltung-bild-jahr haltung-bild-jahr-rechts haltung-bild-jahr-korrektur" aria-hidden="true">2005–2011</span>
 </figure>
 
 <div class="story-inner narrative-grid">
