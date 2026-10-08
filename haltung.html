@@ -755,6 +755,17 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 
 <style>
 /* Bild und Text bilden je Chronikstation eine gestalterische Einheit. */
+/* Lesbarer Kontrast der Bildchronik auf dunklen und hellen Karten – auch mobil. */
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy p,
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy li,
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy span{
+  color:#263f52 !important;
+}
+main .story-section:has(> .haltung-chronik-bild){
+  background:#f5f8fb !important;
+}
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy a{color:#124e85 !important;}
+
 main .story-section:has(> .haltung-chronik-bild){padding:0 !important;overflow:hidden;}
 main .story-section:has(> .haltung-chronik-bild) > .haltung-chronik-bild{width:100%;max-width:none;margin:0 !important;border:0;border-radius:0;box-shadow:none;line-height:0;}
 main .story-section:has(> .haltung-chronik-bild) > .haltung-chronik-bild img{display:block;width:100%;height:auto;object-fit:contain;}
