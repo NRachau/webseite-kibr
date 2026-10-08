@@ -744,6 +744,14 @@ main .story-section > .haltung-chronik-bild{width:100%;max-width:1360px;margin:3
 main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
 @media(max-width:760px){main .story-section > .haltung-chronik-bild{margin-top:26px;border-radius:12px}}
 </style>
+
+<style>
+/* Bildchronik: zuerst das großformatige Kapitelmotiv, darunter der vollständig erhaltene Text. */
+main .story-section > .haltung-chronik-bild{max-width:none;width:100%;margin:0 0 34px;border-radius:16px;box-sizing:border-box}
+main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{margin-top:0}
+@media(max-width:760px){main .story-section > .haltung-chronik-bild{margin:0 0 24px;border-radius:10px}}
+</style>
 </head>
 <body>
 <div class="cookie-overlay" id="cookie-overlay"><section class="cookie-box" role="dialog" aria-modal="true"><h2>Cookie-Einstellungen</h2><p>Sie entscheiden, welche optionalen Funktionen verwendet werden.</p><button class="cookie-accept" id="cookie-accept">ALLE AKZEPTIEREN</button><button class="cookie-settings" id="cookie-settings">PERSÖNLICHE EINSTELLUNGEN</button><div class="cookie-options" id="cookie-options"><label><input id="cookie-analytics" type="checkbox"/> Statistik &amp; Analyse</label><label><input id="cookie-marketing" type="checkbox"/> Marketing</label><label><input id="cookie-media" type="checkbox"/> Externe Medien</label><button class="cookie-settings" id="cookie-save">AUSWAHL SPEICHERN</button><button class="cookie-settings" id="cookie-reject">ALLE ABLEHNEN</button></div></section></div>
@@ -801,6 +809,11 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </section>
 <section class="story-section soft">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b01.png" alt="Illustrative Darstellung der Lebensmittelproduktion und der frühen Erfahrung mit Maschinen und Arbeitsabläufen" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">ERSTE PRÄGUNG · 2000–2005</span><h2>Frühe Erfahrung mit Prozessen und Effizienz.</h2></div>
 <div class="narrative-copy">
@@ -811,6 +824,11 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </section>
 <section class="story-section">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b02.png" alt="Illustrative Darstellung von Produktion und Logistik aus unterschiedlichen Berufsfeldern" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">PRAXIS · 2005–2011</span><h2>Erfahrung aus unterschiedlichen Arbeitswelten.</h2></div>
 <div class="narrative-copy">
@@ -820,11 +838,13 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b01.png" alt="Illustrative Darstellung der Lebensmittelproduktion und der frühen Erfahrung mit Maschinen und Arbeitsabläufen" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="story-section soft">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b03.png" alt="Illustrative Grafik zur kaufmännischen Ausbildung und Weiterbildung von 2011 bis 2016" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">KAUFMÄNNISCHE PERSPEKTIVE · 2011–2016</span><h2>Die praktische Erfahrung wurde um eine kaufmännische Perspektive erweitert.</h2></div>
 <div class="narrative-copy">
@@ -840,11 +860,13 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 <span><b>Ausbildereignung</b><small>IHK seit 2016</small></span>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b02.png" alt="Illustrative Darstellung von Produktion und Logistik aus unterschiedlichen Berufsfeldern" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="story-section">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b04.png" alt="Illustrative Darstellung von Gastronomie, Service, Organisation und Personalführung" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">KUNDEN, SERVICE &amp; FÜHRUNG · 2016–2026</span><h2>Kundenkontakt, Führung und Verantwortung im laufenden Betrieb.</h2></div>
 <div class="narrative-copy">
@@ -854,11 +876,13 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b03.png" alt="Illustrative Grafik zur kaufmännischen Ausbildung und Weiterbildung von 2011 bis 2016" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="story-section soft">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b05.png" alt="Illustrative Darstellung des Wegs zur KI Beratung Rachau seit 2024" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">DER WEG ZUR KI BERATUNG RACHAU</span><h2>Wie aus beruflicher Erfahrung eine eigene Unternehmensberatung entstand.</h2></div>
 <div class="narrative-copy">
@@ -868,11 +892,13 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b04.png" alt="Illustrative Darstellung von Gastronomie, Service, Organisation und Personalführung" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="story-section">
+
+<figure class="haltung-chronik-bild">
+  <img src="Haltung_b06.png" alt="Illustrative Darstellung einer Beratungssituation und der Verbindung beruflicher Erfahrung mit KI und Automatisierung" loading="lazy" decoding="async"/>
+</figure>
+
 <div class="story-inner narrative-grid">
 <div class="section-title"><span class="story-kicker">WAS HEUTE ZUSAMMENKOMMT</span><h2>Wie meine beruflichen Erfahrungen meine heutige Beratung prägen.</h2></div>
 <div class="narrative-copy">
@@ -882,9 +908,6 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 </div>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b05.png" alt="Illustrative Darstellung des Wegs zur KI Beratung Rachau seit 2024" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="story-section soft collaboration">
 <div class="story-inner collaboration-grid">
@@ -900,9 +923,6 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 <div class="statement final-statement"><strong>Erfahrung aus der Praxis. Verantwortung in der Umsetzung.</strong><span>Die fachlichen Werkzeuge entwickeln sich weiter. Entscheidend bleibt, eine Lösung zu finden, die zum Unternehmen und zu den Menschen passt, die damit arbeiten.</span></div>
 </div>
 
-<figure class="haltung-chronik-bild">
-  <img src="Haltung_b06.png" alt="Illustrative Darstellung einer Beratungssituation und der Verbindung beruflicher Erfahrung mit KI und Automatisierung" loading="lazy" decoding="async"/>
-</figure>
 </section>
 <section class="closing" id="kontakt">
 <div aria-hidden="true" class="closing-shapes"><span></span><span></span><span></span><span></span><span></span></div>
