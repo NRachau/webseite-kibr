@@ -808,6 +808,10 @@ main .haltung-abschluss-kapitel .haltung-abschluss-teil p:last-child{margin-bott
 main .haltung-abschluss-kapitel .final-statement{margin:0;max-width:100%;box-sizing:border-box}
 @media(max-width:760px){main .haltung-abschluss-kapitel .haltung-abschluss-inhalt{padding:24px 22px 32px}}
 </style>
+<style>
+/* Orange Markierung vor der Seitenbezeichnung im Einstieg. */
+.opening-copy .haltung-einstieg-kicker::before{content:"";display:inline-block;vertical-align:middle;width:7px;height:25px;margin-right:12px;border-radius:3px;background:#ed7a16}
+</style>
 </head>
 <body>
 <div class="cookie-overlay" id="cookie-overlay"><section class="cookie-box" role="dialog" aria-modal="true"><h2>Cookie-Einstellungen</h2><p>Sie entscheiden, welche optionalen Funktionen verwendet werden.</p><button class="cookie-accept" id="cookie-accept">ALLE AKZEPTIEREN</button><button class="cookie-settings" id="cookie-settings">PERSÖNLICHE EINSTELLUNGEN</button><div class="cookie-options" id="cookie-options"><label><input id="cookie-analytics" type="checkbox"/> Statistik &amp; Analyse</label><label><input id="cookie-marketing" type="checkbox"/> Marketing</label><label><input id="cookie-media" type="checkbox"/> Externe Medien</label><button class="cookie-settings" id="cookie-save">AUSWAHL SPEICHERN</button><button class="cookie-settings" id="cookie-reject">ALLE ABLEHNEN</button></div></section></div>
@@ -856,7 +860,7 @@ main .haltung-abschluss-kapitel .final-statement{margin:0;max-width:100%;box-siz
 <div class="story-inner opening-grid">
 <figure class="portrait"><img alt="Nicolas Rachau, Inhaber der KI Beratung Rachau" src="haltung-nicolas-neutral.jpg"/></figure>
 <div class="opening-copy">
-<span class="story-kicker">ÜBER MICH · NICOLAS RACHAU</span>
+<span class="story-kicker haltung-einstieg-kicker">HALTUNG – ÜBER MICH</span>
 <h1 id="haltung-title">Wer hinter der KI Beratung Rachau steht.</h1>
 <p class="lead">Mein Name ist Nicolas Rachau. Als Inhaber der KI Beratung Rachau bin ich für die Beratung, die Entwicklung von Lösungen und die Begleitung der Projekte persönlich verantwortlich.</p>
 <p>Mein beruflicher Weg begann nicht in der Unternehmensberatung und auch nicht im Bereich der künstlichen Intelligenz. In mehr als zwei Jahrzehnten habe ich in unterschiedlichen Branchen und Funktionen gearbeitet – von industrieller Produktion und Logistik über kaufmännische Aufgaben bis hin zu Service, Führung und Restaurantleitung. Diese Erfahrungen prägen bis heute meinen Blick auf Unternehmen, Abläufe und die praktische Umsetzung von Lösungen.</p>
