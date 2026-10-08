@@ -727,6 +727,15 @@ main .story-section .qualification-line span:last-child{border-right:1px solid r
   main .story-section .qualification-line{grid-template-columns:1fr;gap:9px}
   main .story-section .qualification-line span{border:1px solid rgba(48,91,119,.13)!important;padding:16px 18px}
 }
+/* Lesbarkeit: helle Chronikkarten benötigen explizit dunkle Schrift, auch in dunklen Abschnitten. */
+@media(min-width:761px){
+  main .story-section .narrative-grid > .narrative-copy,
+  main .story-section .narrative-grid > .narrative-copy p,
+  main .story-section .narrative-grid > .narrative-copy li,
+  main .story-section .narrative-grid > .narrative-copy span { color:#263f52 !important; }
+  main .story-section .narrative-grid > .narrative-copy a { color:#124e85 !important; }
+  main .story-section .narrative-grid > .narrative-copy strong { color:#132e46 !important; }
+}
 </style>
 </head>
 <body>
