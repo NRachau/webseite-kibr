@@ -752,6 +752,20 @@ main .story-section > .haltung-chronik-bild img{display:block;width:100%;height:
 main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{margin-top:0}
 @media(max-width:760px){main .story-section > .haltung-chronik-bild{margin:0 0 24px;border-radius:10px}}
 </style>
+
+<style>
+/* Bild und Text bilden je Chronikstation eine gestalterische Einheit. */
+main .story-section:has(> .haltung-chronik-bild){padding:0 !important;overflow:hidden;}
+main .story-section:has(> .haltung-chronik-bild) > .haltung-chronik-bild{width:100%;max-width:none;margin:0 !important;border:0;border-radius:0;box-shadow:none;line-height:0;}
+main .story-section:has(> .haltung-chronik-bild) > .haltung-chronik-bild img{display:block;width:100%;height:auto;object-fit:contain;}
+main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{display:block !important;width:100%;max-width:none;box-sizing:border-box;margin:0 !important;padding:clamp(25px,4vw,58px) var(--haltung-card-pad-x) clamp(32px,4vw,62px);}
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy{display:block !important;max-width:100%;width:100%;box-sizing:border-box;margin:0;padding:0 !important;background:transparent !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;}
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy p{max-width:100%;font-size:clamp(15px,1.17vw,17px);line-height:1.8;}
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy p:first-child{margin-top:0}
+main .story-section:has(> .haltung-chronik-bild) .narrative-copy p:last-child{margin-bottom:0}
+main .story-section:has(> .haltung-chronik-bild) .qualification-line{box-sizing:border-box;width:calc(100% - 2 * var(--haltung-card-pad-x));margin:0 var(--haltung-card-pad-x) clamp(28px,4vw,50px);}
+@media(max-width:760px){main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{padding:22px 22px 30px}main .story-section:has(> .haltung-chronik-bild) .qualification-line{width:calc(100% - 44px);margin:0 22px 26px}}
+</style>
 </head>
 <body>
 <div class="cookie-overlay" id="cookie-overlay"><section class="cookie-box" role="dialog" aria-modal="true"><h2>Cookie-Einstellungen</h2><p>Sie entscheiden, welche optionalen Funktionen verwendet werden.</p><button class="cookie-accept" id="cookie-accept">ALLE AKZEPTIEREN</button><button class="cookie-settings" id="cookie-settings">PERSÖNLICHE EINSTELLUNGEN</button><div class="cookie-options" id="cookie-options"><label><input id="cookie-analytics" type="checkbox"/> Statistik &amp; Analyse</label><label><input id="cookie-marketing" type="checkbox"/> Marketing</label><label><input id="cookie-media" type="checkbox"/> Externe Medien</label><button class="cookie-settings" id="cookie-save">AUSWAHL SPEICHERN</button><button class="cookie-settings" id="cookie-reject">ALLE ABLEHNEN</button></div></section></div>
@@ -815,7 +829,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">ERSTE PRÄGUNG · 2000–2005</span><h2>Frühe Erfahrung mit Prozessen und Effizienz.</h2></div>
+
 <div class="narrative-copy">
 <p>Meine berufliche Laufbahn begann im Jahr 2000 mit der Ausbildung zur Fachkraft für Lebensmitteltechnik bei Vita in Reutlingen. Die Produktion war durch kurze Haltbarkeiten und entsprechend hohe Anforderungen an Geschwindigkeit und Organisation geprägt. Ein großer Teil des Sortiments musste täglich hergestellt werden. Produktionswechsel, Reinigung, Umrüstung und das erneute Anfahren der Anlagen mussten deshalb zuverlässig und in möglichst kurzer Zeit erfolgen.</p>
 <p>Während meiner Ausbildung entwickelte sich der Abpackbereich zu einem meiner Schwerpunkte. Besonders intensiv beschäftigte ich mich mit den dort eingesetzten Schlauchbeutelmaschinen. Mich interessierte nicht nur deren Bedienung, sondern vor allem das Zusammenspiel der einzelnen Einstellungen und Maschinenparameter. Dieses Verständnis ermöglichte es mir bereits mit 16 Jahren, die Anlagen sehr effizient zu fahren und mehrfach außergewöhnlich hohe Stückzahlen pro Minute zu erreichen. Prägend war dabei vor allem die Erkenntnis, wie stark sich ein Ergebnis verbessert, wenn ein Ablauf im Detail verstanden und gezielt abgestimmt wird.</p>
@@ -830,7 +844,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">PRAXIS · 2005–2011</span><h2>Erfahrung aus unterschiedlichen Arbeitswelten.</h2></div>
+
 <div class="narrative-copy">
 <p>In den folgenden Jahren lernte ich weitere Bereiche der operativen Arbeitswelt kennen. 2005 arbeitete ich über Persona in den Niederlanden in der Kommissionierung und anschließend bei Gyma in Kamp-Lintfort als Anlagenführer. 2006 war ich bei ALB-GOLD am Aufbau eines neuen Bereichs für Frischteigwaren beteiligt. Der Bereich bestand dort zuvor in dieser Form noch nicht und musste in die vorhandenen Produktionsstrukturen integriert werden.</p>
 <p>Von 2006 bis 2007 folgte eine Tätigkeit bei Billy Bob’s. Anschließend war ich bis Ende 2008 Schichtleiter bei Romina Mineralquellen. 2009 wechselte ich zu DMS Hasenauer + Koch und arbeitete dort zunächst bis 2011 als Möbelpacker.</p>
@@ -846,7 +860,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">KAUFMÄNNISCHE PERSPEKTIVE · 2011–2016</span><h2>Die praktische Erfahrung wurde um eine kaufmännische Perspektive erweitert.</h2></div>
+
 <div class="narrative-copy">
 <p>Von 2011 bis 2014 absolvierte ich bei Hasenauer + Koch eine Ausbildung im Speditionsbereich. Nach vielen Jahren in operativen Funktionen lernte ich Abläufe damit verstärkt aus der Perspektive von Planung, Koordination und kaufmännischer Steuerung kennen.</p>
 <p>Anschließend absolvierte ich von 2014 bis 2016 die Weiterbildung zum staatlich geprüften Betriebswirt mit den Schwerpunkten Personalmanagement und Controlling. 2016 kam der IHK-Ausbilderschein hinzu.</p>
@@ -868,7 +882,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">KUNDEN, SERVICE &amp; FÜHRUNG · 2016–2026</span><h2>Kundenkontakt, Führung und Verantwortung im laufenden Betrieb.</h2></div>
+
 <div class="narrative-copy">
 <p>Von 2016 bis 2021 arbeitete ich erneut bei Billy Bob’s, diesmal im Service. Ab 2022 übernahm ich bis Juni 2026 die Restaurantleitung bei Frau Möllers.</p>
 <p>Die Gastronomie verbindet Kundenkontakt, Personalführung, Warenwirtschaft, Qualität, Kosten und hohen Zeitdruck in einem unmittelbaren Tagesgeschäft. Entscheidungen zeigen ihre Wirkung häufig noch während derselben Schicht. Schwächen in einem Ablauf lassen sich deshalb kaum theoretisch betrachten – sie werden im Betrieb unmittelbar sichtbar.</p>
@@ -884,7 +898,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">DER WEG ZUR KI BERATUNG RACHAU</span><h2>Wie aus beruflicher Erfahrung eine eigene Unternehmensberatung entstand.</h2></div>
+
 <div class="narrative-copy">
 <p>2022 begann ich, mich intensiver mit künstlicher Intelligenz zu beschäftigen; ab 2023 vertiefte ich das Thema kontinuierlich. Für mich stand dabei von Beginn an weniger die Technologie selbst im Mittelpunkt als die Frage, welche konkreten Aufgaben sich damit besser lösen lassen. Viele Themen waren mir aus früheren Tätigkeiten bereits vertraut: wiederkehrende Arbeit, Informationsaufwand, Abstimmungsprobleme und Prozesse, die unnötig Zeit binden.</p>
 <p>Am 5. Dezember 2024 gründete ich meine Unternehmensberatung. Mit den ersten Projekten entwickelte sich die Ausrichtung weiter und konzentrierte sich zunehmend auf die Verbindung von Unternehmensberatung, künstlicher Intelligenz und praktischer Umsetzung. Seit Juli 2026 liegt mein beruflicher Schwerpunkt vollständig auf der Selbstständigkeit und der KI Beratung Rachau.</p>
@@ -900,7 +914,7 @@ main .story-section:has(> .haltung-chronik-bild) > .story-inner.narrative-grid{m
 </figure>
 
 <div class="story-inner narrative-grid">
-<div class="section-title"><span class="story-kicker">WAS HEUTE ZUSAMMENKOMMT</span><h2>Wie meine beruflichen Erfahrungen meine heutige Beratung prägen.</h2></div>
+
 <div class="narrative-copy">
 <p>Wenn ich meinen beruflichen Weg heute betrachte, liegt die Verbindung der einzelnen Stationen weniger in den Branchen als in der Art der Aufgaben. Immer wieder ging es darum, Abläufe zu verstehen, Ursachen für Probleme zu erkennen, unterschiedliche Anforderungen miteinander zu verbinden und Verbesserungen praktisch umzusetzen.</p>
 <p>Das zeigt sich auch darin, wie ich heute an neue Aufgabenstellungen herangehe. Eine Aufgabenstellung betrachte ich nicht ausschließlich aus technischer Sicht. Ebenso wichtig sind die betrieblichen Rahmenbedingungen: Wer arbeitet mit einer Lösung? Welche bestehenden Abläufe sind betroffen? Welche Abhängigkeiten entstehen? Steht der erwartete Nutzen in einem sinnvollen Verhältnis zum Aufwand?</p>
