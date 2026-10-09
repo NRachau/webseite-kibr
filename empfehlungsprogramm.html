@@ -1012,6 +1012,8 @@ main{
   const PAGE='Empfehlungsprogramm';
   const WEB='https://hook.eu2.make.com/1dj9ip8a1qlrm2q5ysdeh5tcdc1psvb2';
   const FOOT='https://hook.eu2.make.com/anforuv68l9uxm3xeddqk9is2uzz8ki5';
+  const THIRD='https://hook.eu2.make.com/u1qpstdfm9dm4n8uog7disccvb119kwn';
+  const HOOKS=[WEB,FOOT,THIRD];
   const add=(host,name,url,dropdown=false)=>{
     if(!host)return null;
     const pixel=document.createElement('span');
@@ -1022,9 +1024,10 @@ main{
     return pixel;
   };
 
-  document.querySelectorAll('main > .content-section').forEach((section,index)=>add(section,PAGE+' '+(index+1),WEB));
-  add(document.querySelector('.closing-inner'),PAGE+' CTA',WEB);
-  add(document.querySelector('.site-footer'),PAGE+' Footer',FOOT);
+  const sectionCount=document.querySelectorAll('main > .content-section').length;
+  document.querySelectorAll('main > .content-section').forEach((section,index)=>add(section,PAGE+' '+(index+1),HOOKS[index%3]));
+  add(document.querySelector('.closing-inner'),PAGE+' CTA',HOOKS[sectionCount%3]);
+  add(document.querySelector('.site-footer'),PAGE+' Footer',HOOKS[(sectionCount+1)%3]);
   add(document.querySelector('#leistungen-dropdown'),PAGE+' Drop Leistung',WEB,true);
   add(document.querySelector('#unternehmen-dropdown'),PAGE+' Drop KIBR',FOOT,true);
 
